@@ -44,10 +44,13 @@ ul.side-nav{
       }
     }
   a{
+    color:color("grey","darken-4");
+    font-weight:700;
     background-color:white;
     display:block;
     padding:16px 32px;
   }
+
 
   }
 
@@ -75,7 +78,23 @@ ul.side-nav{
   @media #{$huge-and-up}  {
       left:0 !important;
   }
-
+  .dropdown-rel{
+    .dropdown-menu{
+      li{
+          a{
+            font-weight:400;
+            background:white;
+            color:color("grey","darken-4");
+            padding-left:88px;
+          }
+        &:active {
+          a{
+            color:color("light-blue","darken-3");
+          }
+        }
+      }
+    }
+  }
     }
 
 #sidenav-overlay {
@@ -86,6 +105,9 @@ ul.side-nav{
   bottom:0px;
   background-color: rgba(0,0,0,.5);
   z-index: 998;
-  
   will-change: opacity;
+  @media #{$huge-and-up}  {
+      display:none;
+  }
+
 }

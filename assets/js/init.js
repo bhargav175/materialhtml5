@@ -159,6 +159,7 @@
 
 
         $('.dropdown-button').dropdown({hover: false});
+        $('.dropdown-rel').dropdownRel({hover: false});
         if (window_width > 600) {
             $('ul.tabs').tabs();
         }

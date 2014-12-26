@@ -683,3 +683,20 @@ img{
     height: 160px ;
   }
 }
+
+.growth-section{
+  @media #{$large-and-down}{
+    display:none;
+  }
+  }
+.partner-icon{
+  height:auto;
+  width:240px;
+  padding:8px;
+  max-width: 100%;
+  @media #{$large-and-down}{
+  height:auto;
+    width:180px;
+
+}
+}
