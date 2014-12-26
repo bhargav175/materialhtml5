@@ -371,9 +371,9 @@ jQuery.extend( jQuery.easing,
       if (defaults.hover) {
         // Click handler for list container
         origin.on('mouseover', function(e){ // Mouse over
-          activates.css('width', origin.outerWidth());
-          activates.css('top', origin.offset().top);
-          activates.css('left', origin.offset().left);
+          //activates.css('width', origin.outerWidth());
+          activates.css('margin-top', 0);
+          //activates.css('left', origin.offset().left);
           activates.show({duration: 200, easing: 'easeOutCubic'});
         });
 
@@ -391,9 +391,9 @@ jQuery.extend( jQuery.easing,
         origin.click( function(e){ // Click
           e.preventDefault();
           e.stopPropagation();
-          activates.css('width', origin.outerWidth());
-          activates.css('top', origin.offset().top);
-          activates.css('left', origin.offset().left);
+          //activates.css('width', origin.outerWidth());
+          activates.css('margin-top',0);
+          //activates.css('left', origin.offset().left);
           activates.show({duration: 200, easing: 'easeOutCubic'});
 
           $(document).bind('click.'+ activates.attr('id'), function (e) {
@@ -411,8 +411,8 @@ jQuery.extend( jQuery.easing,
       // Window Resize Reposition
       $(document).on('resize', function(){
         if (origin.is(':visible')) {
-          activates.css('top', origin.offset().top);
-          activates.css('left', origin.offset().left);
+          activates.css('margin-top',-activates.outerWidth());
+          //activates.css('left', origin.offset().left);
         }
       });
     });
