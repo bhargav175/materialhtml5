@@ -48,10 +48,7 @@ nav {
 ********************/
 
 #logo-container {
-  position: absolute;
-  top: 50%;
-  @include transform( translateY(-50%));
-  height: 70%;
+
 }
 
 #front-page-logo {

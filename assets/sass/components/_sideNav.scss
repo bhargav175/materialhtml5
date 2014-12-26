@@ -1,39 +1,82 @@
-@media #{$medium-and-down}  {
-  ul.side-nav {
-    position: fixed;
-    width: 240px;
-    left: -240px;
-    top: 0;
-    height: 120%;
-    background-color: #FFF;
-    z-index: 999;
-    @include box-shadow-2(0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15));
-    
-    will-change: left;
-
-    li {
-      float: none;
-      padding: 0 15px;
-
-      &:hover, &.active { background-color: #ddd; }
-    }
-    a {
-      color: #444;
-    }
-  }
-  #front-page-nav ul.side-nav {
-    li {
-      float: none;
-      padding: 0 15px;
-
-      &:hover { background-color: #ddd; }
-      .active { background-color: transparent; }
-    }
-    a {
-      color: #444;
-    }
+@media #{$huge-and-down}  {
+ body{
+    padding-left:0;
   }
 }
+
+
+
+ul.side-nav{
+  background:color("grey","lighten-4");
+  flex-grow:1;
+  display:block;
+  margin:0;
+  z-index:999;
+  position:fixed;
+  top:0;
+  left:0;
+  width:240px;
+  min-height:1000px;
+  overflow-y: auto;
+  height:1000px;
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  li{
+    padding:0;
+    &:hover{
+     a{
+      background-color: #ddd;
+      }
+    }
+    &:active {
+      a{
+        background-color:color("grey","darken-4");
+        color:white;
+      }
+    }
+
+    &.head{
+      height:64px;
+      line-height:64px;
+      a{
+        background:color("light-blue","base");
+        color:white;
+        padding:0 32px;
+      }
+    }
+  a{
+    background-color:white;
+    display:block;
+    padding:16px 32px;
+  }
+
+  }
+
+  .content{
+
+  }
+
+    @media #{$huge-and-down}  {
+      @include box-shadow-2(0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15));
+      will-change: left;
+      position: fixed;
+      width: 240px;
+      left: -240px;
+      top: 0;
+      background-color: #FFF;
+      z-index: 999;
+      li {
+        float: none;
+        &:hover, &.active { background-color: #ddd; }
+      }
+      a {
+        color: #444;
+      }
+    }
+  @media #{$huge-and-up}  {
+      left:0 !important;
+  }
+
+    }
 
 #sidenav-overlay {
   position:absolute;

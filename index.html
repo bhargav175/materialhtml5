@@ -1,11 +1,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="assets/css/materialize.min.css"/>
     <link rel="stylesheet" href="assets/sass/ghpages-materialize.css"/>
-
-
-    <!--slider-->
+   <!--slider-->
     <link href="assets/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/sliderpro/slider-pro.min.css"/>
     <link rel="stylesheet" href="assets/css/sliderpro/examples.css"/>
@@ -21,75 +18,83 @@
 <body>
 
 
-<header>
 
-    <nav id="front-page-nav">
-        <div class="container">
-            <div class="nav-wrapper"><a id="logo-container" href="index.html" class="brand-logo">
-              Joe Bloggs Associates
-            </a>
-                <ul id="nav-mobile" class="right side-nav">
-                    <li><a class="" href="services.html">Services</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Modal Login</a></li>
-                    <li><a class="dropdown-button" href="#" data-activates='dropdown1'>Additional Pages</a></li>
+        <ul id="nav-mobile" class="side-nav">
+            <li class="head"><a href="#">Joe Bloggs</a></li>
+            <li><a class="" href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Modal Login</a></li>
+            <li><a class="dropdown-button" href="#" data-activates='dropdown1'>Additional Pages</a></li>
 
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            </div>
-        </div>
-    </nav>
+        </ul>
 
-    <script>
-        $(document).ready(function () {
-            $('.dropdown-button').dropdown();
-        });
-
-        $(document).ready(function () {
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal-trigger').leanModal();
-        });
-    </script>
-
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <h4>Login</h4>
-
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" required>
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" required>
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-
-
-        <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
-        <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
-    </div>
-
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">Features</a></li>
-        <li><a href="#!">Portfolio</a></li>
-        <li><a href="#!">Blog Page</a></li>
-    </ul>
-
-
-</header>
 <main>
+
+
+
+    <header>
+
+        <nav id="front-page-nav navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a id="logo-container" href="index.html" class="brand-logo">
+                    <p class="nav-header">Joe Bloggs Associates</p>
+                    </a>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-button').dropdown();
+            });
+
+            $(document).ready(function () {
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+        </script>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <h4>Login</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
+        </div>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Portfolio</a></li>
+            <li><a href="#!">Blog Page</a></li>
+        </ul>
+
+
+    </header>
+
 
 
     <div class="section no-pad" id="index-banner">

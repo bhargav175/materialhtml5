@@ -176,6 +176,7 @@
         $('.button-collapse').sideNav();
         $('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
 
+
         //uncomment later
         //$('select').not('.disabled').material_select();
 
