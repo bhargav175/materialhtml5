@@ -2,7 +2,9 @@
 
 <head>
 <link rel="stylesheet" href="assets/css/materialize.min.css"/>
-<link rel="stylesheet" href="assets/css/ghpages-materialize.css"/>
+<link rel="stylesheet" href="assets/sass/ghpages-materialize.css"/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 </head>
 
 
@@ -22,6 +24,7 @@
     })();
 
 </script>
+
 <header>
     <nav id="front-page-nav">
         <div class="container">
@@ -29,90 +32,218 @@
                 <object id="front-page-logo" type="image/svg+xml" data="http://materializecss.com/res/materialize.svg">Your browser does not support SVG</object></a>
                 <ul id="nav-mobile" class="right side-nav">
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="knowledge.html">FAQ</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Modal Login</a></li>
+                    <li><a class="dropdown-button" href="#" data-activates='dropdown1' >Additional Pages</a></li>
 
                 </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
         </div>
     </nav>
-</header>
-<main>
 
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <h1 class="header center-on-small-only">Manavi Associates</h1>
-            <div class='row center'>
-                <h4 class ="header col s12 light center">Corporate Support Services</h4>
-            </div>
-            <div class="row center">
-                <a href="http://materializecss.com/getting_started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
-            </div>
-            <div class="row center"><a class="red-text lighten-4" href="https://github.com/Dogfalo/materialize">Hyderabad, IN</a></div>
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-button').dropdown();
+        });
 
-            <div class="row center">
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+        $(document).ready(function(){
+            $('.materialboxed').materialbox();
+        });
 
-            </div>
-            <br>
 
-        </div>
-        <div class="github-commit">
-            <div class="container">
-                <div class="commit">
-                    Latest Commit on Github:
-                    &nbsp;&nbsp;
-                    <a href="" class="sha"></a>
-                    &nbsp;&nbsp;
-                    <span class="date"></span>
-                    <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text lighten-5 waves-effect waves-light hide-on-med-and-down">Github</a>
+    </script>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <h4>Login</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" required>
+                        <label for="email">Email</label>
+                    </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+
+            </form>
         </div>
+
+
+        <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+        <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
     </div>
 
-    <div class="container">
-        <div class='section'>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">Features</a></li>
+        <li><a href="#!">Portfolio</a></li>
+        <li><a href="#!">Blog Page</a></li>
+    </ul>
 
-            <div class='row'>
-                <div class='col s12 m8 offset-m2'>
-                    <img id="responsive-img" src="images/responsive.png">
-                </div>
-            </div>
 
+</header>
+<main >
+
+    <div class="section no-pad-bot white">
+        <div class="container">
             <div class="row">
-                <h3 class="col s12 light center header">We Take Care of Your Company For You</h3>
+
+                <h3 class="header "> Latest News</h3>
+                <p class="caption">All the stuff that is going around the world right now.</p>
             </div>
 
-            <!--   Promo Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-image-flash-on"></i>
-                        <p class="promo-caption">About Us</p>
-                        <p class="light center">Our firm believes that team work can play a major role in the success of its goals and mission. The team consists of young, dynamic professionals possessing personal experience and a visionary frame of mind and has got a completely flat structure capable of quick turnaround times for responding to virtually any kind of an emerging situation.</p>
+            <div class="row blog">
+                <div class="col m8 s12 l8 blog-excerpts">
+                    <div class="blog-item">
+                        <div class="blog-item-image-holder">
+                            <img src="assets/img/fullimage4.jpg">
+
+                        </div>
+                        <div class="blog-item-meta">
+                            <p class="caption">Posted In <span class="tags"> <a class="tag" href="category.html">Maths</a> ,<a class="tag" href="category.html">Science</a></span><span class="date"> September 21,2014 </span></p>
+                        </div>
+                        <div class="blog-item-body">
+                            <h5>Lorem ipsum</h5>
+                            <p class="caption">
+                                Placerat feugiat a id vitae arcu eget ac at curabitur vestibulum faucibus a consectetur urna consequat dictumst ullamcorper a ad vestibulum aliquet.Nibh placerat blandit aenean cras scelerisque per cum a facilisi imperdiet feugiat sit adipiscing at.
+      </p>
+
+                        </div>
+                        <div class="blog-item-footer">
+                            <a>Read More</a>
+                        </div>
                     </div>
+                    <div class="blog-item">
+                        <div class="blog-item-image-holder">
+                            <img src="assets/img/fullimage3.jpg">
+
+                        </div>
+                        <div class="blog-item-meta">
+                            <p class="caption">Posted In <span class="tags"> <a class="tag" href="category.html">Maths</a> ,<a class="tag" href="category.html">Science</a></span><span class="date"> September 21,2014 </span></p>
+                        </div>
+                        <div class="blog-item-body">
+                            <h5>Lorem ipsum</h5>
+                            <p class="caption">
+                                Placerat feugiat a id vitae arcu eget ac at curabitur vestibulum faucibus a consectetur urna consequat dictumst ullamcorper a ad vestibulum aliquet.Nibh placerat blandit aenean cras scelerisque per cum a facilisi imperdiet feugiat sit adipiscing at.
+                            </p>
+
+                        </div>
+                        <div class="blog-item-footer">
+                            <a>Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-item">
+                        <div class="blog-item-image-holder">
+                            <img src="assets/img/fullimage2.jpg">
+
+                        </div>
+                        <div class="blog-item-meta">
+                            <p class="caption">Posted In <span class="tags"> <a class="tag" href="category.html">Maths</a> ,<a class="tag" href="category.html">Science</a></span><span class="date"> September 21,2014 </span></p>
+                        </div>
+                        <div class="blog-item-body">
+                            <h5>Lorem ipsum</h5>
+                            <p class="caption">
+                                Placerat feugiat a id vitae arcu eget ac at curabitur vestibulum faucibus a consectetur urna consequat dictumst ullamcorper a ad vestibulum aliquet.Nibh placerat blandit aenean cras scelerisque per cum a facilisi imperdiet feugiat sit adipiscing at.
+                            </p>
+
+                        </div>
+                        <div class="blog-item-footer">
+                            <a>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m4 l4 sidebar">
+                    <div class="search sidebar-widget">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col m8 l8">
+                                        <input id="first_name" type="text" required>
+                                        <label for="first_name">Search Query</label>
+                                    </div>
+                                    <div class="input-field col m4 l4">
+                                       <button class="btn waves-light waves-effect"><i class="mdi-action-search"></i></button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    <div class="categories sidebar-widget">
+                        <p class="flow-text">Categories</p>
+                        <ul>
+                            <li class="cat-item"><i class="mdi-av-my-library-music"></i>Music</li>
+                            <li class="cat-item"><i class="mdi-file-cloud"></i>Science</li>
+                            <li class="cat-item"><i class="mdi-editor-mode-edit"></i>Paint</li>
+                            <li class="cat-item"><i class="mdi-image-flash-on"></i>Current Affairs</li>
+                        </ul>
+
+
+                    </div>
+
+
+
                 </div>
 
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-social-group"></i>
-                        <p class="promo-caption">Services</p>
-                        <p class="light center">Manavi Associates Provides wide range of Services to both, national and International ClientsHaving Expertise in providing services in the area relating to Company Law, other Corporate Laws and Compliances, the Firm also provides sound advice & support in matters relating to various regulatory acts and authorities like Labour Laws, Industrial Licencing, FEMA, RBI,  in India.</p>
-                    </div>
                 </div>
 
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-action-settings"></i>
-                        <p class="promo-caption">Our Vision</p>
-                        <p class="light center">Our vision serves as the framework for our Roadmap and guides every aspect of our business by describing what we need to accomplish in order to continue achieving sustainable, quality growth.</p>
-                    </div>
-                </div>
+
             </div>
+
 
         </div>
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal white">
+            <div class="row">
+
+                <div class="col s12 m6 l12">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                    <div class="col s12 m12 l12">
+                        <img src="assets/img/economy.jpg" height="250">
+                    </div>
+
+                    <div class="col s12 m12 l12">
+                        <p class="caption">Joe Bloggs Associates have vast experience in the field of ESI, PF and Payroll Processing. We have a team of employees well versed and proficient to attend these jobs. In the field of Labor Record, Employee's Provident Fund (EPF), Employee's State Insurance Corp. (ESIC) maintenance. Record maintainer for various Labour Laws i.e. Employees Provident Fund, Payroll Processing & Miscellaneous Provisions Act, Employees State Insurance Act. Complete services for Factories Act. 1948, Payment of Wages under Minimum Wages Act, and Bonus Act.
+                        We are in this field for last 7 years and are associated with a number of industries such as Software Companies, Educational Institutions like Schools, Colleges, Industries like Engineering, Electronics & I.T., Hospitals and Nursing Homes, Automobiles, Builders & Developers, Pharmaceuticals, Hotels, etc., located in and around Hyderabad. We take care of all your PF and ESI issues of your organisation.
+</p>
+                    </div>
+
+
+
+                </div>
+                <br>
+                <br>
+<div class="col s12 m12 l12">
+ <br>
+    <br>
+    <a href="#" class="waves-effect btn-flat modal-close waves-button blue-text">Close</a>
+
+</div>
+
+            </div>
+
+
     </div>
 </main>
 
@@ -162,7 +293,6 @@
 
 
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/js/jquery.timeago.min.js"></script>
     <script src="assets/js/prism.js"></script>
     <script src="assets/js/init.js"></script>

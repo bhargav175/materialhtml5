@@ -2,15 +2,15 @@
 
 <head>
 <link rel="stylesheet" href="assets/css/materialize.min.css"/>
-<link rel="stylesheet" href="assets/css/ghpages-materialize.css"/>
+<link rel="stylesheet" href="assets/sass/ghpages-materialize.css"/>
 </head>
 
 
 
-<body>
+<body class="contact-page">
 
 
-<body>
+
 <!-- Buy sell ads-->
 <script>
     (function(){
@@ -22,98 +22,170 @@
     })();
 
 </script>
+
 <header>
+
     <nav id="front-page-nav">
         <div class="container">
             <div class="nav-wrapper"><a id="logo-container" href="index.html" class="brand-logo">
                 <object id="front-page-logo" type="image/svg+xml" data="http://materializecss.com/res/materialize.svg">Your browser does not support SVG</object></a>
                 <ul id="nav-mobile" class="right side-nav">
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="knowledge.html">FAQ</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Modal Login</a></li>
+                    <li><a class="dropdown-button" href="#" data-activates='dropdown1' >Additional Pages</a></li>
 
                 </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
         </div>
     </nav>
+
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-button').dropdown();
+        });
+
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+    </script>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <h4>Login</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+        <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+        <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">Features</a></li>
+        <li><a href="#!">Portfolio</a></li>
+        <li><a href="#!">Blog Page</a></li>
+    </ul>
+
+
 </header>
 <main>
 
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <h1 class="header center-on-small-only">Manavi Associates</h1>
-            <div class='row center'>
-                <h4 class ="header col s12 light center">Corporate Support Services</h4>
-            </div>
-            <div class="row center">
-                <a href="http://materializecss.com/getting_started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
-            </div>
-            <div class="row center"><a class="red-text lighten-4" href="https://github.com/Dogfalo/materialize">Hyderabad, IN</a></div>
 
-            <div class="row center">
 
-            </div>
-            <br>
 
-        </div>
-        <div class="github-commit">
-            <div class="container">
-                <div class="commit">
-                    Latest Commit on Github:
-                    &nbsp;&nbsp;
-                    <a href="" class="sha"></a>
-                    &nbsp;&nbsp;
-                    <span class="date"></span>
-                    <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text lighten-5 waves-effect waves-light hide-on-med-and-down">Github</a>
+<div class="section no-pad-bot white" id="contact-banner">
+
+        <div class="container" style="overflow: hidden">
+            <div class="row">
+
+                <h1 class="header ">Contact Us <br></h1>
+
+
+
+                <br/><br/>
+                <div class="col 12 s12 m6">
+                    <h5 class="">Have a question? Get in Touch! </h5>
+                    <p class="caption">Our firm is centrally located in the heart of twin cities i.e., at Kachiguda equipped with sufficient infrastructure facilities to provide prompt & quick service to the clients creating an entirely different perception and is prompt in upgrading the rules and regulations at appropriate intervals and provide quality services par excellence.</p>
+                    <h5 class="">Joe Bloggs  ASSOCIATES</h5>
+                     <h7>Corporate Support Services</h7>
+                        <pre>Office: 3-4-1013/2/3,
+Opp.St. Peters Primary School, ICICI Bank Lane
+Barkatpura, Kachiguda, Hyderabad - 500027.
+Phone.:040-27557297
+Mobile.: +91-984 8947297
++91-8332857297</pre>
+
                 </div>
+
+                <form class="col s12 m6 white">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="name" type="text" required>
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <input id="email" type="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="message" type="text" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="mdi-content-send right"></i>
+                        </button>
+
+                    </div>
+
+                    <p class="caption"> Our support staff will get in touch with you immediately once you send a mail.</p>
+                </form>
+
+
             </div>
+
+
         </div>
+
     </div>
 
-    <div class="container">
-        <div class='section'>
+    <div class="section map-section">
+        <div class="col 12 s12 m12">
 
-            <div class='row'>
-                <div class='col s12 m8 offset-m2'>
-                    <img id="responsive-img" src="images/responsive.png">
-                </div>
-            </div>
-
-            <div class="row">
-                <h3 class="col s12 light center header">We Take Care of Your Company For You</h3>
-            </div>
-
-            <!--   Promo Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-image-flash-on"></i>
-                        <p class="promo-caption">About Us</p>
-                        <p class="light center">Our firm believes that team work can play a major role in the success of its goals and mission. The team consists of young, dynamic professionals possessing personal experience and a visionary frame of mind and has got a completely flat structure capable of quick turnaround times for responding to virtually any kind of an emerging situation.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-social-group"></i>
-                        <p class="promo-caption">Services</p>
-                        <p class="light center">Manavi Associates Provides wide range of Services to both, national and International ClientsHaving Expertise in providing services in the area relating to Company Law, other Corporate Laws and Compliances, the Firm also provides sound advice & support in matters relating to various regulatory acts and authorities like Labour Laws, Industrial Licencing, FEMA, RBI,  in India.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="center promo">
-                        <i class="mdi-action-settings"></i>
-                        <p class="promo-caption">Our Vision</p>
-                        <p class="light center">Our vision serves as the framework for our Roadmap and guides every aspect of our business by describing what we need to accomplish in order to continue achieving sustainable, quality growth.</p>
-                    </div>
-                </div>
-            </div>
-
+            <div id="map-canvas" style="height:300px;"></div>
         </div>
+
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+        <script type="text/javascript">
+            function initialize() {
+                var myLatlng =  { lat:17.391341711936438, lng: 78.49824920296669};
+                var mapOptions = {
+                    center:myLatlng,
+                    zoom: 17
+                };
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+
+                var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png';
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map, //global variable 'map' from opening function
+                    icon: image,
+                    title:"Joe Bloggs Associates"
+                });
+//Your content for the infowindow
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
     </div>
+
+
+
 </main>
 
 
@@ -154,6 +226,9 @@
     <div class="footer-copyright">
         <div class="container">
             © 2014 Paper, All rights reserved.
+            <span class="right white-text">
+                Built by Bhargav
+            </span>
         </div>
     </div>
 
