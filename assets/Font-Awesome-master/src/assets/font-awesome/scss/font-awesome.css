@@ -1,0 +1,46 @@
+/*
+Syntax error: Invalid CSS after "-": expected number or function, was "--"
+        on line 1 of font-awesome.scss
+
+1: ---
+2: ---
+3: {% include code/license.css %}
+4: 
+5: @import "variables";
+6: @import "mixins";
+
+Backtrace:
+font-awesome.scss:1
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:1312:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:1248:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:1228:in `expr!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:1064:in `term'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:1038:in `expr'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:789:in `simple_selector_sequence'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:752:in `_selector'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:727:in `selector'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:710:in `selector_sequence'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:632:in `ruleset'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:659:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:649:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:116:in `stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/engine.rb:409:in `_to_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/engine.rb:274:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/exec.rb:43:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.7/bin/scss:13:in `<top (required)>'
+C:/Ruby200-x64/bin/scss:23:in `load'
+C:/Ruby200-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"-\": expected number or function, was \"--\"\A         on line 1 of font-awesome.scss\A \A 1: ---\A 2: ---\A 3: {% include code/license.css %}\A 4: \A 5: @import \"variables\";\A 6: @import \"mixins\";"; }
