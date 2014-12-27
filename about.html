@@ -14,12 +14,12 @@
 </head>
 
 
-<body>
+<body class="about-page">
 
 
 
 <ul id="nav-mobile" class="side-nav">
-    <li class="head"><a href="#">Joe Bloggs</a></li>
+    <li class="head"><a href="index.html">Joe Bloggs</a></li>
     <li><a class="" href="services.html">Services</a></li>
     <li><a href="news.html">News</a></li>
     <li><a href="about.html">About</a></li>
@@ -37,77 +37,32 @@
 
 </ul>
 
+<header class="header-scroll">
+    <div class="header-overlay">
+
+    </div>
+
+    <nav id="front-page-nav navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="index.html" class="brand-logo">
+                    <p class="nav-header">About Us</p>
+                </a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+</header>
+
 <main>
 
 
 
-    <header>
-
-        <nav id="front-page-nav navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a id="logo-container" href="index.html" class="brand-logo">
-                        <p class="nav-header">Joe Bloggs Associates</p>
-                    </a>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                </div>
-            </div>
-        </nav>
-
-        <script>
-            $(document).ready(function () {
-                $('.dropdown-button').dropdown();
-            });
-
-            $(document).ready(function () {
-                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                $('.modal-trigger').leanModal();
-            });
-        </script>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <h4>Login</h4>
-
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" required>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-
-            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
-            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
-        </div>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Features</a></li>
-            <li><a href="#!">Portfolio</a></li>
-            <li><a href="#!">Blog Page</a></li>
-        </ul>
-
-
-    </header>
-
    <div class="section no-pad-bot">
        <div class="container">
-
-           <h1 class="header ">About Us</h1>
-
-           <p class="caption flow-text">
+<p class="caption flow-text">
                <span class="h">Joe Bloggs Associates</span> believes that team work can play a major role in the success of its goals and mission.
                
                
@@ -228,6 +183,7 @@ Mobile.: +91-984 8947297
                 <a href="#" class="white-text " style="margin-right:10px;">Terms and Conditions</a>
             </div>
         </div>
+        </div>
 
 
         <!--  Scripts-->
@@ -271,6 +227,51 @@ Mobile.: +91-984 8947297
 
         <script src="assets/js/init.js"></script>
         <script src="assets/js/paper.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-button').dropdown();
+            });
+
+            $(document).ready(function () {
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+        </script>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <h4>Login</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
+        </div>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Portfolio</a></li>
+            <li><a href="#!">Blog Page</a></li>
+        </ul>
 
 
 

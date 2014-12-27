@@ -29,14 +29,114 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
 body {
   display: flex;
   position:relative;
-  padding-left:240px;
-  padding-top:64px;
   min-height: 100vh;
   flex-direction: column;
 }
 
 main {
   flex: 1;
+  padding-bottom: 100px;
+  padding-left: 240px;
+  padding-top:100px;
+  @media #{$huge-and-down}  {
+    padding: 0;
+  }
+}
+header{
+  height:256px;
+  padding:115px 16px 0px 240px;
+  box-sizing: border-box;
+  position:relative;
+  nav{
+    .nav-header{
+      line-height: normal;
+    }
+  }
+  @media #{$huge-and-down}{
+    padding-left:0px;
+  }
+  @media #{$medium-and-down}{
+    padding-left:16px;
+    padding-right:16px;
+
+  }
+  @media #{$small-and-down}{
+    height:128px;
+    padding-top:73px;
+    padding-left:16px;
+    padding-right:16px;
+
+  }
+
+  .header-overlay{
+    display:none;
+  }
+  &.fixed-header{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    left: 0;
+    right: 0;
+    top: -192px;
+    z-index: 1;
+    position: fixed;
+    nav{
+      position:fixed;
+      z-index:2;
+      top:0;
+      @media #{$huge-and-up}{
+          left:240px;
+      }
+      .nav-wrapper{
+        @media #{$huge-and-down}{
+          padding-left:72px;
+          padding-right:72px;
+        }
+       }
+    }
+    @media #{$small-and-down}{
+      top:-64px;
+    }
+  }
+  &.scrolled{
+    .header-overlay{
+      position:absolute;
+      top:0;
+      display:block;
+      bottom:0;
+      left:0;
+      right:0;
+//      background-color: color("amber", "darken-1");
+    }
+    nav{
+      position:fixed;
+      z-index:2;
+      top:0;
+      right:0;
+      @media #{$huge-and-up}{
+        left:240px;
+      }
+      .nav-wrapper{
+        @media #{$huge-and-down}{
+          padding-left:72px;
+          padding-right:72px;
+        }
+        .nav-header{
+          line-height:64px;
+        }
+      }
+    }
+    @media #{$small-and-down}  {
+      left: 0;
+      right: 0;
+      top: -64px;
+    height: 128px;
+      z-index: 1;
+      position: fixed;
+    }
+  }
+  @media #{$small-and-down}  {
+    padding-top:73px;
+    height:128px;
+  }
 }
 
 ul {

@@ -1,0 +1,19 @@
+.section{
+  .header{
+    .title{
+      font-size:$h4-fontsize;
+      margin-bottom:0px;
+      @media #{$medium-and-down}{
+        font-size:$h5-fontsize;
+      }
+    }
+    .caption{
+      margin-top:0;
+      padding-top:0px;
+      font-size: 1.2rem;
+      @media #{$medium-and-down}{
+        font-size:1rem;
+      }
+    }
+  }
+}

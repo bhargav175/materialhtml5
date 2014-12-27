@@ -14,12 +14,12 @@
 </head>
 
 
-<body>
+<body class="news-page">
 
 
 
 <ul id="nav-mobile" class="side-nav">
-    <li class="head"><a href="#">Joe Bloggs</a></li>
+    <li class="head"><a href="index.html">Joe Bloggs</a></li>
     <li><a class="" href="services.html">Services</a></li>
     <li><a href="news.html">News</a></li>
     <li><a href="about.html">About</a></li>
@@ -37,79 +37,30 @@
 
 </ul>
 
+<header class="header-scroll">
+    <div class="header-overlay">
+
+    </div>
+
+    <nav id="front-page-nav navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="index.html" class="brand-logo">
+                    <p class="nav-header">News</p>
+                </a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+</header>
+
 <main>
 
 
-
-    <header>
-
-        <nav id="front-page-nav navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a id="logo-container" href="index.html" class="brand-logo">
-                        <p class="nav-header">Joe Bloggs Associates</p>
-                    </a>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                </div>
-            </div>
-        </nav>
-
-        <script>
-            $(document).ready(function () {
-                $('.dropdown-button').dropdown();
-            });
-
-            $(document).ready(function () {
-                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                $('.modal-trigger').leanModal();
-            });
-        </script>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <h4>Login</h4>
-
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" required>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-
-            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
-            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
-        </div>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Features</a></li>
-            <li><a href="#!">Portfolio</a></li>
-            <li><a href="#!">Blog Page</a></li>
-        </ul>
-
-
-    </header>
-
     <div class="section no-pad-bot white">
         <div class="container">
-            <div class="row">
-
-                <h3 class="header "> Latest News</h3>
-                <p class="caption">All the stuff that is going around the world right now.</p>
-            </div>
-
             <div class="row blog">
                 <div class="col m8 s12 l8 blog-excerpts">
                     <div class="blog-item">
@@ -303,10 +254,10 @@ Mobile.: +91-984 8947297
   <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
 </span>
                     </div>
-                    
-                    
-                    
-                    
+
+
+
+
 
                 </div>
             </div>
@@ -348,7 +299,7 @@ Mobile.: +91-984 8947297
                 <a href="#" class="white-text " style="margin-right:10px;">Terms and Conditions</a>
             </div>
         </div>
-
+</div>
 
         <!--  Scripts-->
         <script src="assets/js/materialize.js"></script>
@@ -391,6 +342,51 @@ Mobile.: +91-984 8947297
 
         <script src="assets/js/init.js"></script>
         <script src="assets/js/paper.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-button').dropdown();
+            });
+
+            $(document).ready(function () {
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+        </script>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <h4>Login</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
+        </div>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Portfolio</a></li>
+            <li><a href="#!">Blog Page</a></li>
+        </ul>
 
 
 

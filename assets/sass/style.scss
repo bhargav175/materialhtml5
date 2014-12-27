@@ -26,9 +26,13 @@ nav {
   }
 }
 
+
 .header {
-  color: color("grey", "darken-4");
+  color: color("light-blue", "base");
   font-weight: 400;
+  @media #{$small-and-down}{
+    font-size:1.64rem;
+}
 }
 
 .caption {
@@ -94,6 +98,35 @@ nav {
 
 }
 
+
+header{
+  .home-page &{
+//    background:url("../img/night.jpg");
+//    background-size:cover;
+//    background-attachment: fixed;
+    background-color: color("amber", "darken-1");
+
+  }
+  .services-page &{
+    background-color: color("purple", "darken-1");
+  }
+  .about-page &{
+    background-color: color("pink", "darken-1");
+  }
+  .category-page &{
+    background-color: color("teal", "darken-1");
+  }
+  .news-page &{
+    background-color: color("green", "darken-1");
+  }
+  .blog-page &{
+    background-color: color("brown", "darken-1");
+  }
+  .contact-page &{
+    background-color: color("lime", "darken-2");
+  }
+
+}
 
 // Latest commit widget
 .github-commit {

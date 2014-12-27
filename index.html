@@ -1,8 +1,9 @@
-/<html>
+<html>
 
 <head>
     <link rel="stylesheet" href="assets/sass/ghpages-materialize.css"/>
    <!--slider-->
+    <link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
     <link href="assets/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/sliderpro/slider-pro.min.css"/>
     <link rel="stylesheet" href="assets/css/sliderpro/examples.css"/>
@@ -15,94 +16,86 @@
 </head>
 
 
-<body>
+<body class="home-page">
 
 
 
         <ul id="nav-mobile" class="side-nav">
-            <li class="head"><a href="#">Joe Bloggs</a></li>
+            <li class="head"><a href="index.html">Joe Bloggs</a></li>
             <li><a class="" href="services.html">Services</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a class="modal-trigger" href="#modal1">Modal Login</a></li>
-            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Features</a>
-
+            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Pages</a>
             <ul class="dropdown-menu">
-                <li><a href="#!">Portfolio</a></li>
-                <li><a href="#!">Page</a></li>
+                <li><a href="blog.html">One Page</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">Blog Post with Slider</a></li>
+                <li><a href="category.html">Category</a></li>
             </ul>
             </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Features</a>
+                <ul class="dropdown-menu">
+                    <li><a href="blog.html">Typography</a></li>
+                    <li><a href="category.html">Forms</a></li>
+                    <li><a href="category.html">Content</a></li>
+                    <li><a href="category.html">Page with Slider</a></li>
+                </ul>
+            </li>
+            <li><a class="modal-trigger" href="#modal1">Login</a></li>
 
 
         </ul>
 
-<main>
+        <header class="header-scroll">
+            <div class="header-overlay">
 
+            </div>
 
-
-    <header>
-
-        <nav id="front-page-nav navbar">
-            <div class="container">
-                <div class="nav-wrapper">
+            <nav id="front-page-nav navbar">
+                <div class="nav-wrapper container">
                     <a id="logo-container" href="index.html" class="brand-logo">
-                    <p class="nav-header">Joe Bloggs Associates</p>
+                        <p class="nav-header">Joe Bloggs Associates</p>
                     </a>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        <script>
-            $(document).ready(function () {
-                $('.dropdown-button').dropdown();
-            });
+        </header>
 
-            $(document).ready(function () {
-                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                $('.modal-trigger').leanModal();
-            });
-        </script>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <h4>Login</h4>
 
+        <main>
+
+
+
+
+
+    <div class="section ">
+        <div class="container">
             <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" required>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
 
-                </form>
+
+                <h3 class="header">Welcome</h3>
+
+
+                <p class="simple-text">Joe Bloggs Associates have vast experience in the field of ESI, PF and
+                    Payroll Processing. We have a team of employees well versed and proficient to attend these jobs. In
+                    the field of Labor Record, Employee's Provident Fund (EPF), Employee's State Insurance Corp. (ESIC)
+                    maintenance. Record maintainer for various Labour Laws i.e. Employees Provident Fund, Payroll
+                    Processing & Miscellaneous Provisions Act, Employees State Insurance Act. Complete services for
+                    Factories Act. 1948, Payment of Wages under Minimum Wages Act, and Bonus Act.
+                    We are in this field for last 7 years and are associated with a number of industries such as
+                    Software Companies, Educational Institutions like Schools, Colleges, Industries like Engineering,
+                    Electronics & I.T., Hospitals and Nursing Homes, Automobiles, Builders & Developers,
+                    Pharmaceuticals, Hotels, etc., located in and around Hyderabad. We take care of all your PF and ESI
+                    issues of your organisation.
+                </p>
+
+
             </div>
-
-
-            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
-            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
         </div>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Features</a></li>
-            <li><a href="#!">Portfolio</a></li>
-            <li><a href="#!">Blog Page</a></li>
-        </ul>
-
-
-    </header>
-
+    </div>
 
 
     <div class="section no-pad" id="index-banner">
@@ -181,33 +174,6 @@
 
 
                 </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section ">
-        <div class="container">
-            <div class="row">
-
-
-                <h3 class="header">Welcome</h3>
-
-
-                <p class="simple-text">Joe Bloggs Associates have vast experience in the field of ESI, PF and
-                    Payroll Processing. We have a team of employees well versed and proficient to attend these jobs. In
-                    the field of Labor Record, Employee's Provident Fund (EPF), Employee's State Insurance Corp. (ESIC)
-                    maintenance. Record maintainer for various Labour Laws i.e. Employees Provident Fund, Payroll
-                    Processing & Miscellaneous Provisions Act, Employees State Insurance Act. Complete services for
-                    Factories Act. 1948, Payment of Wages under Minimum Wages Act, and Bonus Act.
-                    We are in this field for last 7 years and are associated with a number of industries such as
-                    Software Companies, Educational Institutions like Schools, Colleges, Industries like Engineering,
-                    Electronics & I.T., Hospitals and Nursing Homes, Automobiles, Builders & Developers,
-                    Pharmaceuticals, Hotels, etc., located in and around Hyderabad. We take care of all your PF and ESI
-                    issues of your organisation.
-                </p>
 
 
             </div>
@@ -595,6 +561,7 @@ Mobile.: +91-984 8947297
                 <a href="#" class="white-text " style="margin-right:10px;">Terms and Conditions</a>
             </div>
         </div>
+        </div>
 
 
         <!--  Scripts-->
@@ -886,6 +853,51 @@ Mobile.: +91-984 8947297
 
             });
         </script>
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-button').dropdown();
+            });
+
+            $(document).ready(function () {
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+        </script>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <h4>Login</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+            <a href="#" class="waves-effect btn-flat modal-close">Disagree</a>
+        </div>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Portfolio</a></li>
+            <li><a href="#!">Blog Page</a></li>
+        </ul>
+
 
 
 </footer>

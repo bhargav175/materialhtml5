@@ -157,6 +157,7 @@
         //user for slider
         //$('.slider').slider({full_width: true});
 
+        $('.header-scroll').headerScroll({hover: false});
 
         $('.dropdown-button').dropdown({hover: false});
         $('.dropdown-rel').dropdownRel({hover: false});

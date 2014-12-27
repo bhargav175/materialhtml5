@@ -417,6 +417,69 @@ jQuery.extend( jQuery.easing,
       });
     });
   };
+}( jQuery ));;(function ($) {
+
+  $.fn.headerScroll = function (options) {
+    var defaults = {
+      hover: true
+    }
+
+    options = $.extend(defaults, options);
+
+    this.each(function(){
+
+
+      var origin = $(this);
+      var page = $(window);
+
+      var activates = origin.find(".header-overlay"); // Dropdown menu
+
+        // Click handler for list container
+      page.on('scroll', function(e){ // Mouse over
+          //activates.css('width', origin.outerWidth());
+        var h = page.scrollTop();
+        var o = h/192;
+        console.log(h);
+        if(h<=192){
+          activates.animate({"opacity":o});
+        }else{
+          activates.css({"opacity":1});
+        }
+        if(page.scrollTop()>192){
+            origin.addClass("fixed-header");
+          }else{
+            origin.removeClass("fixed-header");
+            }
+        if(page.scrollTop()>0){
+          origin.addClass("scrolled");
+        }else{
+          origin.removeClass("scrolled");
+        }
+
+          //activates.css('left', origin.offset().left);
+        });
+
+
+
+
+
+
+      // Window Resize Reposition
+      $(document).on('resize', function(){
+        if(page.scrollTop()>192){
+          origin.addClass("fixed-header");
+        }else{
+          origin.removeClass("fixed-header");
+        }
+        if(page.scrollTop()>0){
+          origin.addClass("scrolled");
+        }else{
+          origin.removeClass("scrolled");
+        }
+      });
+    });
+  };
+
 
 }( jQuery ));;(function($) {
   $.fn.extend({
