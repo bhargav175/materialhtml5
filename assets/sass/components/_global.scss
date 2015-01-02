@@ -49,7 +49,16 @@ header{
   position:relative;
   nav{
     .nav-header{
-      line-height: normal;
+      @media #{$large-and-down}{
+        line-height: normal;
+
+      }
+      @media #{$medium-and-down}{
+        font-size: 2.92rem;
+      }
+      @media #{$small-and-down}{
+        font-size:  1.64rem;
+      }
     }
   }
   @media #{$huge-and-down}{

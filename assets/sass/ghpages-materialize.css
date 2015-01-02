@@ -1982,8 +1982,15 @@ header {
   padding: 115px 16px 0px 240px;
   box-sizing: border-box;
   position: relative; }
-  header nav .nav-header {
-    line-height: normal; }
+  @media only screen and (max-width: 1200px) {
+    header nav .nav-header {
+      line-height: normal; } }
+  @media only screen and (max-width: 992px) {
+    header nav .nav-header {
+      font-size: 2.92rem; } }
+  @media only screen and (max-width: 600px) {
+    header nav .nav-header {
+      font-size: 1.64rem; } }
   @media only screen and (max-width: 1492px) {
     header {
       padding-left: 0px; } }
@@ -4814,6 +4821,8 @@ nav {
     overflow: hidden;
     margin: 0;
     font-size: 56px; }
+    .home-page nav .nav-header {
+      color: #03a9f4; }
     .scrolled nav .nav-header {
       font-size: 1.33rem; }
     @media only screen and (max-width: 600px) {
@@ -4844,6 +4853,8 @@ nav {
     display: inline-block;
     font-size: 2.1rem;
     padding: 0; }
+    .home-page nav .brand-logo {
+      color: #03a9f4; }
     @media only screen and (max-width: 992px) {
       nav .brand-logo {
         left: 0;
@@ -6157,9 +6168,8 @@ ul.side-nav {
   top: 0;
   left: 0;
   width: 240px;
-  min-height: 1000px;
+  bottom: 0;
   overflow-y: auto;
-  height: 1000px;
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2); }
   ul.side-nav li {
     padding: 0; }
@@ -7505,6 +7515,19 @@ ul.side-nav {
     .section .header .caption, .section .header .blog .blog-single .blog-item .author .author-body .about, .blog .blog-single .blog-item .author .author-body .section .header .about {
       font-size: 1rem; } }
 
+.loader {
+  z-index: 2000;
+  position: fixed;
+  background: white;
+  top: 0;
+  height: 100%;
+  left: 0;
+  right: 0; }
+  .loader i {
+    top: 45%;
+    position: relative;
+    left: 50%; }
+
 /***************
   HTML Styles	
 ***************/
@@ -7574,7 +7597,7 @@ nav ul li:hover, nav ul li.active {
   padding-top: 0; }
 
 .home-page header {
-  background-color: #ffb300; }
+  background-color: white; }
 .services-page header {
   background-color: #8e24aa; }
 .about-page header {

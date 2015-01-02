@@ -177,8 +177,12 @@
         $('.scrollspy').scrollSpy();
         $('.button-collapse').sideNav();
         $('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
+        $("img").magnificPopup({type:'image'});
 
 
+        $(window).load(function(){
+           $(".loader").fadeOut();
+        });
         //uncomment later
         //$('select').not('.disabled').material_select();
 
