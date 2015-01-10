@@ -1,0 +1,24 @@
+header{
+  &.thin{
+    height:64px;
+    padding:0px;
+    nav{
+      .nav-header{
+        font-size: 1.33rem;
+        color:white;
+      }
+    }
+    &.fixed-header ,&.scrolled{
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+      left: 0;
+      right: 0;
+      top: 0px;
+      z-index: 1;
+      position: fixed;
+    }
+    & + main{
+      padding-top:0;
+    }
+  }
+
+}

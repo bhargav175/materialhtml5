@@ -216,7 +216,7 @@ jQuery.extend( jQuery.easing,
 }(function($, Hammer) {
     function hammerify(el, options) {
         var $el = $(el);
-        if(!$el.data("hammer")) {
+        if(!$el.data("hammer")) {css({"opacity":0})
             $el.data("hammer", new Hammer($el[0], options));
         }
     }
@@ -419,6 +419,145 @@ jQuery.extend( jQuery.easing,
   };
 }( jQuery ));;(function ($) {
 
+  $.fn.bottomsheet = function (options) {
+    var defaults = {
+
+    }
+
+    options = $.extend(defaults, options);
+
+    this.each(function(){
+
+
+      var origin = $(this);
+
+      var activates = $("#"+ origin.attr('data-activates')); // Dropdown menu
+      activates.addClass("hidden");
+      // Click handler for list container
+      origin.click( function(e){ // Click
+        e.preventDefault();
+        e.stopPropagation();
+        activates.addClass( "active").removeClass("hidden");
+        var bottomOverlay = $("<div class='bottom-sheet-overlay'></div>").appendTo("body");
+        console.log(bottomOverlay);
+
+        $(document).bind('click.'+ activates.attr('id'), function (e) {
+          if (!activates.is(e.target) && (!origin.is(e.target))) {
+            activates.removeClass( "active").addClass("hidden");
+            bottomOverlay.remove();
+            $(document).unbind('click.' + activates.attr('id'));
+          }
+
+        });
+      });
+
+
+
+
+      //// Window Resize Reposition
+      //$(document).on('resize', function(){
+      //    if (origin.is(':visible')) {
+      //        activates.css('top', origin.offset().top);
+      //        activates.css('left', origin.offset().left);
+      //    }
+      //});
+    });
+  };
+}( jQuery ));;(function ($) {
+
+  $.fn.dialogSheet = function (options) {
+    var defaults = {
+
+    }
+    options = $.extend(defaults, options);
+    this.each(function(){
+    var origin = $(this);
+
+      var activates = $("#"+ origin.attr('data-activates')); // Dialog sheet
+      activates.addClass("hidden").css({"opacity":0});
+
+      // Click handler for dialog toggle role
+      origin.click( function(e){ // Click
+        e.preventDefault();
+        e.stopPropagation();
+        //get origins position
+        var offset = origin.offset();
+        var posY = offset.top - $(window).scrollTop();
+        var posX = offset.left - $(window).scrollLeft();
+        var height = origin.height();
+        var width = this.offsetWidth;
+          //get auto height and auto width
+
+
+        var startCss = {
+          "top":posY,
+          "left":posX,
+          "width":width,
+          "height":height,
+          "opacity":0
+        };
+        //auto height and width properties to get the height to animate to during the end of animation
+        var autoCss={
+          "top":"20%",
+          "left":"20%",
+          "right":"20%",
+           opacity:1
+        }
+        activates.removeAttr('style').css(autoCss);
+        var autoHeight = activates.height();
+        var autoWidth = activates.width();
+        activates.endCss={
+          "top":"20%",
+          "left":"20%",
+          "right":"20%",
+          "width":autoWidth,
+          "height":autoHeight,
+          opacity:1
+        }
+        //set back to startcss and start animation
+        activates.removeAttr('style').css(startCss);
+        activates.removeClass("hidden").addClass("active").velocity(activates.endCss,300);
+        var bottomOverlay = $("<div class='bottom-sheet-overlay'></div>").appendTo("body");
+        $(document).bind('click.'+ activates.attr('id'), function (e) {
+          if (!activates.is(e.target) && (!origin.is(e.target)) && (!$(e.target).closest(activates).length>0)) {
+            activates.velocity({opacity:0},300,function(){
+              $(this).removeClass( "active").addClass("hidden").removeAttr('style');
+              bottomOverlay.remove();
+            });
+            $(document).unbind('click.' + activates.attr('id'));
+          }
+
+        });
+
+      });
+      $(window).on('resize', function(){
+        console.log("resized");
+        if (activates.is(':visible')) {
+          var autoCss={
+            "top":"20%",
+            "left":"20%",
+            "right":"20%",
+            opacity:1
+          }
+          activates.removeAttr('style').css(autoCss);
+          var autoHeight = activates.height();
+          var autoWidth = activates.width();
+          activates.endCss={
+            "top":"20%",
+            "left":"20%",
+            "right":"20%",
+            "width":autoWidth,
+            "height":autoHeight,
+            opacity:1
+          }
+          activates.removeAttr('style').animate(activates.endCss,300);
+        }
+      });
+    });
+  };
+
+}( jQuery ));;(function ($) {
+
   $.fn.headerScroll = function (options) {
     var defaults = {
       hover: true
@@ -434,9 +573,9 @@ jQuery.extend( jQuery.easing,
 
       var activates = origin.find(".header-overlay"); // Dropdown menu
 
-        // Click handler for list container
+      // Click handler for list container
       page.on('scroll', function(e){ // Mouse over
-          //activates.css('width', origin.outerWidth());
+        //activates.css('width', origin.outerWidth());
         var h = page.scrollTop();
         var o = h/192;
         console.log(h);
@@ -446,18 +585,18 @@ jQuery.extend( jQuery.easing,
           activates.css({"opacity":1});
         }
         if(page.scrollTop()>192){
-            origin.addClass("fixed-header");
-          }else{
-            origin.removeClass("fixed-header");
-            }
+          origin.addClass("fixed-header");
+        }else{
+          origin.removeClass("fixed-header");
+        }
         if(page.scrollTop()>0){
           origin.addClass("scrolled");
         }else{
           origin.removeClass("scrolled");
         }
 
-          //activates.css('left', origin.offset().left);
-        });
+        //activates.css('left', origin.offset().left);
+      });
 
 
 
@@ -871,11 +1010,11 @@ jQuery.extend( jQuery.easing,
         var origin = $(this);
       
       // Create tooltip
-      var newTooltip = $('<div></div');
+      var newTooltip = $('<div></div>');
       newTooltip.addClass('material-tooltip').text(origin.attr('data-tooltip'));
       newTooltip.appendTo($('body'));
       
-      var backdrop = $('<div></div').addClass('backdrop');
+      var backdrop = $('<div></div>').addClass('backdrop');
       backdrop.appendTo(newTooltip);
       backdrop.css({ top: 0, left:0, marginLeft: (newTooltip.outerWidth()/2) - (backdrop.width()/2) });
       
@@ -1099,7 +1238,7 @@ jQuery.extend( jQuery.easing,
                     '-moz-transform': scale,
                     '-ms-transform': scale,
                     '-o-transform': scale,
-                    'transform': scale,
+                    'transform': scale
                 };
 
                 ripple.setAttribute('style', convertStyle(style));
@@ -1488,7 +1627,7 @@ jQuery.extend( jQuery.easing,
 		top : 0,
 		right : 0,
 		bottom : 0,
-		left : 0,
+		left : 0
 	}
 
 	/**

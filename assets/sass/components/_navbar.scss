@@ -33,7 +33,7 @@ nav {
     margin:0;
     font-size:56px;
     .home-page &{
-      color:color("light-blue","base");
+      color:white;
     }
     .scrolled &{
       font-size: 1.33rem;
@@ -74,7 +74,7 @@ nav {
     font-size: 2.1rem;
     padding: 0;
     .home-page &{
-      color:color("light-blue","base");
+      color:white;
     }
     @media #{$medium-and-down} {
       left: 0;

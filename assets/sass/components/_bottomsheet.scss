@@ -1,0 +1,37 @@
+.bottom-sheet-button{
+
+}
+
+.bottom-sheet{
+  display:none;
+  height:0;
+  position:fixed;
+  bottom:0;
+  z-index:1000;
+  background:color("grey","lighten-3");
+  left:0;
+  right:0;
+  @include transition(all 2s ease);
+
+  &.hidden{
+    display:none;
+    height:0;
+
+ }
+
+  &.active{
+    display:block;
+    height:auto;
+
+  }
+}
+
+.bottom-sheet-overlay{
+  background:rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:999;
+  }

@@ -1,0 +1,25 @@
+.svg-holder{
+  padding-top:0.75rem !important;
+  padding-bottom:0.75rem !important;
+  box-sizing: border-box;
+  .svg-bg{
+    cursor:hand;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    display: block;
+    height: 100%;
+    -moz-transition: -moz-transform .2s cubic-bezier(.4,0,.2,1);
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.4,0,.2,1);
+    transition: transform .2s cubic-bezier(.4,0,.2,1);
+    width: 100%;
+    font-size:16px;
+    z-index: 1;
+    background: url("../svg/pink.svg") no-repeat 50% 50%;
+  &:hover{
+    @extend .z-depth-3;
+  }
+    &.bg-in{
+      background: url("../svg/blue.svg") no-repeat 50% 50%;
+    }
+  }
+}

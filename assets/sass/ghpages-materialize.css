@@ -2120,12 +2120,12 @@ li {
   -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
-.z-depth-3 {
+.z-depth-3, .svg-holder .svg-bg:hover {
   -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
 
-.z-depth-4 {
+.z-depth-4, .dialog-sheet {
   -webkit-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21); }
@@ -2323,6 +2323,22 @@ img.circle {
   -moz-border-radius: 50%;
   border-radius: 50%;
   background-clip: padding-box; }
+
+header.thin {
+  height: 64px;
+  padding: 0px; }
+  header.thin nav .nav-header {
+    font-size: 1.33rem;
+    color: white; }
+  header.thin.fixed-header, header.thin.scrolled {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    left: 0;
+    right: 0;
+    top: 0px;
+    z-index: 1;
+    position: fixed; }
+  header.thin + main {
+    padding-top: 0; }
 
 @font-face {
   font-family: "Material-Design-Icons";
@@ -4822,7 +4838,7 @@ nav {
     margin: 0;
     font-size: 56px; }
     .home-page nav .nav-header {
-      color: #03a9f4; }
+      color: white; }
     .scrolled nav .nav-header {
       font-size: 1.33rem; }
     @media only screen and (max-width: 600px) {
@@ -4854,7 +4870,7 @@ nav {
     font-size: 2.1rem;
     padding: 0; }
     .home-page nav .brand-logo {
-      color: #03a9f4; }
+      color: white; }
     @media only screen and (max-width: 992px) {
       nav .brand-logo {
         left: 0;
@@ -5196,6 +5212,52 @@ small {
       .card .card-action a:hover {
         color: #ffd8a6; }
 
+.bottom-sheet {
+  display: none;
+  height: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  background: #eeeeee;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease; }
+  .bottom-sheet.hidden {
+    display: none;
+    height: 0; }
+  .bottom-sheet.active {
+    display: block;
+    height: auto; }
+
+.bottom-sheet-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; }
+
+.dialog-sheet {
+  display: none;
+  height: auto;
+  width: auto;
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  padding: 56px; }
+  @media only screen and (max-width: 992px) {
+    .dialog-sheet {
+      padding: 24px; } }
+  .dialog-sheet.hidden {
+    display: none; }
+  .dialog-sheet.active {
+    display: block; }
+
 #toast-container {
   display: block;
   position: fixed; }
@@ -5250,6 +5312,26 @@ small {
     font-weight: 300;
     color: #FFF;
     text-align: center; }
+
+.svg-holder {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  box-sizing: border-box; }
+  .svg-holder .svg-bg {
+    cursor: hand;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    display: block;
+    height: 100%;
+    -moz-transition: -moz-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    font-size: 16px;
+    z-index: 1;
+    background: url("../svg/pink.svg") no-repeat 50% 50%; }
+    .svg-holder .svg-bg.bg-in {
+      background: url("../svg/blue.svg") no-repeat 50% 50%; }
 
 ul.tabs {
   position: relative;
@@ -6213,10 +6295,10 @@ ul.side-nav {
     ul.side-nav {
       left: 0 !important; } }
   ul.side-nav .dropdown-rel .dropdown-menu li a {
-    font-weight: 400;
+    font-weight: 300;
     background: white;
     color: #212121;
-    padding-left: 88px; }
+    font-size: small; }
   ul.side-nav .dropdown-rel .dropdown-menu li:active a {
     color: #0277bd; }
 
@@ -7523,7 +7605,7 @@ ul.side-nav {
   height: 100%;
   left: 0;
   right: 0; }
-  .loader i {
+  .loader i, .loader .preloader-wrapper {
     top: 45%;
     position: relative;
     left: 50%; }
@@ -7597,7 +7679,7 @@ nav ul li:hover, nav ul li.active {
   padding-top: 0; }
 
 .home-page header {
-  background-color: white; }
+  background-color: #212121; }
 .services-page header {
   background-color: #8e24aa; }
 .about-page header {

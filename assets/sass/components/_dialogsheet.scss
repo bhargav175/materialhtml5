@@ -1,0 +1,24 @@
+[role="dialog-sheet-toggle"]{
+}
+
+.dialog-sheet{
+  display:none;
+  height:auto;
+  width:auto;
+  position:fixed;
+  z-index:1000;
+  background:color("shades","white");
+  padding:56px;
+  @media #{$medium-and-down} {
+    padding:24px;
+  }
+  @extend .z-depth-4;
+
+  &.hidden{
+    display:none;
+ }
+  &.active{
+    display:block;
+  }
+}
+

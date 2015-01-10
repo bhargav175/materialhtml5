@@ -176,15 +176,22 @@
         $('.materialboxed').materialbox();
         $('.scrollspy').scrollSpy();
         $('.button-collapse').sideNav();
-        $('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
+        //$('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
         $("img").magnificPopup({type:'image'});
+        $(".bottom-sheet-button").bottomsheet();
+        $("[role='dialog-sheet-toggle']").dialogSheet();
 
 
+        $(document).ready(function(){
+            $(".loader").fadeOut();
+        });
         $(window).load(function(){
-           $(".loader").fadeOut();
+
         });
         //uncomment later
         //$('select').not('.disabled').material_select();
 
     }); // end of document ready
+    console.log("I m initialized");
 })(jQuery); // end of jQuery name space
+

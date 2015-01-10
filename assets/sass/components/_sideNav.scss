@@ -76,10 +76,10 @@ ul.side-nav{
     .dropdown-menu{
       li{
           a{
-            font-weight:400;
+            font-weight:300;
             background:white;
             color:color("grey","darken-4");
-            padding-left:88px;
+            font-size:small;
           }
         &:active {
           a{
