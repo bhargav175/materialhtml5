@@ -1,4 +1,5 @@
-[role="dialog-sheet-toggle"]{
+.dialog-sheet-togge{
+
 }
 
 .dialog-sheet{
@@ -7,12 +8,20 @@
   width:auto;
   position:fixed;
   z-index:1000;
-  background:color("shades","white");
-  padding:56px;
-  @media #{$medium-and-down} {
-    padding:24px;
+  overflow-y:auto;
+  box-sizing: border-box;
+  background:transparent;
+  img{
+    height:300px;
+    width:100%;
+    @media #{$medium-and-down} {
+      height:160px;
+    }
   }
-  @extend .z-depth-4;
+  &.bg-white{
+    background:white;
+    @extend .z-depth-4;
+  }
 
   &.hidden{
     display:none;

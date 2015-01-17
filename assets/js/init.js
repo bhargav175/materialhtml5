@@ -177,9 +177,11 @@
         $('.scrollspy').scrollSpy();
         $('.button-collapse').sideNav();
         //$('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
-        $("img").magnificPopup({type:'image'});
+        $("img .magnific").magnificPopup({type:'image'});
         $(".bottom-sheet-button").bottomsheet();
-        $("[role='dialog-sheet-toggle']").dialogSheet();
+        $(".dialog-sheet-toggle").dialogSheet();
+        $(".list-collapse").listCollapse();
+        $(".progress-bar").progressBar();
 
 
         $(document).ready(function(){

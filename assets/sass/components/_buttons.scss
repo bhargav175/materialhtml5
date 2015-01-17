@@ -65,7 +65,13 @@ $button-color: color("blue", "base") !default;
   @extend .z-depth-1;  
   @include transition(.3s);
   cursor: pointer;
-
+  &.btn-large {
+    width: 55.5px;
+    height: 55.5px;
+    i{
+      line-height: 55.5px;
+    }
+  }
   i {
     width: inherit;
     display: inline-block;
@@ -90,6 +96,7 @@ $button-color: color("blue", "base") !default;
   &.disabled {
     color: lighten(#999, 10%);
   }
+
 }
 
 

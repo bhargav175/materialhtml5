@@ -3,15 +3,20 @@
 // Mixins
 @import "components/prefixer";
 @import "components/mixins";
+@import "components/color";
+
+// Variables;
+@import "components/variables";
 
 // Reset
 @import "components/normalize";
 
 // components
-@import "components/color";
+
 @import "components/global";
 @import "components/header";
 @import "components/icons-material-design";
+@import "components/icons";
 @import "components/grid";
 @import "components/navbar";
 @import "components/roboto";
@@ -19,19 +24,26 @@
 @import "components/cards";
 @import "components/bottomsheet";
 @import "components/dialogsheet";
+@import "components/portfolio";
 @import "components/toast";
 @import "components/svg";
 @import "components/tabs";
 @import "components/tooltip";
 @import "components/buttons";
+@import "components/media";
+@import "components/divider";
 @import "components/dropdown";
 @import "components/waves";
 @import "components/modal";
 @import "components/collapsible";
 @import "components/materialbox";
+@import "components/list";
 @import "components/form";
 @import "components/table_of_contents";
 @import "components/sideNav";
+@import "components/progress";
+@import "components/background";
+@import "components/pricing_tables";
 @import "components/preloader";
 @import "components/slider";
 @import "components/date_picker/default.scss";

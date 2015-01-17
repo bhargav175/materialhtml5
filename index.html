@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -13,9 +14,12 @@
     <link rel="stylesheet" href="assets/css/animate/animate.min.css"/>
     <link rel="stylesheet" href="assets/css/magnific/magnific-popup.css"/>
     <link rel="stylesheet" href="dependencies/layerslider/css/layerslider.css"/>
-
+    <title>Paper Theme</title>
 
 </head>
+
+
+<body class="home-page animated fade-in">
 
 
 <div class="loader">
@@ -63,67 +67,69 @@
 
 </div>
 
-<body class="home-page animated fade-in">
 
 
 
-        <ul id="nav-mobile" class="side-nav">
-            <li class="head"><a href="index.html">Joe Bloggs</a></li>
-            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">HomePages</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#!">HomePage with Side Nav</a></li>
-                    <li><a href="#!">HomePage with Top Nav</a></li>
-                    <li><a href="#!">HomePage with Top Nav Parallax</a></li>
-                </ul>
-            </li>
+<div class="side-nav" id="side-navbar">
+    <ul id="nav-mobile" class="">
+        <li class="head"><a href="index.html">Joe Bloggs</a></li>
+        <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">HomePages</a>
+            <ul class="dropdown-menu">
+                <li><a href="#!">HomePage with Side Nav</a></li>
+                <li><a href="#!">HomePage with Top Nav</a></li>
+                <li><a href="#!">HomePage with Top Nav Parallax</a></li>
+            </ul>
+        </li>
 
-            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Header Styles</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#!">Large Header</a></li>
-                    <li><a href="#!">Thin Header</a></li>
-                    <li><a href="#!">Header with background</a></li>
-                    <li><a href="#!">Header with parallax background</a></li>
-                    <li><a href="#!">Thin Header with parallax background</a></li>
-                </ul>
-            </li>
-            <li><a class="" href="#">One Page Business</a></li>
-            <li><a class="" href="#">One Page Portfolio</a></li>
-            <li><a class="" href="services.html">Services</a></li>
-            <li><a href="pages/use-cases/news.html">News</a></li>
-            <li><a href="about.html">Team</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Pages</a>
+        <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Header Styles</a>
+            <ul class="dropdown-menu">
+                <li><a href="#!">Large Header</a></li>
+                <li><a href="#!">Thin Header</a></li>
+                <li><a href="#!">Header with background</a></li>
+                <li><a href="#!">Header with parallax background</a></li>
+                <li><a href="#!">Thin Header with parallax background</a></li>
+            </ul>
+        </li>
+        <li><a class="" href="#">One Page Business</a></li>
+        <li><a class="" href="#">One Page Portfolio</a></li>
+        <li><a class="" href="services.html">Services</a></li>
+        <li><a href="pages/use-cases/news.html">News</a></li>
+        <li><a href="about.html">Team</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Pages</a>
             <ul class="dropdown-menu">
                 <li><a href="pages/use-cases/blog.html">One Page</a></li>
                 <li><a href="pages/use-cases/blog.html">Blog</a></li>
                 <li><a href="pages/use-cases/blog.html">Blog Post with Slider</a></li>
                 <li><a href="category.html">Category</a></li>
             </ul>
-            </li>
-            <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Features</a>
-                <ul class="dropdown-menu">
-                    <li><a href="pages/use-cases/blog.html">Typography</a></li>
-                    <li><a href="category.html">Forms</a></li>
-                    <li><a href="category.html">Content</a></li>
-                    <li><a href="category.html">Page with Slider</a></li>
-                </ul>
-            </li>
-            <li><a class="modal-trigger" href="#modal1">Login</a></li>
+        </li>
+        <li class="dropdown-rel"><a class="dropdown-rel-button" href="#">Features</a>
+            <ul class="dropdown-menu">
+                <li><a href="pages/use-cases/blog.html">Typography</a></li>
+                <li><a href="category.html">Forms</a></li>
+                <li><a href="category.html">Content</a></li>
+                <li><a href="category.html">Page with Slider</a></li>
+            </ul>
+        </li>
+        <li><a class="modal-trigger" href="#modal1">Login</a></li>
 
 
-        </ul>
+    </ul>
+</div>
+
         <header class="thin header-scroll">
             <div class="header-overlay">
 
             </div>
 
-            <nav id="front-page-nav navbar">
+            <nav id="front-page-nav">
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="index.html" class="brand-logo">
                         <p class="nav-header">Joe Bloggs Associates</p>
                     </a>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                    <a href="#" data-activates="side-navbar" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 </div>
             </nav>
 
@@ -146,34 +152,34 @@
             <div id="full-slider-wrapper">
                 <div id="layerslider" style="width:100%;height:500px;">
                     <div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
-                        <img src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" alt="Slide background"/><img class="ls-l" style="top:280px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:300;delayin:500;offsetxout:0;offsetyout:-50;durationout:1000;showuntil:220;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;transformoriginout:50% top 0;" src="dependencies/layerslider/sliderimages/s1.png" alt=""><img class="ls-l" style="top:230px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:30;delayin:1720;scalexin:0.9;scaleyin:0.9;offsetxout:0;offsetyout:300;durationout:1000;scalexout:0.5;scaleyout:0.5;transformoriginout:50% bottom 0;" src="dependencies/layerslider/sliderimages/s2.png" alt=""><img class="ls-l" style="top:65%;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:250;durationin:950;delayin:500;offsetxout:0;offsetyout:-8;durationout:1000;showuntil:270;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;" src="dependencies/layerslider/sliderimages/s2.jpg" alt=""><img class="ls-l" style="top:195px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;delayin:1720;easingin:easeInOutQuart;scalexin:0.7;scaleyin:0.7;offsetxout:-800;durationout:1000;" src="dependencies/layerslider/sliderimages/s1.jpg" alt="">
+                        <img alt="Image" src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" /><img alt="Image" class="ls-l" style="top:280px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:300;delayin:500;offsetxout:0;offsetyout:-50;durationout:1000;showuntil:220;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;transformoriginout:50% top 0;" src="dependencies/layerslider/sliderimages/s1.png" ><img alt="Image" class="ls-l" style="top:230px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:30;delayin:1720;scalexin:0.9;scaleyin:0.9;offsetxout:0;offsetyout:300;durationout:1000;scalexout:0.5;scaleyout:0.5;transformoriginout:50% bottom 0;" src="dependencies/layerslider/sliderimages/s2.png" ><img alt="Image" class="ls-l" style="top:65%;left:50%;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:250;durationin:950;delayin:500;offsetxout:0;offsetyout:-8;durationout:1000;showuntil:270;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;" src="dependencies/layerslider/sliderimages/s2.jpg" ><img alt="Image" class="ls-l" style="top:195px;left:50%;white-space: nowrap;" data-ls="offsetxin:0;delayin:1720;easingin:easeInOutQuart;scalexin:0.7;scaleyin:0.7;offsetxout:-800;durationout:1000;" src="dependencies/layerslider/sliderimages/s1.jpg" >
                         <p class="ls-l" style="top:150px;left:116px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-size:30px;line-height:37px;color:#ffffff;background:#82d10c;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;">
                             FRESH FEATURES
                         </p>
                         <p class="ls-l" style="top:190px;left:125px;font-family:'Indie Flower';font-size:31px;color:#6db509;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-400;">
                             for starter
                         </p>
-                        <img class="ls-l ls-linkto-3" style="top:460px;left:610px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;rotatein:-40;offsetxout:-50;rotateout:-40;" src="dependencies/layerslider/sliderimages/left.png" alt=""><img class="ls-l ls-linkto-2" style="top:460px;left:650px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;" src="dependencies/layerslider/sliderimages/right.png" alt="">
+                        <img alt="Image" class="ls-l ls-linkto-3" style="top:460px;left:610px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;rotatein:-40;offsetxout:-50;rotateout:-40;" src="dependencies/layerslider/sliderimages/left.png" ><img alt="Image" class="ls-l ls-linkto-2" style="top:460px;left:650px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;" src="dependencies/layerslider/sliderimages/right.png" >
                     </div>
                     <div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
-                        <img src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" alt="Slide background"/><img class="ls-l" style="top:157px;left:284px;white-space: nowrap;" data-ls="offsetxin:300;durationin:2000;offsetxout:-300;parallaxlevel:-1;" src="dependencies/layerslider/sliderimages/l1.png" alt=""><img class="ls-l" style="top:20px;left:50%;white-space: nowrap;" data-ls="offsetxin:600;durationin:2000;offsetxout:-600;parallaxlevel:1;" src="dependencies/layerslider/sliderimages/l2.png" alt=""><img class="ls-l" style="top:37px;left:564px;white-space: nowrap;" data-ls="offsetxin:900;durationin:2000;offsetxout:-900;parallaxlevel:4;" src="dependencies/layerslider/sliderimages/l3.png" alt="">
+                        <img alt="Image" src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" /><img alt="Image" class="ls-l" style="top:157px;left:284px;white-space: nowrap;" data-ls="offsetxin:300;durationin:2000;offsetxout:-300;parallaxlevel:-1;" src="dependencies/layerslider/sliderimages/l1.png" ><img alt="Image" class="ls-l" style="top:20px;left:50%;white-space: nowrap;" data-ls="offsetxin:600;durationin:2000;offsetxout:-600;parallaxlevel:1;" src="dependencies/layerslider/sliderimages/l2.png" ><img alt="Image" class="ls-l" style="top:37px;left:564px;white-space: nowrap;" data-ls="offsetxin:900;durationin:2000;offsetxout:-900;parallaxlevel:4;" src="dependencies/layerslider/sliderimages/l3.png" >
                         <p class="ls-l" style="top:170px;left:174px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-size:30px;line-height:37px;color:#ffffff;background:#f04705;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:10;">
                             SPICY PARALLAX EFFECT
                         </p>
                         <p class="ls-l" style="top:210px;left:183px;font-family:'Indie Flower';font-size:31px;color:#f04705;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-400;parallaxlevel:8;">
                             for main course
                         </p>
-                        <img class="ls-l ls-linkto-1" style="top:430px;left:210px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;offsetxout:-50;parallaxlevel:3;" src="dependencies/layerslider/sliderimages/left.png" alt=""><img class="ls-l ls-linkto-3" style="top:430px;left:250px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;parallaxlevel:3;" src="dependencies/layerslider/sliderimages/right.png" alt="">
+                        <img alt="Image" class="ls-l ls-linkto-1" style="top:430px;left:210px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;offsetxout:-50;parallaxlevel:3;" src="dependencies/layerslider/sliderimages/left.png" ><img alt="Image" class="ls-l ls-linkto-3" style="top:430px;left:250px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;parallaxlevel:3;" src="dependencies/layerslider/sliderimages/right.png" >
                     </div>
                     <div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
-                        <img src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" alt="Slide background"/><img class="ls-l" style="top:129px;left:487px;white-space: nowrap;" data-ls="offsetxin:400;durationin:2000;offsetxout:400;" src="dependencies/layerslider/sliderimages/d1.png" alt=""><img class="ls-l" style="top:104px;left:70px;white-space: nowrap;" data-ls="offsetxin:-200;durationin:2000;offsetxout:-200;" src="dependencies/layerslider/sliderimages/d2.png" alt="">
+                        <img alt="Image" src="dependencies/layerslider/sliderimages/fw-1.jpg" class="ls-bg" /><img alt="Image" class="ls-l" style="top:129px;left:487px;white-space: nowrap;" data-ls="offsetxin:400;durationin:2000;offsetxout:400;" src="dependencies/layerslider/sliderimages/d1.png" ><img alt="Image" class="ls-l" style="top:104px;left:70px;white-space: nowrap;" data-ls="offsetxin:-200;durationin:2000;offsetxout:-200;" src="dependencies/layerslider/sliderimages/d2.png" >
                         <p class="ls-l" style="top:320px;left:830px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-size:30px;line-height:37px;color:#ffffff;background:#544f8c;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-400;durationout:1000;">
                             SWEET TRANSITIONS
                         </p>
                         <p class="ls-l" style="top:360px;left:836px;font-family:'Indie Flower';font-size:31px;color:#544f8c;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-600;">
                             for dessert
                         </p>
-                        <img class="ls-l ls-linkto-2" style="top:430px;left:960px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;offsetxout:-50;" src="dependencies/layerslider/sliderimages/left.png" alt=""><img class="ls-l ls-linkto-1" style="top:430px;left:1000px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;" src="dependencies/layerslider/sliderimages/right.png" alt="">
+                        <img alt="Image" class="ls-l ls-linkto-2" style="top:430px;left:960px;white-space: nowrap;" data-ls="offsetxin:-50;delayin:1000;offsetxout:-50;" src="dependencies/layerslider/sliderimages/left.png" ><img alt="Image" class="ls-l ls-linkto-1" style="top:430px;left:1000px;white-space: nowrap;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;" src="dependencies/layerslider/sliderimages/right.png" >
                     </div>
                 </div>
             </div>
@@ -223,7 +229,7 @@
         </div>
     </div>
 
-    <div class="section no-pad-bot" id="" style="background:url('assets/img/corporate.jpg'); background-size: cover; background-attachment: fixed">
+    <div class="section no-pad-bot" style="background:url('assets/img/corporate.jpg'); background-size: cover; background-attachment: fixed">
         <div class="container">
             <div class="row center ">
                 <h3 class="col s12 light center white-text">We Take Care of Your Company For You</h3>
@@ -277,7 +283,7 @@
     </div>
 
 
-    <div class="section no-pad-bot darken-1 "style="background:url('assets/img/bakers.jpg'); background-size: cover; background-attachment: fixed">
+    <div class="section no-pad-bot darken-1" style="background:url('assets/img/bakers.jpg'); background-size: cover; background-attachment: fixed">
         <div class="container" style="z-index: 100; position:relative;">
 
 
@@ -329,12 +335,6 @@
 
         </div>
     </div>
-
-    <style>
-
-    </style>
-
-
     <div class="section no-pad-bot">
         <div class="container">
 
@@ -348,7 +348,7 @@
                     <div class="team-member">
                         <div class="team-member-image">
                             <div class="team-mem-img-holder">
-                                <img src="assets/img/johndoe1.jpg" height="475">
+                                <img alt="Image" src="assets/img/johndoe1.jpg" height="475">
                             </div>
                         </div>
                         <div class="team-content">
@@ -365,7 +365,7 @@
                     <div class="team-member">
                         <div class="team-member-image">
                             <div class="team-mem-img-holder">
-                                <img src="assets/img/johndoe2.jpg" height="475">
+                                <img alt="Image" src="assets/img/johndoe2.jpg" height="475">
                             </div>
                         </div>
                         <div class="team-content">
@@ -381,7 +381,7 @@
                     <div class="team-member">
                         <div class="team-member-image">
                             <div class="team-mem-img-holder">
-                                <img src="assets/img/aryastark.jpg" height="475">
+                                <img alt="Image" src="assets/img/aryastark.jpg" height="475">
                             </div>
                         </div>
                         <div class="team-content">
@@ -397,7 +397,7 @@
                     <div class="team-member">
                         <div class="team-member-image">
                             <div class="team-mem-img-holder">
-                                <img src="assets/img/johndoe1.jpg" height="475">
+                                <img alt="Image" src="assets/img/johndoe1.jpg" height="475">
                             </div>
                         </div>
                         <div class="team-content">
@@ -419,7 +419,7 @@
         </div>
     </div>
 
-            <div class="section">
+            <div class="section large-pad">
                 <div class="container">
                     <button class="bottom-sheet-button" type="button" data-activates="sheet-one">
                         Bottom Sheet
@@ -451,15 +451,14 @@
 
 
 
-            <div class="section">
+            <div class="section large-pad">
                 <div class="container svg-container">
                    <div class="row" >
                        <div class="col m4 s6 svg-holder" style="height:310px;">
-                            <div class="svg-bg" role="dialog-sheet-toggle" data-activates="dialog-sheet-1">
+                            <div class="svg-bg dialog-sheet-toggle" data-activates="dialog-sheet-1">
 
                             </div>
-                           <div class="dialog-sheet" id="dialog-sheet-1">
-                               <div class="container">
+                           <div class="dialog-sheet bg-white" id="dialog-sheet-1">
                                    <ul class="list-group">
                                        <li class="list-group-item">Cras justo odio</li>
                                        <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -467,13 +466,15 @@
                                        <li class="list-group-item">Porta ac consectetur ac</li>
                                        <li class="list-group-item">Vestibulum at eros</li>
                                    </ul>
-                               </div>
                            </div>
                        </div>
                        <div class="col m4 s6 svg-holder" style="height:310px;">
-                            <div class="svg-bg bg-in">
+                            <div class="svg-bg bg-in dialog-sheet-toggle" data-activates="dialog-sheet-2">
 
                             </div>
+                           <div class="dialog-sheet" id="dialog-sheet-2">
+                               <img src="assets/img/fullimage4.jpg" alt="Full Image"/>
+                           </div>
                        </div>
                        <div class="col m4 s6 svg-holder" style="height:310px;">
                             <div class="svg-bg">
@@ -501,7 +502,22 @@
             </div>
 
 
-            <div class="section">
+            <div class="section large-pad">
+                <div class="container portfolio">
+                    <div class="row">
+                        <div class="col m4 s6 p-item" >
+                           <img src="assets/img/bakers.jpg" alt="Bakers"/>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="section large-pad">
                 <div class="container svg-container">
                     <div class="row">
                         <div class="col m4 s6 svg-holder" style="height:310px;">
@@ -543,7 +559,7 @@
 
 
 
-            <div class="section no-pad-bot">
+            <div class="section large-pad">
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
@@ -556,27 +572,27 @@
 
 
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon" src="assets/img/latestmarketplacelogographics/themeforest-light-background.png">
+                        <img alt="Image" class="partner-icon" src="assets/img/latestmarketplacelogographics/themeforest-light-background.png">
 
                     </div>
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon"  src="assets/img/latestmarketplacelogographics/codecanyon-light-background.png">
+                        <img alt="Image" class="partner-icon"  src="assets/img/latestmarketplacelogographics/codecanyon-light-background.png">
 
                     </div>
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon"  src="assets/img/latestmarketplacelogographics/audiojungle-light-background.png">
+                        <img alt="Image" class="partner-icon"  src="assets/img/latestmarketplacelogographics/audiojungle-light-background.png">
 
                     </div>
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon"  src="assets/img/latestmarketplacelogographics/graphicriver-light-background.png">
+                        <img alt="Image" class="partner-icon"  src="assets/img/latestmarketplacelogographics/graphicriver-light-background.png">
 
                     </div>
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon"  src="assets/img/latestmarketplacelogographics/3docean-light-background.png">
+                        <img alt="Image" class="partner-icon"  src="assets/img/latestmarketplacelogographics/3docean-light-background.png">
 
                     </div>
                     <div class="col s12 m4 l2">
-                        <img class="partner-icon"  src="assets/img/latestmarketplacelogographics/activeden-light-background.png">
+                        <img alt="Image" class="partner-icon"  src="assets/img/latestmarketplacelogographics/activeden-light-background.png">
 
                     </div>
 
@@ -647,7 +663,6 @@ Mobile.: +91-984 8947297
             </div>
 
         </div>
-    </div>
     </div>
 
 

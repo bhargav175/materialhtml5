@@ -1,0 +1,21 @@
+.divider{
+  border:none;
+  display:block;
+  height:1px;
+  margin:30px 0px 0px;
+  &:after, &:before{
+    display:block;
+    content:"";
+    clear:both;
+  }
+}
+hr{
+  &.transparent{
+    border-color:transparent;
+  }
+}
+.clearfix{
+  display:block;
+  content:"";
+  clear:both;
+}

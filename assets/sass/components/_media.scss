@@ -1,0 +1,21 @@
+img{
+  max-width:100%;
+  height:auto;
+  &.img-small{
+    height:48px;
+    width:48px;
+  }
+  &.responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+  &.circle {
+    @include border-radius(50%);
+  }
+}
+.img-floater{
+  float:left;
+  margin-right:16px;
+  margin-bottom:16px;
+}
+

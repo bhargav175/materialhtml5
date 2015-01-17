@@ -383,6 +383,9 @@ $colors: (
     }
   }
 }
+.transparent{
+  background:transparent;
+ }
 
 // Shade classes
 @each $color, $color_value in $shades {

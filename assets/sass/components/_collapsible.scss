@@ -1,41 +1,186 @@
 ul.collapsible {
   border-top: 1px solid #eee;
   @extend .z-depth-1;
-}
 
-.collapsible-header {
-  display: block;
-  cursor: pointer;
-  height: 3rem;
-  line-height: 3rem;
-  padding: 0 1rem;
-  overflow: hidden;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  li{
+    .collapsible-header{
+      display: block;
+      cursor: pointer;
+      height: 3rem;
+      line-height: 3rem;
+      padding: 0 1rem;
+      overflow: hidden;
+      background-color: #fff;
+      i{
+          width: 2rem;
+          height:2rem;
+          font-size: 1.6rem;
+          line-height: 3rem;
+          display: block;
+          float: left;
+          text-align: center;
+          margin-right: 1rem;
+         @include transition(all 300ms);
+        }
+    }
+    .collapsible-body{
+      overflow: hidden;
+      display: none;
+      @include box-sizing(border-box);
 
-  i {
-    width: 2rem;
-    font-size: 1.6rem;
-    line-height: 3rem;
-    display: block;
-    float: left;
-    text-align: center;
-    margin-right: 15px;
+      p {
+        margin: 0;
+        padding: 2rem;
+      }
+    }
+    &.active{
+
+    }
+
   }
-}
 
-.collapsible-body {
-  overflow: hidden;
-  display: none;
-  border-bottom: 1px solid #ddd;
-  @include box-sizing(border-box);
-
-  p {
-    margin: 0;
-    padding: 2rem;
+  &:not(.collapsible-plus){
+    li{
+      .collapsible-header {
+        border-bottom: 1px solid #ddd;
+        i{
+        }
+      }
+      .collapsible-body{
+        border-bottom: 1px solid #ddd;
+      }
+    }
+   }
+  &.collapsible-plus{
+    padding-top:12px;
+    padding-bottom:12px;
+    li{
+      .collapsible-header {
+        font-weight:500;
+        i{
+           border-radius:50%;
+            width: 1.6rem;
+            height:1.6rem;
+            padding:6px;
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+          }
+      }
+      &.active{
+        .collapsible-header {
+            i{
+            }
+        }
+      }
+      .collapsible-body {
+          margin-bottom:12px;
+          padding-left:2.6rem;
+      }
+    }
+    &.right-align{
+      .collapsible-body {
+         padding-left:0rem;
+          padding-right:2.6rem;
+        }
+    }
   }
-}
+  &.right-align{
+    i{
+      float:right !important;
+      margin-right: 0px !important;
+      margin-left:1rem !important;
+    }
 
-li.active .collapsible-body { 
+  }
 
-}
+
+    @each $color_name, $color in $colors {
+      @each $color_type, $color_value in $color {
+        @if $color_type == "base" {
+          &.#{$color_name} ,&.#{$color_name}-text{
+            background-color:transparent !important;
+            color:initial !important;
+            li{
+              .collapsible-header {
+                color: $color_value !important;
+                background-color:transparent !important;
+                i{
+                  background-color: white !important;
+                  color: $color_value !important;
+                  border:1px solid white !important;
+                }
+              }
+              .collapsible-body{
+                background-color:white !important;
+                color:black !important;
+              }
+              &.active{
+                .collapsible-header {
+                  color: $color_value !important;
+                  background-color:transparent !important;
+                  i{
+                    background-color: white !important;
+                    color: $color_value !important;
+                    border:1px solid $color_value !important;
+                  }
+                }
+                .collapsible-body{
+                  background-color:white !important;
+                  color:black !important;
+                }
+              }
+            }
+
+          }
+
+
+        }
+        @else {
+          &.#{$color_name}.#{$color_type} ,&.#{$color_name}-text.#{$color_type} {
+            background-color:transparent !important;
+            color:initial !important;
+            li{
+              .collapsible-header {
+                color: $color_value !important;
+                background-color:transparent !important;
+                i{
+                  background-color: white !important;
+                  color: $color_value !important;
+                  border:1px solid white !important;
+                }
+              }
+              .collapsible-body{
+                background-color:white !important;
+                color:black !important;
+              }
+              &.active{
+                .collapsible-header {
+                  color: $color_value !important;
+                  background-color:transparent !important;
+                  i{
+                    background-color: white !important;
+                    color: $color_value !important;
+                    border:1px solid $color_value !important;
+
+                  }
+                }
+                .collapsible-body{
+                  background-color:white !important;
+                  color:black !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+    }
+
+
+
+
+
+

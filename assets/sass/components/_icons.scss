@@ -1,0 +1,79 @@
+a.icon{
+    &.icon-big{
+        width: 80px;
+       height: 80px;
+        i{
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 24px;
+        }
+    }
+    &.icon-medium{
+        width: 60px;
+        height: 60px;
+        i{
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 20px;
+        }
+    }
+    &.icon-small{
+        width: 40px;
+        height: 40px;
+        i{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+    }
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 27px 30px 0;
+    float: none;
+    text-align: center;
+    @include transition(background 300ms);
+    &:hover{
+        background:color("grey","darken-3") !important;
+    }
+    i{
+        text-align: center;
+        display: block;
+        color: #fff;
+        font-weight: 400;
+        @include transition(color 300ms);
+    }
+    &.icon-circle{
+        border-radius: 50%;
+    }
+    &.icon-rounded{
+        border-radius: 3%;
+    }
+    &.icon-plain{
+        background:none !important;
+        @each $color_name, $color in $colors {
+            @each $color_type, $color_value in $color {
+                @if $color_type == "base" {
+                    &.#{$color_name}-text{
+                        i{
+                            color: $color_value !important;
+                        }
+                    }
+                }
+                @else {
+                    &.#{$color_name}-text.#{$color_type}{
+                        i{
+                            color: $color_value !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover{
+            background:none !important;
+        }
+    }
+}

@@ -15,6 +15,10 @@ nav {
     left: 0;
   }
 
+  &.transparent{
+    height:0 !important;
+  }
+
 
   .nav-wrapper {
     position: relative;
@@ -64,6 +68,14 @@ nav {
       display:block;
       width:24px;
       line-height:initial;
+    }
+    &.white{
+      color:white;
+      background:transparent !important;
+    }
+    &.black{
+      color:black;
+      background:transparent !important;
     }
   }
 

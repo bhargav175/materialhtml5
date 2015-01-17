@@ -1,17 +1,39 @@
 .container {
   padding: 0 $gutter-width;
   margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
+  width:1160px;;
+  box-sizing: border-box;
+  &.fluid-container{
+    width: 90% !important;
+    @media #{$medium-and-up} {
+        width: 85% !important;
+     }
+    @media #{$large-and-up} {
+      width: 80% !important;
+    }
+  }
+  box-sizing: border-box;
 }
-@media #{$medium-and-up} {
+
+
+@media #{$huge-and-down} {
   .container {
-    width: 85%;
+   padding-left:0px;
   }
 }
-@media #{$large-and-up} {
+@media #{$large-and-down} {
   .container {
-    width: 70%;
+    width: 760px;
+  }
+}
+@media #{$small-and-down} {
+  .container {
+    width: 360px;
+  }
+}
+@media #{$very-small-and-down} {
+  .container {
+    width: 100%
   }
 }
 .container .row {
@@ -23,6 +45,16 @@
 	padding-top: 1rem;
 	padding-bottom: 1rem;
     margin-bottom:4rem;
+  &.large-pad{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  &.large-pad-top{
+    padding-top: 4rem;
+  }
+  &.large-pad-bottom{
+    padding-bottom: 4rem;
+  }
   &.no-pad {
     padding: 0;
   }
@@ -33,7 +65,10 @@
     padding-top: 0;
   }
   .header{
- margin-bottom:56px;
+   margin-bottom:56px;
+  }
+  .caption{
+    margin-bottom:32px;
   }
 }
 

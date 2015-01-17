@@ -1,0 +1,192 @@
+.pricing-tables{
+  .pricing-table-item{
+    margin-top:32px;
+    margin-bottom:16px;
+    padding:0 !important;
+    background:color("shades","white");
+    border:1px solid color("grey","lighten-2");
+    text-transform: uppercase;
+    div,p,h1,h2,h3,h4,h5,h6,legend,span{
+      text-align: center;
+    }
+    .pricing-table-item-header{
+      background:color("grey","lighten-4");
+      padding:36px;
+      @extend h5;
+      color:color("indigo","base");
+      margin:0;
+    }
+    .pricing-table-item-body{
+      padding:24px;
+      .price{
+          position:relative;
+        color:color("grey","darken-3");
+        text-align: center;
+        @extend h3;
+        margin:0px;
+        margin-top:24px;
+        margin-bottom:8px;
+        display:inline-block;
+        .amt{
+          position:relative;
+          padding:0 0 0 18px;
+          .c{
+            font-size:20px;
+            line-height:18px;
+            position:absolute;
+            left: 3px;
+            top: 3px;
+            color:color("grey","darken-1");
+          }
+          .pm{
+            font-size:20px;
+            line-height:18px;
+            position:relative;
+            color:color("grey","darken-1");
+          }
+        }
+      }
+      ul{
+        li{
+          padding:16px 0px;
+          color:color("indigo","base");
+          &.disabled{
+            color:color("grey","base");
+            i{
+              padding-right:12px;
+              color:color("grey","base");
+            }
+            .i-promo{
+              background:color("green","lighten-3");
+              }
+          }
+          i{
+            padding-right:12px;
+            color:color("pink","base");
+          }
+          .i-promo{
+            @extend .small-text;
+            background:color("green","lighten-2");
+            color:white;
+            padding:8px;
+            margin-left:8px;
+            border-radius:5px;
+          }
+        }
+      }
+    }
+    .pricing-table-item-footer{
+      padding:24px;
+    }
+    .btn-pricing{
+      background:color("indigo","base");
+      color:color("grey","lighten-3") !important;
+      &:hover{
+        background:color("shades","white") !important;
+        color:color("indigo","base") !important;
+    }
+    }
+    &.most_popular{
+      margin-top:0px;
+      @extend .z-depth-3;
+      .pricing-table-item-header{
+        background:color("pink","base");
+        padding:36px;
+        @extend h3;
+        color:white;
+        margin:0;
+      }
+      .pricing-table-item-body{
+        ul{
+          li{
+            &.disabled{
+              color:color("grey","base");
+              i{
+                padding-right:12px;
+                color:color("grey","base");
+              }
+              .i-promo{
+                background:color("green","lighten-3");
+              }
+            }
+             color:color("indigo","base");
+            i{
+              color:color("pink","base");
+            }
+          }
+        }
+        .price{
+          color:black;
+          text-align: center;
+          @extend h1;
+          margin:0px;
+          margin-top:24px;
+          margin-bottom:8px;
+        }
+      }
+      .pricing-table-item-footer{
+        padding:36px;
+      }
+      .btn-pricing{
+        background:color("pink","base") !important;
+        color:white !important;
+        &:hover{
+          background:white !important;
+          color:color("pink","base") !important;
+          border:1px solid color("pink","base") !important;
+    }
+      }
+    }
+    &.second_most_popular{
+      margin-top:16px;
+      @extend .z-depth-1-half;
+      .pricing-table-item-header{
+        background:color("amber","base");
+        padding:28px;
+        @extend h3;
+        color:white;
+        margin:0;
+      }
+      .pricing-table-item-body{
+        ul{
+          li{
+            &.disabled{
+              color:color("grey","base");
+              i{
+                padding-right:12px;
+                color:color("grey","base");
+              }
+              .i-promo{
+                background:color("green","lighten-3");
+              }
+            }
+            color:color("indigo","base");
+            i{
+              color:color("amber","base");
+            }
+          }
+        }
+        .price{
+          color:black;
+          text-align: center;
+          @extend h1;
+          margin:0px;
+          margin-top:24px;
+          margin-bottom:8px;
+        }
+      }
+      .pricing-table-item-footer{
+        padding:28px;
+      }
+      .btn-pricing{
+        background:color("amber","base") !important;
+        color:white !important;
+        &:hover{
+          background:white !important;
+          color:color("amber","base") !important;
+          border:1px solid color("amber","base") !important;
+        }
+      }
+    }
+  }
+}

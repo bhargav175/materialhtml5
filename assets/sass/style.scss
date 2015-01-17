@@ -1,6 +1,9 @@
 /***************
   HTML Styles	
 ***************/
+*{
+}
+
 body {
   background-color: white;
 }
@@ -36,9 +39,10 @@ nav {
 }
 
 .caption {
-  font-size: 1.25rem;
-  font-weight: 300;
   margin-bottom: 30px;
+  @media #{$small-and-down}{
+    margin-bottom: 12px;
+  }
 }
 
 .preview {
@@ -191,25 +195,6 @@ header{
   margin-top: 5px;
   margin-bottom: 0px;
 
-}
-
-#front-page-nav {
-  background-color: #FFF;
-  position: relative;
-  a {
-      color: color("light-blue", "base");
-    }
-  li {
-    &:hover {
-      background-color: color("light-blue", "lighten-4");
-    }
-    &.active {
-      background-color:color("light-blue", "lighten-4");
-    }
-  }
-  .container {
-    height: inherit;
-  }
 }
 
 // Grid doc styles
@@ -732,4 +717,25 @@ img{
     width:180px;
 
 }
+}
+
+main{
+  &.contact-main{
+
+  }
+}
+.section.map-section{
+  padding:0px;
+}
+#map-canvas{
+  height:480px;
+  @media #{$large-and-down} {
+    height: 320px ;
+  }
+  @media #{$medium-and-down} {
+    height: 240px ;
+  }
+  @media #{$small-and-down} {
+    height: 160px ;
+  }
 }

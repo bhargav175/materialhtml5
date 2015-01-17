@@ -1,36 +1,83 @@
 ul.tabs {
   position: relative;
   height: 48px;
-  background-color: #FFF;
+  background-color: color("grey","base");
   margin: 0 auto;
   width: 100%;
   white-space: nowrap;
+  &.side-tabs{
+    float: left;
+    display: inline-block;
+    width: 20%;
+    height: initial;
+    &.right-tabs{
+      float: right;
+    }
+    &.left-tabs{
+      float: left;
+    }
+    li.tab{
+      float: none;
+      margin: 0 0 -1px;
+      display: block!important;
+      width:100%;
+      @media #{$large-and-up} {
+        max-width:none;
+      }
+      &.active{
+        border-right:none !important;
+      }
+      a{
+        float:none;
+      }
+    }
+    + .tabs-content{
+     float:left;
+      width:80%;
+    }
+    .indicator {
+      position: absolute;
+        right: 0;
+        left:0;
+        width: 2px;
+        bottom:auto;
+        height:auto;
+
+    }
+  }
+
+
 
   li.tab {
     @media #{$large-and-up} {
-      max-width: 25%; 
+      max-width: 25%;
+
     }
-    
     display: block;
     float: left;
+    box-sizing: border-box;
     text-align: center;
-    background-color: #fff;
+    background-color:  white;
     line-height: 48px;
     height: 48px;
-    padding: 0 20px;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: .8px;
     width: 15%;
 
     a {
-      color: lighten(color("materialize-red", "base"), 18%);
+      color: color("blue", "lighten-4");
       display: block;
       width: 100%;
+      box-sizing: border-box;
+      background-color:color("blue","base");
       height: 100%;
       @include transition( color .28s ease);
+      &.active{
+        color: white;
+      }
       &:hover {
-        color: color("materialize-red", "lighten-4");
+        color: white;
       }
     }
   }
@@ -38,9 +85,37 @@ ul.tabs {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: color("materialize-red", "lighten-2");
+    background-color: color("yellow", "lighten-2");
   }
+  @each $color_name, $color in $colors {
+    @each $color_type, $color_value in $color {
+      @if $color_type == "base" {
+        &.#{$color_name}-indicator {
+          .indicator {
+            background-color: $color_value !important;
+          }
+        }
+      }
+      @else {
+        &.#{$color_name}-indicator.#{$color_type}-indicator {
+          .indicator {
+            background-color: $color_value !important;
+          }
+        }
+      }
+    }
+  }
+
 }
+.tab-content{
+  padding:24px;
+  @include transition( all .28s ease);
+  background-color:color("blue","lighten-4");
+}
+
+.t-wrapper{  margin-bottom:24px;
+}
+
 
 ul.tabs li.tab { padding: 0; }
 

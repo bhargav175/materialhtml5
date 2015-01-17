@@ -1,0 +1,114 @@
+.list-collapse{
+  background-color: #FFF;
+  margin: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+
+  .list-item {
+    background:color("grey","lighten-4");
+    line-height: 1.5rem;
+    padding: 16px 20px 8px;
+    @media #{$small-and-down} {
+        box-sizing: border-box;
+        padding: 12px 8px;
+        margin: 0;
+       width: 100%;
+    }
+    margin: 0px;
+    position:relative;
+    z-index:1;
+    @include transition(all .3s);
+    cursor:pointer;
+    border-bottom: 1px solid #e0e0e0;
+    overflow-y: auto;
+    &:last-child {
+      border-bottom: none;
+    }
+    .list-item-title{
+        overflow: hidden;
+
+    }
+    .list-item-body{
+      display:none;
+      overflow: hidden;
+    }
+    &.active{
+      @extend .z-depth-3;
+      z-index: 2;
+      background:white;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-top: -1rem;
+      margin-bottom: -1rem;
+      border: 1px solid color("grey","lighten-2");
+      border-top: 2px solid color("grey","lighten-2");
+      padding: 32px;
+      .list-item-body{
+      }
+    }
+    img{
+      height:auto;
+      max-height:150px;
+      width:200px;
+      float:left;
+      margin-right:20px;
+      margin-bottom:20px;
+    }
+  }
+
+  a.list-item{
+    display: block;
+    @include transition(.25s);
+    &:not(.active) {
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+
+    .list-header {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 20px;
+      color:color("light-blue","base");
+    }
+    .list-item {
+      padding-left: 30px;
+    }
+
+  .secondary-content {
+    float: right;
+  }
+
+
+  //Pagination
+  &.pagination {
+    display: inline-block;
+
+    ul{
+      background-color: transparent;
+
+      font-size: 0;
+      display: inline-block;
+    }
+    li {
+      display: inline;
+      font-weight: 500;
+      margin: 0px;
+      padding: 0px;
+      font-size: 1rem;
+
+      a {
+        padding: 0px 5px;
+      }
+      &.active {
+        background-color: color('light-blue', 'base');
+        color: #FFF;
+      }
+      &:hover {
+        background-color: color('light-blue', 'lighten-5');
+      }
+    }
+
+  }
+}

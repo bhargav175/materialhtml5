@@ -1,0 +1,21 @@
+.portfolio{
+  .p-item{
+    height:310px;
+    box-sizing:border-box;
+    padding:0 !important;
+    cursor:pointer;
+    @media #{$medium-and-down} {
+      height:160px;
+    }
+    @media #{$large-and-down} {
+      height:210px;
+    }
+    img{
+      height:100%;
+      width:100%;
+    }
+    &:hover{
+      @extend .z-depth-3;
+    }
+  }
+}

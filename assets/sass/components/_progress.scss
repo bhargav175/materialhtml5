@@ -1,0 +1,17 @@
+.progress-bar{
+  float: left;
+  width: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  position:relative;
+  @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  clear: both;
+}
+.progress-line{
+  background:color("grey","lighten-2");
+  width:100%;
+  overflow:hidden;
+  margin-bottom:8px;
+}
