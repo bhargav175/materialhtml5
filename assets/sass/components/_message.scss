@@ -1,0 +1,45 @@
+.message {
+  @extend .z-depth-1;
+  @include border-radius(2px);
+  @include box-sizing(border-box);
+  top: 0px;
+  width: auto;
+  clear: both;
+  margin-top: 10px;
+  position: relative;
+  max-width:100%;
+  height: $toast-height;
+  line-height: $toast-height;
+  background-color: $toast-color;
+  padding: 0px 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: $toast-text-color;
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn, .btn-flat {
+    margin: 0;
+    margin-left: 3rem;
+  }
+
+  &.rounded{
+    border-radius: 24px;
+  }
+
+  @media #{$small-and-down} {
+    width:100%;
+  }
+  @media #{$medium-only} {
+    float: left;
+  }
+  @media #{$large-and-up} {
+    float: right;
+  }
+  &.message-block{
+    width:100%;
+  }
+
+}

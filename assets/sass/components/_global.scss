@@ -22,14 +22,18 @@ body {
 main {
   flex: 1;
   padding-bottom: 100px;
-  padding-left: 240px;
+  &.with-sidenav{
+    padding-left: 240px;
+  }
   padding-top:100px;
   @media #{$huge-and-down}  {
     padding: 0;
   }
 }
 header{
-  height:256px;
+  &.large-header{
+    height:256px;
+  }
   padding:115px 16px 0px 240px;
   box-sizing: border-box;
   position:relative;
@@ -557,6 +561,18 @@ span.badge {
 }
 .padding{
   padding:32px;
+  &.large-padding{
+    padding-left: 56px;
+    @media #{$large-and-down} {
+      padding: 32px;
+    }
+    @media #{$medium-and-down} {
+      padding: 16px;
+    }
+    @media #{$small-and-down} {
+      padding: 8px;
+    }
+  }
   @media #{$medium-and-down} {
       padding:16px;
   }
@@ -565,11 +581,33 @@ span.badge {
   }
 }
 .padding-side{
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 32px;
+  padding-right: 32px;
+  @media #{$medium-and-down} {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @media #{$small-and-down} {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  &.large-padding{
+    padding-left: 56px;
+    padding-right: 56px;
+    @media #{$large-and-down} {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    @media #{$medium-and-down} {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media #{$small-and-down} {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }
-
-
 .margin{
   margin:32px;
   @media #{$medium-and-down} {
@@ -579,9 +617,11 @@ span.badge {
     margin:8px;
   }
 }
+.no-margin{
+  margin:0 !important;
+}
 .margin-top{
   margin-top:32px;
-  margin-bottom:0;
   @media #{$medium-and-down} {
     margin-top:16px;
   }
@@ -591,7 +631,6 @@ span.badge {
 }
 .margin-bottom{
   margin-bottom:32px;
-  margin-top:0;
   @media #{$medium-and-down} {
     margin-bottom:16px;
   }
@@ -601,4 +640,7 @@ span.badge {
 }
 .overflow{
   overflow:hidden;
+}
+.relative{
+  position:relative;
 }

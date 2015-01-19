@@ -34,8 +34,25 @@ li.divider {
   }
 
 }
-.dropdown-rel{
-   .dropdown-menu{
 
-   }
+.dropdown-rel{
+    position:relative;
+  .navbar-nav &{
+    .dropdown-menu{
+      left: 0;
+      min-width: 300px;
+      position: absolute;
+      z-index: 1;
+      @extend .z-depth-2;
+      top: 0;
+      width: auto;
+      background: white;
+      li{
+        float: none;
+        display: block;
+        width: auto;
+      }
+    }
+  }
+
  }

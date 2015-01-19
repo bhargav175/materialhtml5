@@ -78,5 +78,23 @@ small { font-size: 75%; }
  font-weight: 700 !important;
 }
 .highlight{
-  color:color("blue","base");
+  color:$primary-color;
 }
+legend, .section-title{
+  @extend h4;
+  span.title{
+    font-weight:500;
+    @extend .padding-side;
+    padding-right:8px !important;
+  }
+  span.sub-title{
+    @extend h6;
+  }
+}
+.italicize{
+  font-style: italic;
+}
+.capitalize{
+  text-transform: uppercase;
+}
+

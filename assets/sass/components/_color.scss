@@ -412,3 +412,13 @@ $colors: (
   @return null;
 }
 
+$primary-color: color("cyan","base");
+$dark-primary-color: color("cyan","darken-2");
+$darkest-primary-color: color("cyan","darken-4");
+$light-primary-color: color("cyan","lighten-4");
+
+$accent-color:color("pink","accent-2");
+$primary-text-color:color("grey","darken-4");
+$secondary-text-color:color("grey","darken-1");
+$divider-color:#B6B6B6;
+$text-color:#ffffff;

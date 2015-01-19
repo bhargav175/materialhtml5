@@ -15,6 +15,23 @@ $footer-font-color: #000 !default;
   @include border-radius(2px);
 
 
+  .onhover{
+    opacity:0;
+    position:relative;
+    &.displace-left{
+      left:-10px;
+    }
+  }
+  &:hover{
+    .onhover{
+          opacity:1;
+          left:0;
+      right:0;
+      top:0;
+      bottom:0;
+          @include transition(all 0.38s);
+    }
+  }
   .card-title {
     color: #fff;
     font-size: 20px;
@@ -40,6 +57,9 @@ $footer-font-color: #000 !default;
       bottom: 0;
       left: 0;
       right: 0;
+    }
+    &.fixed-size-card-image{
+      height: 160px;
     }
 
   }
@@ -140,9 +160,11 @@ $footer-font-color: #000 !default;
       &:hover { color: lighten(color("orange", "accent-2"), 20%); }
     }
   }
-
 .card-header ,.card-footer{
   padding:16px;
+  &.no-border{
+    border:none;
+  }
   }
   .card-footer{
     border-top: 1px solid rgba(160, 160, 160, 0.2);
@@ -202,8 +224,12 @@ $footer-font-color: #000 !default;
         }
       }
     }
-
-
     }
+  &.no-shadow{
+    box-shadow:none;
+    .card-header,.card-footer{
+      border:none;
+    }
+  }
   }
 

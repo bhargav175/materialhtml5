@@ -1,0 +1,157 @@
+nav{
+  &.navbar-nav{
+    ul{
+      li {
+        float: left;
+        padding: 0px;
+        @include transition(background-color .3s);
+        &:hover, &.active {
+          >a{
+            border-color:$accent-color;
+          }
+        }
+      }
+      a {
+        font-size: 1rem;
+        color: $primary-color;
+        display: block;
+        padding: 0px 15px;
+        border-bottom:5px solid transparent;
+      }
+
+    }
+
+  }
+}
+header,footer{
+  background:$primary-color;
+}
+
+.dropdown-rel{
+  .navbar-nav &{
+    .dropdown-menu{
+      li {
+
+        @include transition(background-color .3s);
+        &:hover, &.active {
+          background-color:color("grey","lighten-4");
+          >a{
+            border-color:transparent;
+          }
+        }
+      }
+      a {
+
+      }
+    }
+  }
+
+}
+legend{
+  span.sub-title{
+    color:color("grey","base");
+  }
+}
+
+.message{
+  color:white;
+  background:color("pink","lighten-1");
+}
+.section{
+  &.primary-section, &.accent-section{
+    legend, .section-title{
+      color:white;
+      span.sub-title{
+        color:color("grey","lighten-4");
+      }
+    }
+  }
+  &.primary-section{
+    background-color:$primary-color;
+  }
+  &.accent-section{
+    background-color:$accent-color;
+  }
+
+}
+
+ul.tabs {
+  background-color: color("grey","base");
+  li.tab {
+    a {
+      color: white;
+      background-color:$primary-color;
+      &.active{
+        color: white;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .indicator {
+    background-color: $accent-color;
+  }
+}
+.tab-content{
+  color: #111;
+  background-color:$primary-color;
+}
+ul.collapsible{
+  &.collapsible-plus{
+    background-color:white;
+    li{
+      .collapsible-header {
+        color: $primary-color !important;
+        background-color:transparent !important;
+        i{
+          background-color: white !important;
+          color: $primary-color !important;
+          border:1px solid white !important;
+        }
+      }
+      .collapsible-body{
+        background-color:white !important;
+        color:black !important;
+      }
+      &.active{
+        .collapsible-header {
+          color: $accent-color !important;
+          background-color:transparent !important;
+          i{
+            background-color: $accent-color !important;
+            color: white !important;
+            border:1px solid $accent-color !important;
+          }
+        }
+        .collapsible-body{
+          background-color:white !important;
+          color:black !important;
+        }
+      }
+    }
+  }
+}
+.testimonials{
+  .owl-controls{
+    @extend .card-footer;
+  }
+}
+.owl-theme{
+  &.primary-color-pagination{
+      .owl-controls{
+        .owl-page{
+          &.active{
+            span{
+              background:$darkest-primary-color;
+            }
+          }
+          span{
+            background: $light-primary-color;
+          }
+        }
+      }
+  }
+}
+
+

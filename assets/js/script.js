@@ -503,7 +503,7 @@ jQuery.extend( jQuery.easing,
         console.log(bottomOverlay);
 
         $(document).bind('click.'+ activates.attr('id'), function (e) {
-          if ($(bottomOverlay).is(e.target)) {
+          if (!activates.is(e.target) && (!origin.is(e.target))) {
             activates.removeClass( "active").addClass("hidden");
             bottomOverlay.remove();
             $(document).unbind('click.' + activates.attr('id'));
