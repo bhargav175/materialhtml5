@@ -153,5 +153,24 @@ ul.collapsible{
       }
   }
 }
+.accent-bg{
+  background-color: $accent-color !important;
+}
+.primary-bg{
+  background-color:$primary-color !important;
+}
+.primary-text{
+  color:$primary-color !important;
+}
+.accent-text{
+  color: $accent-color !important;
+}
+.card-content .input-field label{
+  color:color("grey","darken-3");
+}
+
+.card-content .input-field input{
+  color:black;
+}
 
 

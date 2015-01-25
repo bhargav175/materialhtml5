@@ -161,6 +161,7 @@
 
         $('.dropdown-button').dropdown({hover: false});
         $('.dropdown-rel').dropdownRel({hover: false});
+        $('.more-dropdown-toggle').dropdownMore({hover: false});
         if (window_width > 600) {
             $('ul.tabs').tabs();
         }
@@ -182,6 +183,8 @@
         $(".dialog-sheet-toggle").dialogSheet();
         $(".list-collapse").listCollapse();
         $(".progress-bar").progressBar();
+        $("#contact-fab").scrollNavigate({target:"#contact-section"});
+        $("#news-letter-signup").scrollNavigate({target:"#news-letter-area"});
 
 
         $(document).ready(function(){

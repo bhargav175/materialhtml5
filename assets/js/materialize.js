@@ -374,6 +374,7 @@ jQuery.extend( jQuery.easing,
           //activates.css('width', origin.outerWidth());
           activates.css('margin-top', 0);
           //activates.css('left', origin.offset().left);
+          $(".dropdown-menu").hide({duration: 175, easing: 'easeOutCubic'});
           activates.show({duration: 200, easing: 'easeOutCubic'});
         });
 
@@ -394,11 +395,13 @@ jQuery.extend( jQuery.easing,
           //activates.css('width', origin.outerWidth());
           activates.css('margin-top',0);
           //activates.css('left', origin.offset().left);
+          $(".dropdown-menu").hide({duration: 175, easing: 'easeOutCubic'});
           activates.show({duration: 200, easing: 'easeOutCubic'});
 
           $(document).bind('click.'+ activates.attr('id'), function (e) {
             if (!activates.is(e.target) && (!origin.is(e.target))) {
               activates.hide({duration: 175, easing: 'easeOutCubic'});
+              //activates.hide({duration: 175, easing: 'easeOutCubic'});
               $(document).unbind('click.' + activates.attr('id'));
             }
 
@@ -415,6 +418,65 @@ jQuery.extend( jQuery.easing,
           //activates.css('left', origin.offset().left);
         }
       });
+    });
+  };
+}( jQuery ));;(function ($) {
+
+  $.fn.dropdownMore = function (options) {
+    var defaults = {
+      hover: true
+    }
+
+    options = $.extend(defaults, options);
+
+    this.each(function(){
+
+
+      var origin = $(this);
+
+      var activates = origin.find(".more-dropdown"); // Dropdown menu
+
+      activates.hide(0);
+
+
+      if (defaults.hover) {
+        // Click handler for list container
+        origin.on('mouseover', function(e){ // Mouse over
+          //activates.css('width', origin.outerWidth());
+          //activates.css('left', origin.offset().left);
+          activates.show({duration: 200, easing: 'easeOutCubic'});
+        });
+
+        // Document click handler
+        activates.on('mouseleave', function(e){ // Mouse out
+          activates.hide({duration: 175, easing: 'easeOutCubic'});
+        });
+
+
+
+      } else {
+        var open = false;
+
+        // Click handler for list container
+        origin.click( function(e){ // Click
+                    e.preventDefault();
+          e.stopPropagation();
+          //activates.css('width', origin.outerWidth());
+          //activates.css('left', origin.offset().left);
+          activates.show({duration: 200, easing: 'easeOutCubic'});
+
+          $(document).bind('click.'+ activates.attr('id'), function (e) {
+            if (!activates.is(e.target) && (!origin.is(e.target))) {
+              activates.hide({duration: 175, easing: 'easeOutCubic'});
+              $(document).unbind('click.' + activates.attr('id'));
+            }
+
+          });
+        });
+
+
+      }
+
     });
   };
 }( jQuery ));;(function ($) {
@@ -457,6 +519,61 @@ jQuery.extend( jQuery.easing,
           });
         });
 
+    });
+  };
+}( jQuery ));;(function ($) {
+
+  $.fn.buttonFill = function (options) {
+    var defaults = {
+
+    }
+
+    options = $.extend(defaults, options);
+
+    this.each(function(){
+
+      var origin = $(this);
+
+      var activates = $("#"+ origin.attr('data-activates'));
+      var cancel = $("#"+ origin.attr('data-cancel'));
+      // Click handler for list container
+      origin.click( function(e){ // Click
+        e.preventDefault();
+        e.stopPropagation();
+        activates.addClass("open");
+        origin.addClass("active")
+        $("body").addClass("no-scroll")
+        cancel.on('click',function(){
+          origin.removeClass("active");
+          activates.removeClass("open");
+
+          $("body").removeClass("no-scroll")
+
+        })
+      });
+
+    });
+  };
+}( jQuery ));;(function ($) {
+
+  $.fn.scrollNavigate = function (options) {
+    var defaults = {
+          target:"body"
+    }
+
+    options = $.extend(defaults, options);
+
+    this.each(function(){
+      var origin = $(this);
+      var activates = options.target;
+      origin.click( function(e){ // Click
+        e.preventDefault();
+        e.stopPropagation();
+        //activates.css('width', origin.outerWidth());
+        //activates.css('left', origin.offset().left);
+        $('html,body').animate({scrollTop: $(activates).offset().top-100}, 800);
+
+      });
     });
   };
 }( jQuery ));;(function ($) {

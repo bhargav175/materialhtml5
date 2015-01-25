@@ -70,6 +70,10 @@ define(function(require){
             skin: 'noskin',
             showCircleTimer: false
         });
+        if(loadedFunction){
+            loadedFunction();
+        }
+
     });
 
 });

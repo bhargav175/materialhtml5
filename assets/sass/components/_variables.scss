@@ -64,18 +64,17 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 
 
 
-$very-small-and-up: "only screen and (min-width : #{$very-small-screen})";
-$small-and-up: "only screen and (min-width : #{$small-screen})";
-$medium-and-up: "only screen and (min-width : #{$medium-screen})";
-$large-and-up: "only screen and (min-width : #{$large-screen})";
-$huge-and-up: "only screen and (min-width : #{$huge-screen})";
+$very-small-and-up: "only screen and (min-width : 0px)";
+$small-and-up: "only screen and (min-width : #{$very-small-screen-up})";
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})";
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})";
+$huge-and-up: "only screen and (min-width : #{$large-screen-up})";
 
-$small-and-down: "only screen and (max-width : #{$small-screen})";
-$very-small-and-down: "only screen and (max-width : #{$very-small-screen})";
-$medium-and-down: "only screen and (max-width : #{$medium-screen})";
-$large-and-down: "only screen and (max-width : #{$large-screen})";
-$huge-and-down: "only screen and (max-width : #{$huge-screen})";
-
+$tiny-screens: "only screen and (max-width : #{$very-small-screen})";
+$small-and-down: "only screen and (max-width : #{$medium-screen})";
+$very-small-and-down: "only screen and (max-width : #{$small-screen})";
+$medium-and-down: "only screen and (max-width : #{$large-screen})";
+$large-and-down: "only screen and (max-width : #{$huge-screen})";
 $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #{$medium-screen})";
 
 
