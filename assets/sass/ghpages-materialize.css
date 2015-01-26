@@ -1981,7 +1981,7 @@ body {
   position: relative;
   min-height: 100vh;
   flex-direction: column; }
-  body.no-scroll {
+  body.floated {
     overflow: hidden; }
 
 main {
@@ -5601,10 +5601,17 @@ nav {
         top: 0;
         overflow-y: auto;
         position: fixed; }
+        nav.navbar-nav .container {
+          width: 100%; }
         nav.navbar-nav .dropdown-rel .dropdown-menu {
           margin: 10px;
           min-width: 0;
           left: 0;
+          right: 0;
+          position: static;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
           right: 0; }
           nav.navbar-nav .dropdown-rel .dropdown-menu li a {
             border-top: none;
@@ -5616,7 +5623,6 @@ nav {
           position: relative;
           display: block;
           padding: 0;
-          overflow: hidden;
           width: 100%; }
           nav.navbar-nav ul li {
             float: none !important; }
@@ -5711,9 +5717,15 @@ nav {
     nav ul.left {
       float: left; }
 
-@media only screen and (min-width: 761px) {
-  nav .nav-wrapper i {
-    font-size: 2rem; } }
+.social-icons li a {
+  -webkit-transition: color 600ms;
+  -moz-transition: color 600ms;
+  -o-transition: color 600ms;
+  -ms-transition: color 600ms;
+  transition: color 600ms; }
+  .social-icons li a :hover {
+    color: #ff4081 !important; }
+
 @font-face {
   font-family: "Roboto";
   src: url(../font/roboto/Roboto-Thin.ttf);
@@ -5996,7 +6008,7 @@ legend span.title, .section-title span.title {
     .card.small .card-image {
       overflow: hidden;
       height: 150px; }
-    .card.small .card-content, .card.small .portfolio .p-item .p-item-body, .portfolio .p-item .card.small .p-item-body {
+    .card.small .card-content, .card.small .portfolio .p-item .p-item-body, .portfolio .p-item .card.small .p-item-body, .card.small .portfolio .p-item .p-item-content, .portfolio .p-item .card.small .p-item-content {
       overflow: hidden;
       height: 150px; }
     .card.small .card-action {
@@ -6054,7 +6066,7 @@ legend span.title, .section-title span.title {
         .card .card-image > img {
           height: auto;
           max-height: 300px; } }
-  .card .card-content, .card .portfolio .p-item .p-item-body, .portfolio .p-item .card .p-item-body {
+  .card .card-content, .card .portfolio .p-item .p-item-body, .portfolio .p-item .card .p-item-body, .card .portfolio .p-item .p-item-content, .portfolio .p-item .card .p-item-content {
     padding: 16px;
     -webkit-border-radius: 0 0 2px 2px;
     -moz-border-radius: 0 0 2px 2px;
@@ -6063,11 +6075,11 @@ legend span.title, .section-title span.title {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .card .card-content.no-pad, .card .portfolio .p-item .no-pad.p-item-body, .portfolio .p-item .card .no-pad.p-item-body {
+    .card .card-content.no-pad, .card .portfolio .p-item .no-pad.p-item-body, .portfolio .p-item .card .no-pad.p-item-body, .card .portfolio .p-item .no-pad.p-item-content, .portfolio .p-item .card .no-pad.p-item-content {
       padding: 0px !important; }
-    .card .card-content p, .card .portfolio .p-item .p-item-body p, .portfolio .p-item .card .p-item-body p {
+    .card .card-content p, .card .portfolio .p-item .p-item-body p, .portfolio .p-item .card .p-item-body p, .card .portfolio .p-item .p-item-content p, .portfolio .p-item .card .p-item-content p {
       color: inherit; }
-    .card .card-content span.card-title, .card .portfolio .p-item .p-item-body span.card-title, .portfolio .p-item .card .p-item-body span.card-title {
+    .card .card-content span.card-title, .card .portfolio .p-item .p-item-body span.card-title, .portfolio .p-item .card .p-item-body span.card-title, .card .portfolio .p-item .p-item-content span.card-title, .portfolio .p-item .card .p-item-content span.card-title {
       line-height: 48px; }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
@@ -6196,7 +6208,7 @@ legend span.title, .section-title span.title {
   .dialog-sheet.active {
     display: block; }
 
-.portfolio * {
+.portfolio .p-item {
   -webkit-transition: box-shadow !important;
   -moz-transition: box-shadow !important;
   -o-transition: box-shadow !important;
@@ -6207,7 +6219,8 @@ legend span.title, .section-title span.title {
   box-sizing: border-box;
   padding: 0 !important;
   margin-bottom: 16px;
-  cursor: pointer; }
+  cursor: pointer;
+  overflow: hidden; }
   .portfolio .p-item .p-item-video {
     position: relative;
     box-sizing: border-box;
@@ -6229,11 +6242,11 @@ legend span.title, .section-title span.title {
   .portfolio .p-item .p-item-image {
     position: relative;
     box-sizing: border-box;
-    padding-top: 56.25%;
+    padding-top: 75%;
     overflow: hidden; }
     @media only screen and (max-width: 979px) {
       .portfolio .p-item .p-item-image {
-        padding-top: 56.25%; } }
+        padding-top: 75%; } }
     .portfolio .p-item .p-item-image img {
       position: absolute;
       top: 0;
@@ -6250,10 +6263,88 @@ legend span.title, .section-title span.title {
     bottom: 0px;
     left: 0;
     right: 0px; }
+  .portfolio .p-item .p-item-content {
+    padding: 16px; }
   .portfolio .p-item .p-item-footer {
     padding: 16px; }
   .portfolio .p-item .p-item-header {
     padding: 16px; }
+  .portfolio .p-item .p-overlay {
+    position: absolute;
+    height: 5em;
+    background: white;
+    width: 5em;
+    top: 75%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1000;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -moz-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -o-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -ms-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms; }
+    .portfolio .p-item .p-overlay .p-overlay-content {
+      opacity: 0;
+      overflow-y: auto;
+      -webkit-transition: opacity 300ms;
+      -moz-transition: opacity 300ms;
+      -o-transition: opacity 300ms;
+      -ms-transition: opacity 300ms;
+      transition: opacity 300ms; }
+  .portfolio .p-item.active .p-overlay {
+    display: block;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-clip: padding-box;
+    cursor: default;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 800%;
+    -moz-transform-origin: 800%;
+    -ms-transform-origin: 800%;
+    -o-transform-origin: 800%;
+    transform-origin: 800%;
+    -webkit-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -moz-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -o-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -ms-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms; }
+    .portfolio .p-item.active .p-overlay .p-overlay-content {
+      opacity: 1;
+      -webkit-transition: opacity 300ms 1000ms;
+      -moz-transition: opacity 300ms 1000ms;
+      -o-transition: opacity 300ms 1000ms;
+      -ms-transition: opacity 300ms 1000ms;
+      transition: opacity 300ms 1000ms; }
+
+.gallery li {
+  width: 29.914893617021278%;
+  float: left;
+  margin-left: 2.427659574468085%;
+  margin-bottom: 2.427659574468085%;
+  box-sizing: border-box; }
 
 #toast-container {
   display: block;
@@ -7194,7 +7285,6 @@ li.divider {
     min-width: 300px;
     position: absolute;
     z-index: 1;
-    top: 0;
     width: auto;
     background: white; }
     .navbar-nav .dropdown-rel .dropdown-menu li {
@@ -15765,18 +15855,74 @@ ul.table-of-contents a {
         cursor: hand;
         color: #03a9f4; }
 
-.fab .btn-floating {
+.btn-floating {
   position: fixed;
   top: 100%;
   left: 100%;
-  z-index: 998;
+  z-index: 1001;
   margin: -5em 0 0 -5em;
   height: 56px;
   width: 56px;
   line-height: 56px; }
-  .fab .btn-floating i {
+  .btn-floating:focus {
+    outline: 0; }
+  .btn-floating i {
     line-height: 56px;
     font-size: 2rem; }
+  .btn-floating.add {
+    z-index: 1001;
+    -webkit-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -moz-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -o-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -ms-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms; }
+    .btn-floating.add i {
+      opacity: 1;
+      -webkit-transition: opacity 200ms ease-out 800ms;
+      -moz-transition: opacity 200ms ease-out 800ms;
+      -o-transition: opacity 200ms ease-out 800ms;
+      -ms-transition: opacity 200ms ease-out 800ms;
+      transition: opacity 200ms ease-out 800ms; }
+  .btn-floating.cancel {
+    display: block;
+    -webkit-transition: transform 300ms ease-out;
+    -moz-transition: transform 300ms ease-out;
+    -o-transition: transform 300ms ease-out;
+    -ms-transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out; }
+  .floated .btn-floating.add {
+    height: 200%;
+    width: 200%;
+    top: 15%;
+    left: 15%;
+    margin: -20% 0 0 -20%;
+    /* margin: 10%; */
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 800%;
+    -moz-transform-origin: 800%;
+    -ms-transform-origin: 800%;
+    -o-transform-origin: 800%;
+    transform-origin: 800%;
+    -webkit-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
+    -moz-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
+    -o-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
+    -ms-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
+    transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms; }
+    .floated .btn-floating.add i {
+      opacity: 0;
+      -webkit-transition: opacity 200ms;
+      -moz-transition: opacity 200ms;
+      -o-transition: opacity 200ms;
+      -ms-transition: opacity 200ms;
+      transition: opacity 200ms; }
 
 .header-scroll .fab {
   top: 560px; }
@@ -15785,20 +15931,28 @@ ul.table-of-contents a {
 
 .action-content {
   position: fixed;
-  z-index: 1001;
+  z-index: 1002;
   top: 0;
+  overflow-y: hidden;
   left: 0;
-  display: none;
+  display: block;
+  visibility: hidden;
   width: 100%;
   height: 100%; }
-  .action-content.open {
-    display: block; }
-    .action-content.open .cancel {
+  .floated .action-content {
+    display: block;
+    visibility: visible; }
+    .floated .action-content .cancel {
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
       -o-transform: scale(1);
-      transform: scale(1); }
+      transform: scale(1);
+      -webkit-transition: transform 300ms ease-out 600ms;
+      -moz-transition: transform 300ms ease-out 600ms;
+      -o-transition: transform 300ms ease-out 600ms;
+      -ms-transition: transform 300ms ease-out 600ms;
+      transition: transform 300ms ease-out 600ms; }
   .action-content .cancel {
     position: absolute;
     z-index: 1;
@@ -15811,11 +15965,56 @@ ul.table-of-contents a {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-transition-delay: 150ms;
-    -moz-transition-delay: 150ms;
-    -o-transition-delay: 150ms;
-    -ms-transition-delay: 150ms;
-    transition-delay: 150ms; }
+    -webkit-transition: transform 300ms ease-out;
+    -moz-transition: transform 300ms ease-out;
+    -o-transition: transform 300ms ease-out;
+    -ms-transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out; }
+    .defloat .action-content .cancel {
+      -webkit-transform: scale(0) !important;
+      -moz-transform: scale(0) !important;
+      -ms-transform: scale(0) !important;
+      -o-transform: scale(0) !important;
+      transform: scale(0) !important;
+      -webkit-transition: transform 300ms ease-out;
+      -moz-transition: transform 300ms ease-out;
+      -o-transition: transform 300ms ease-out;
+      -ms-transition: transform 300ms ease-out;
+      transition: transform 300ms ease-out; }
+  .defloat .action-content .action-content-inner {
+    opacity: 0 !important;
+    -webkit-transform: translateY(20px) !important;
+    -moz-transform: translateY(20px) !important;
+    -ms-transform: translateY(20px) !important;
+    -o-transform: translateY(20px) !important;
+    transform: translateY(20px) !important;
+    -webkit-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+    -moz-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+    -o-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+    -ms-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+    transition: opacity 300ms ease-out, transform 300ms ease-out !important; }
+  .action-content .action-content-inner {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    transform: translateY(20px);
+    margin-top: 56px; }
+  .floated .action-content {
+    overflow-y: auto; }
+    .floated .action-content .action-content-inner {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
+      -moz-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
+      -o-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
+      -ms-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
+      transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms; }
 
 .button-fill {
   position: relative;
@@ -16106,10 +16305,10 @@ ul.collapsible.collapsible-plus {
 .accent-text {
   color: #ff4081 !important; }
 
-.card-content .input-field label, .portfolio .p-item .p-item-body .input-field label {
+.card-content .input-field label, .portfolio .p-item .p-item-body .input-field label, .portfolio .p-item .p-item-content .input-field label {
   color: #424242; }
 
-.card-content .input-field input, .portfolio .p-item .p-item-body .input-field input {
+.card-content .input-field input, .portfolio .p-item .p-item-body .input-field input, .portfolio .p-item .p-item-content .input-field input {
   color: black; }
 
 /***************
@@ -16533,7 +16732,7 @@ body.parallax-demo footer {
   background-color: white;
   color: #212121; }
 
-.card-panel span, .card-content p, .portfolio .p-item .p-item-body p {
+.card-panel span, .card-content p, .portfolio .p-item .p-item-body p, .portfolio .p-item .p-item-content p {
   -webkit-font-smoothing: antialiased; }
 
 #images .card-panel img {
@@ -16645,3 +16844,56 @@ img {
   @media only screen and (max-width: 979px) {
     #map-canvas {
       height: 160px; } }
+
+.inner-footer ul {
+  margin-top: 0; }
+.inner-footer h5, .inner-footer .pricing-tables .pricing-table-item .pricing-table-item-header, .pricing-tables .pricing-table-item .inner-footer .pricing-table-item-header {
+  font-size: 1.4rem;
+  margin-bottom: 40px; }
+.inner-footer a {
+  line-height: 26px; }
+
+.footer-about ul li {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: white; }
+  .footer-about ul li i {
+    font-size: 1.2rem;
+    margin-right: 16px; }
+.footer-about a {
+  font-size: 1rem;
+  color: #00bcd4; }
+
+.footer-links a {
+  font-size: 1rem;
+  color: #00bcd4;
+  display: block;
+  margin-bottom: 7px;
+  padding-bottom: 7px; }
+
+.footer-twitter a {
+  font-size: 1rem;
+  color: #00bcd4;
+  display: block;
+  margin-bottom: 7px;
+  padding-bottom: 7px; }
+.footer-twitter .user img {
+  display: none; }
+.footer-twitter .user span span {
+  display: none; }
+.footer-twitter .tweet {
+  color: whitesmoke; }
+.footer-twitter .interact {
+  width: 10%;
+  margin-top: -7px;
+  display: none; }
+.footer-twitter .tweet-icon {
+  width: 32px; }
+  .footer-twitter .tweet-icon i {
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 16px; }
+.footer-twitter .tweets-list {
+  flex: 1; }
+.footer-twitter .tweet-inner {
+  display: flex; }

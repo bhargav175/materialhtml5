@@ -745,3 +745,86 @@ main{
     height: 160px ;
   }
 }
+
+.inner-footer{
+  ul{
+    margin-top:0;
+  }
+  h5{
+    font-size:1.4rem;
+    margin-bottom:40px;
+  }
+  a{
+    line-height:26px;
+  }
+}
+
+.footer-about{
+  ul{
+    li{
+      margin-bottom:20px;
+      font-size:1rem;
+      color:white;
+      i{
+        font-size:1.2rem;
+        margin-right:16px;
+      }
+    }
+  }
+
+  a{
+    font-size:1rem;
+    color:$primary-color;
+  }
+}
+
+.footer-links{
+a{
+  font-size:1rem;
+  color:$primary-color;
+  display: block;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+}
+}
+.footer-twitter{
+  a{
+    font-size:1rem;
+    color:$primary-color;
+    display: block;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+  }
+  .user{
+    img{
+      display:none;
+    }
+    span{
+      span{
+        display:none;
+      }
+    }
+  }
+  .tweet{
+    color:color("grey","lighten-4");
+  }
+  .interact {
+    width: 10%;
+    margin-top: -7px;
+    display: none;
+  }
+  .tweet-icon{
+    width:32px;
+    i{
+      color:white;
+      font-size:1.2rem;
+      margin-right:16px;
+    }
+  }
+  .tweets-list{
+    flex:1;
+  }
+  .tweet-inner{
+    display:flex;
+  }
+}

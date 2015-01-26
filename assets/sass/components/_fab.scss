@@ -1,20 +1,76 @@
-.fab{
 
   .btn-floating{
     position:fixed;
     top:100%;
     left:100%;
-    z-index: 998;
+    z-index: 1001;
     margin: -5em 0 0 -5em;
     height:56px;
     width:56px;
     line-height:56px;
+    &:focus{
+      outline: 0;
+    }
     i{
       line-height:56px;
       font-size:2rem;
     }
+    &.add{
+      z-index:1001;
+      @include transition-value(
+              top 400ms ease-out 400ms,
+              left 400ms ease-out 400ms,
+              width 400ms ease-out,
+              border-radius 400ms ease-out,
+              height 400ms ease-out,
+              padding 400ms ease-out,
+              margin 400ms ease-out,
+              z-index 0 ease-out 400ms,
+              box-shadow 300ms ease-out 400ms,
+              transform-origin 300ms ease-out 400ms,
+              transform 300ms ease-out 400ms);
+      i{
+        opacity:1;
+        @include transition(opacity 200ms ease-out 800ms);
+      }
+
+    }
+    &.cancel{
+      display:block;
+      @include transition-value(transform 300ms ease-out);
+    }
+    .floated &{
+
+      &.add{
+        height: 200%;
+        width: 200%;
+        top: 15%;
+        left: 15%;
+        margin:-20% 0 0 -20%;
+        /* margin: 10%; */
+        border-radius: 0;
+        @include box-shadow(none);
+        @include transform(rotate(0deg));
+        @include transform-origin(800%);
+        @include transition-value(top 400ms ease-out,
+                left 400ms ease-out,
+                box-shadow 400ms ease-out,
+                transform-origin 400ms ease-out,
+                transform 400ms ease-out,
+                z-index 0 ease-out 400ms,
+                height 300ms ease-out 400ms,
+                width 300ms ease-out 400ms,
+                border-radius 300ms ease-out 400ms,
+                padding 300ms ease-out 400ms,
+                margin 300ms ease-out 400ms);
+        i{
+          opacity:0;
+          @include transition(opacity 200ms);
+        }
+      }
+    }
   }
-}
+
 .header-scroll{
   .fab{
     top: 560px;
@@ -28,19 +84,24 @@
 
 .action-content{
     position:fixed;
-    z-index:1001;
+    z-index:1002;
   top:0;
+  overflow-y:hidden;
   left:0;
-  display:none;
+  display:block;
+  visibility:hidden;
   width:100%;
   height:100%;
-  &.open{
+  .floated &{
     display:block;
+    visibility:visible;
+
     .cancel {
       @include transform(scale(1));
+      @include transition-value(transform 300ms ease-out 600ms);
+
     }
   }
-
   .cancel {
     position: absolute; z-index: 1;
     top: 0%;
@@ -48,8 +109,33 @@
     left: 100%;
     background: #ff4081;
     @include transform(scale(0));
-    @include transition-delay(150ms);
+    @include transition-value(transform 300ms ease-out);
+    .defloat &{
+      @include transform(scale(0) !important);
+      @include transition-value(transform 300ms ease-out);
+    }
   }
+  .defloat &{
+    .action-content-inner{
+      opacity:0 !important;
+      @include transform(translateY(20px) !important);
+      @include transition-value(opacity 300ms ease-out,transform 300ms ease-out !important);
+    }
+  }
+  .action-content-inner{
+    opacity:0;
+    @include transform(translateY(20px));
+    margin-top:56px;
+  }
+  .floated &{
+    overflow-y:auto;
+    .action-content-inner{
+      opacity:1;
+      @include transform(translateY(0px));
+      @include transition-value(opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms);
+    }
+  }
+
 }
 
 .button-fill {

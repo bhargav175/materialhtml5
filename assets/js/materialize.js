@@ -390,12 +390,16 @@ jQuery.extend( jQuery.easing,
 
         // Click handler for list container
         origin.click( function(e){ // Click
-          e.preventDefault();
           e.stopPropagation();
           //activates.css('width', origin.outerWidth());
           activates.css('margin-top',0);
           //activates.css('left', origin.offset().left);
-          $(".dropdown-menu").hide({duration: 175, easing: 'easeOutCubic'});
+          $(".dropdown-menu").each(function(){
+            if(!$(this).is(activates)){
+              $(this).hide({duration: 175, easing: 'easeOutCubic'});
+            }
+
+          });
           activates.show({duration: 200, easing: 'easeOutCubic'});
 
           $(document).bind('click.'+ activates.attr('id'), function (e) {
@@ -420,6 +424,7 @@ jQuery.extend( jQuery.easing,
       });
     });
   };
+
 }( jQuery ));;(function ($) {
 
   $.fn.dropdownMore = function (options) {
@@ -553,6 +558,71 @@ jQuery.extend( jQuery.easing,
       });
 
     });
+  };
+
+}( jQuery ));;(function ($) {
+
+  $.fn.portfolioItem = function (options) {
+    var defaults = {
+      hover: true
+    }
+
+    options = $.extend(defaults, options);
+    this.each(function(){
+      var origin = $(this);
+      origin.click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(origin.children('.reddy').length<1){
+          origin.addClass("active");
+          $(document).bind('click.'+ origin.attr('id'), function (e) {
+            if ((!origin.is(e.target))) {
+              origin.removeClass("active");
+              $(document).unbind('click.' + origin.attr('id'));
+            }
+
+          });
+
+        }
+
+      });
+
+
+    });
+
+  };
+}( jQuery ));;(function ($) {
+
+  $.fn.floatingAction = function (options) {
+    var defaults = {
+      hover: true
+    }
+
+    options = $.extend(defaults, options);
+    this.each(function(){
+      var origin = $(this);
+      var body = $("body");
+      var activates = $("#"+ origin.attr('data-activates'));
+      var cancel = activates.find(".cancel");
+      origin.click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+          body.addClass("floated");
+        cancel.click(function(){
+          body.addClass("defloat").delay(400).queue(function(next){
+            $(this).removeClass("defloat").removeClass("floated");
+            next();
+          });
+        })
+
+
+
+
+      });
+
+
+    });
+
   };
 }( jQuery ));;(function ($) {
 

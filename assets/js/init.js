@@ -183,7 +183,9 @@
         $(".dialog-sheet-toggle").dialogSheet();
         $(".list-collapse").listCollapse();
         $(".progress-bar").progressBar();
-        $("#contact-fab").scrollNavigate({target:"#contact-section"});
+        $(".p-item").portfolioItem();
+        $("#contact-fab").floatingAction();
+       // $("#contact-fab").scrollNavigate({target:"#contact-section"});
         $("#news-letter-signup").scrollNavigate({target:"#news-letter-area"});
 
 

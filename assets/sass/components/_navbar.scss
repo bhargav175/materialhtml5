@@ -27,12 +27,19 @@ nav {
       top:0;
       overflow-y: auto;
       position:fixed;
+
+      .container{
+        width:100%;
+      }
       .dropdown-rel{
         .dropdown-menu{
           margin: 10px;
           min-width:0;
           left:0;
           right:0;
+          position: static;
+          @include box-shadow(none);
+          right: 0;
           li{
           a{
             border-top:none;
@@ -49,7 +56,6 @@ nav {
         position: relative;
         display: block;
         padding: 0;
-        overflow: hidden;
         width: 100%;
         li{
           float:none !important;
@@ -186,6 +192,17 @@ nav {
   nav, nav .nav-wrapper i, nav a.button-collapse i {
   }
   nav .nav-wrapper i {
-    font-size: 2rem;    
   }
 }
+
+.social-icons{
+  li{
+    a{
+      @include transition(color 600ms);
+      :hover{
+        color: $accent-color !important;
+      }
+    }
+  }
+}
+

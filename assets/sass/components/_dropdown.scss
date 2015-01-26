@@ -44,7 +44,6 @@ li.divider {
       position: absolute;
       z-index: 1;
       @extend .z-depth-2;
-      top: 0;
       width: auto;
       background: white;
       li{
