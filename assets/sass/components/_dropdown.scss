@@ -29,7 +29,7 @@ li.divider {
     
   @media only screen and (min-width: $large-screen) {
     li:hover {
-      background-color: rgba(0,0,0, .07)
+     color:$primary-text-color;
     }
   }
 
@@ -43,7 +43,7 @@ li.divider {
       min-width: 300px;
       position: absolute;
       z-index: 1;
-      @extend .z-depth-2;
+      @extend .z-depth-1;
       width: auto;
       background: white;
       li{
@@ -94,8 +94,9 @@ bottom:0;
       a{
         display:block;
         padding:8px 16px;
+        color:color("grey","darken-3");
         &:hover{
-          background:color("grey","lighten-4");
+          color:$primary-color;
         }
       }
       i{

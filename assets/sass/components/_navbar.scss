@@ -14,10 +14,9 @@ nav {
   &.navbar-nav {
     height: 64px;
     line-height: 64px;
-    @media #{$medium-and-up}{
+    @media #{$large-and-up}{
       left : 0 !important;
   }
-
     @media #{$small-and-down} {
       height:auto;
       width:240px;
@@ -118,9 +117,8 @@ nav {
     }
   }
   a { color: #fff; }
-
   a.button-collapse {
-    @extend .hide-on-huge-only;
+    @extend .hide-on-med-and-up;
     position: fixed;
     top:6px;
     height:48px;

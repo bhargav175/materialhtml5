@@ -17,11 +17,11 @@ define(function(require){
                 //Once loaded, use the global 'Backbone' as the
                 //module value.
             },
-            'platform':{
-                deps: ['materialize']
-                //Once loaded, use the global 'Backbone' as the
-                //module value.
-            },
+            //'platform':{
+            //    deps: ['materialize']
+            //    //Once loaded, use the global 'Backbone' as the
+            //    //module value.
+            //},
             'prism':{
                 deps: ['materialize']
                 //Once loaded, use the global 'Backbone' as the
@@ -32,11 +32,7 @@ define(function(require){
                 //Once loaded, use the global 'Backbone' as the
                 //module value.
             },
-            'magnific/magnific-popup':{
-                deps: ['materialize']
-                //Once loaded, use the global 'Backbone' as the
-                //module value.
-            },'sliderpro/jquery.sliderPro.min':{
+            'sliderpro/jquery.sliderPro.min':{
                 deps: ['materialize'],
                 //Once loaded, use the global 'Backbone' as the
                 //module value.
@@ -47,6 +43,12 @@ define(function(require){
                 //Once loaded, use the global 'Backbone' as the
                 //module value.
                 exports: 'owl'
+            },
+            'dependencies/lightbox/js/lightbox.min':{
+                deps: ['jquery'],
+                //Once loaded, use the global 'Backbone' as the
+                //module value.
+                exports: 'lightbox'
             },
             'init':{
                 deps: ['jquery','materialize','magnific/magnific-popup'],
@@ -62,7 +64,21 @@ define(function(require){
             }
         }
     });
-    require(["materialize","jquery.timeago.min","platform","prism","sliderpro/jquery.sliderPro.min","init","paper","owlCarousel/owl.carousel.min","chart/Chart.min","magnific/magnific-popup","init2","../../dependencies/layerslider/js/greensock","../../dependencies/layerslider/js/layerslider.transitions","../../dependencies/layerslider/js/layerslider.kreaturamedia.jquery"],function(materialize,timeago,platform,prism,slider,init,paper,owl,chart,mag,init2,greensock,transition,kreatura){
+    //require(["materialize","jquery.timeago.min","platform","prism","sliderpro/jquery.sliderPro.min","init","paper","owlCarousel/owl.carousel.min","chart/Chart.min","magnific/magnific-popup","init2","../../dependencies/layerslider/js/greensock","../../dependencies/layerslider/js/layerslider.transitions","../../dependencies/layerslider/js/layerslider.kreaturamedia.jquery"],function(materialize,timeago,platform,prism,slider,init,paper,owl,chart,mag,init2,greensock,transition,kreatura){
+    //
+    //    jQuery("#layerslider").layerSlider({
+    //        pauseOnHover: false,
+    //        skinsPath: 'dependencies/layerslider/skins/',
+    //        skin: 'noskin',
+    //        showCircleTimer: false
+    //    });
+    //    if(loadedFunction){
+    //        loadedFunction();
+    //    }
+    //
+    //});
+
+    require(["materialize","jquery.timeago.min","prism","sliderpro/jquery.sliderPro.min","init","paper","owlCarousel/owl.carousel.min","../../dependencies/lightbox/js/lightbox.min","chart/Chart.min","init2","../../dependencies/layerslider/js/greensock","../../dependencies/layerslider/js/layerslider.transitions","../../dependencies/layerslider/js/layerslider.kreaturamedia.jquery"],function(materialize,timeago,prism,slider,init,paper,owl,lightbox,chart,init2,greensock,transition,kreatura){
 
         jQuery("#layerslider").layerSlider({
             pauseOnHover: false,

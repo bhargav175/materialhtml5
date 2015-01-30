@@ -178,7 +178,6 @@
         $('.scrollspy').scrollSpy();
         $('.button-collapse').sideNav();
         //$('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
-        $("img .magnific").magnificPopup({type:'image'});
         $(".bottom-sheet-button").bottomsheet();
         $(".dialog-sheet-toggle").dialogSheet();
         $(".list-collapse").listCollapse();
@@ -186,7 +185,13 @@
         $(".p-item").portfolioItem();
         $("#contact-fab").floatingAction();
        // $("#contact-fab").scrollNavigate({target:"#contact-section"});
-        $("#news-letter-signup").scrollNavigate({target:"#news-letter-area"});
+        $("#portfolio-scroller").scrollNavigate({target:".portfolio"});
+        $("#about-scroller").scrollNavigate({target:".about-us"});
+        $("#client-scroller").scrollNavigate({target:".clientelle"});
+        $("#contact-scroller").click(function(){
+            $(".add").click();
+        });
+
 
 
         $(document).ready(function(){

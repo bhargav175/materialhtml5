@@ -20,7 +20,7 @@ html{
         font-size: 15px;
     }
     
-    font-family: "Roboto-draft","Roboto", sans-serif;
+    font-family: "Roboto","Roboto", sans-serif;
     font-weight: normal;
     color: $off-black;
 }
@@ -35,6 +35,8 @@ $h3-fontsize: 2.92rem;
 $h4-fontsize: 2.28rem;
 $h5-fontsize: 1.64rem;
 $h6-fontsize: 1rem;
+
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 h1 { font-size: $h1-fontsize; line-height: 1.1*$h1-fontsize; margin: ($h1-fontsize / 2) 0 ($h1-fontsize / 2.5) 0;}
 h2 { font-size: $h2-fontsize; line-height: 1.1*$h2-fontsize; margin: ($h2-fontsize / 2) 0 ($h2-fontsize / 2.5) 0;}
@@ -83,9 +85,12 @@ small { font-size: 75%; }
 legend, .section-title{
   @extend h4;
   span.title{
-    font-weight:500;
-    @extend .padding-side;
-    padding-right:8px !important;
+    display: block;
+    font-weight:300;
+    color:color("grey","darken-3");
+    @extend .padding-side,.center-align;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
   }
   span.sub-title{
     @extend h6;
@@ -97,3 +102,30 @@ legend, .section-title{
 .capitalize{
   text-transform: uppercase;
 }
+.dropcap{
+  span{
+    float:left;
+    display: block;
+    line-height:40px;
+    color:$primary-color;
+    padding-right:24px;
+    padding-bottom:16px;
+    font-weight:400;
+    @extend h4;
+    margin:0;
+  }
+  &.fill{
+    span{
+      padding: 4px 8px;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      margin-top: 4px;      background:$primary-color;
+      color:white;
+    }
+
+  }
+}
+p{
+  line-height: 26px;
+}
+

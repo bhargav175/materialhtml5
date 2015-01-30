@@ -504,13 +504,14 @@ jQuery.extend( jQuery.easing,
             event.preventDefault();
             event.stopPropagation();
             var clicked = $(this);
-              $(this).toggleClass('active');
             if ($(this).hasClass('active')){
+            }
+            else{
+              $(this).toggleClass('active');
               $(this).find('.list-item-body').stop(true,false).slideDown({ duration: 350, easing: "easeOutQuart", queue: false});
               $panel_headers.not($(this)).removeClass('active');
               $panel_headers.not($(this)).find('.list-item-body').stop(true,false).slideUp({ duration: 350, easing: "easeOutQuart", queue: false});
-            }
-            else{
+
             }
             $(document).bind('click.'+ clicked.attr('id'), function (e) {
               console.log(clicked.attr('id'));
@@ -551,7 +552,6 @@ jQuery.extend( jQuery.easing,
         cancel.on('click',function(){
           origin.removeClass("active");
           activates.removeClass("open");
-
           $("body").removeClass("no-scroll")
 
         })
@@ -1953,6 +1953,7 @@ jQuery.extend( jQuery.easing,
 
 
     };
+
 }( jQuery ));;/**
  * Extend jquery with a scrollspy plugin.
  * This watches the window scroll and fires events when elements are scrolled into viewport.

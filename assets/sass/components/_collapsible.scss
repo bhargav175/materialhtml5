@@ -55,6 +55,10 @@ ul.collapsible {
     margin: 10px;
     padding-top:12px;
     padding-bottom:12px;
+    @media #{$small-and-down}{
+      margin:0;
+
+    }
     li{
       .collapsible-header {
         font-weight:500;

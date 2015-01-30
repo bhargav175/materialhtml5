@@ -68,14 +68,19 @@ $footer-font-color: #000 !default;
   .card-image {
     position: relative;
     overflow: hidden;
+    padding-top:56.25%;
+    @media #{$small-and-down} {
+      padding-top:75%;
+
+    }
     .card-image-overlay{
       position:absolute;
       top:0;
       left:0;
       right:0;
       bottom:0;
-      background:rgba(0,0,0,0.6);
-
+      z-index:1;
+      background:rgba(0,0,0,0.1);
     }
     .card-image-header{
       top:0;
@@ -83,7 +88,7 @@ $footer-font-color: #000 !default;
       right:0;
       position:absolute;
       padding:16px 16px 8px;
-
+      z-index:1;
        @media #{$small-and-down} {
         padding:16px 16px 8px;
 
@@ -94,6 +99,8 @@ $footer-font-color: #000 !default;
       right:0;
       left:0;
       padding:16px 16px 8px;
+      z-index:1;
+
       @media #{$small-and-down} {
         padding:16px 16px 8px;
       }
@@ -104,6 +111,7 @@ $footer-font-color: #000 !default;
       right:0;
       left:0;
       bottom:0;
+      z-index:1;
       vertical-align: middle;
       text-align: center;
       position: absolute;
@@ -111,14 +119,16 @@ $footer-font-color: #000 !default;
 
     // Image background for content
     > img {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
       @include border-radius(2px 2px 0 0);
-      max-height:300px;
-      z-index: -1;
-      width:100%;
-      @media #{$small-and-down} {
-        height:auto;
-        max-height:300px;
-      }
+      z-index: 0;
+      min-width: 100%;
+      min-height: 100%;
+
     }
 
 //    span.card-title {

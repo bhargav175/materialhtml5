@@ -358,3 +358,29 @@
     transition-timing-function: $function;
 }
 
+@function vendor-args($arg, $vendor) {
+    $result: ();
+    @each $i in $arg {
+        @if $i == transform { $result: append($result, #{$vendor}$i); }
+        @else if $i == transform-origin { $result: append($result, #{$vendor}$i); }
+        @else { $result: append($result, $i); }
+    }
+    @return $result;
+}
+
+// general vendor mixin
+@mixin vendor($property, $args...){
+    @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+        $out: null;
+        @each $arg in nth($args,1) {
+            $out: ($out, vendor-args($arg, $vendor));
+        }
+        #{$vendor}#{$property}: $out;
+    }
+}
+
+// general transition mixin
+@mixin my-transition($args...) {
+    @include vendor(transition, $args);
+}
+

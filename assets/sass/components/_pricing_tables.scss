@@ -13,14 +13,14 @@
       background:color("grey","lighten-4");
       padding:36px;
       @extend h5;
-      color:color("indigo","base");
+      color:$dark-color;
       margin:0;
     }
     .pricing-table-item-body{
       padding:24px;
       .price{
           position:relative;
-        color:color("grey","darken-3");
+        color:color("grey","darken-1");
         text-align: center;
         @extend h3;
         margin:0px;
@@ -49,7 +49,7 @@
       ul{
         li{
           padding:16px 0px;
-          color:color("indigo","base");
+          color:$dark-color;
           &.disabled{
             color:color("grey","base");
             i{
@@ -57,16 +57,16 @@
               color:color("grey","base");
             }
             .i-promo{
-              background:color("green","lighten-3");
+              background:$dark-color;
               }
           }
           i{
             padding-right:12px;
-            color:color("pink","base");
+            color:$dark-color;
           }
           .i-promo{
             @extend .small-text;
-            background:color("green","lighten-2");
+            background:$dark-color;
             color:white;
             padding:8px;
             margin-left:8px;
@@ -79,18 +79,18 @@
       padding:24px;
     }
     .btn-pricing{
-      background:color("indigo","base");
-      color:color("grey","lighten-3") !important;
+      background:color("grey","lighten-5");
+      color:$dark-color !important;
       &:hover{
-        background:color("shades","white") !important;
-        color:color("indigo","base") !important;
+        background:color("grey","lighten-5") !important;
+        color:$dark-color !important;
     }
     }
     &.most_popular{
       margin-top:0px;
       @extend .z-depth-3;
       .pricing-table-item-header{
-        background:color("pink","base");
+        background:$accent-color;
         padding:36px;
         @extend h3;
         color:white;
@@ -106,12 +106,17 @@
                 color:color("grey","base");
               }
               .i-promo{
-                background:color("green","lighten-3");
+                background:color("green","lighten-3");;
+                color: white;
               }
             }
              color:color("indigo","base");
             i{
-              color:color("pink","base");
+              color:$accent-color;
+            }
+            .i-promo{
+              background:$accent-color;;
+              color: white;
             }
           }
         }
@@ -122,18 +127,27 @@
           margin:0px;
           margin-top:24px;
           margin-bottom:8px;
+          .amt{
+            color:$accent-color;
+
+            .c{
+              color:$accent-color;
+            }
+            .pm{
+              color:$accent-color;;
+            }
+          }
         }
       }
       .pricing-table-item-footer{
         padding:36px;
       }
       .btn-pricing{
-        background:color("pink","base") !important;
+        background:$accent-color !important;
         color:white !important;
         &:hover{
-          background:white !important;
-          color:color("pink","base") !important;
-          border:1px solid color("pink","base") !important;
+          background:darken($accent-color,8%) !important;
+          color:white !important;
     }
       }
     }
@@ -141,7 +155,7 @@
       margin-top:16px;
       @extend .z-depth-1-half;
       .pricing-table-item-header{
-        background:color("amber","base");
+        background:$primary-color;
         padding:28px;
         @extend h3;
         color:white;
@@ -162,7 +176,11 @@
             }
             color:color("indigo","base");
             i{
-              color:color("amber","base");
+              color:$primary-color;
+            }
+            .i-promo{
+              background: $primary-color;
+              color: white;
             }
           }
         }
@@ -173,18 +191,27 @@
           margin:0px;
           margin-top:24px;
           margin-bottom:8px;
+          .amt{
+            color:$primary-color;
+
+            .c{
+              color:$primary-color;
+            }
+            .pm{
+              color:$primary-color;
+            }
+          }
         }
       }
       .pricing-table-item-footer{
         padding:28px;
       }
       .btn-pricing{
-        background:color("amber","base") !important;
+        background:$primary-color !important;
         color:white !important;
         &:hover{
-          background:white !important;
-          color:color("amber","base") !important;
-          border:1px solid color("amber","base") !important;
+          background:darken($primary-color,8%) !important;
+          color:white !important;
         }
       }
     }

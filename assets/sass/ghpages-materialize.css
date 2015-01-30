@@ -1980,7 +1980,8 @@ body {
   display: flex;
   position: relative;
   min-height: 100vh;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-x: hidden; }
   body.floated {
     overflow: hidden; }
 
@@ -1990,7 +1991,7 @@ main {
   padding-top: 100px; }
   main.with-sidenav {
     padding-left: 240px; }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     main {
       padding: 0; } }
 
@@ -2000,23 +2001,23 @@ header {
   position: relative; }
   header.large-header {
     height: 256px; }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     header nav .nav-header {
       line-height: normal; } }
-  @media only screen and (max-width: 1240px) {
-    header nav .nav-header {
-      font-size: 2.92rem; } }
   @media only screen and (max-width: 979px) {
     header nav .nav-header {
+      font-size: 2.92rem; } }
+  @media only screen and (max-width: 760px) {
+    header nav .nav-header {
       font-size: 1.64rem; } }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     header {
       padding-left: 0px; } }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     header {
       padding-left: 16px;
       padding-right: 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     header {
       height: 128px;
       padding-top: 73px;
@@ -2038,11 +2039,11 @@ header {
       @media only screen and (min-width: 1241px) {
         header.fixed-header nav {
           left: 240px; } }
-      @media only screen and (max-width: 1492px) {
+      @media only screen and (max-width: 1240px) {
         header.fixed-header nav .nav-wrapper {
           padding-left: 72px;
           padding-right: 72px; } }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       header.fixed-header {
         top: -64px; } }
   header.scrolled .header-overlay {
@@ -2060,13 +2061,13 @@ header {
     @media only screen and (min-width: 1241px) {
       header.scrolled nav {
         left: 240px; } }
-    @media only screen and (max-width: 1492px) {
+    @media only screen and (max-width: 1240px) {
       header.scrolled nav .nav-wrapper {
         padding-left: 72px;
         padding-right: 72px; } }
     header.scrolled nav .nav-wrapper .nav-header {
       line-height: 64px; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     header.scrolled {
       left: 0;
       right: 0;
@@ -2074,10 +2075,23 @@ header {
       height: 128px;
       z-index: 1;
       position: fixed; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     header {
       padding-top: 73px;
       height: 128px; } }
+  @media only screen and (min-width: 1241px) {
+    header.thin.header-scroll nav, header.thin.fixed-header nav {
+      left: 240px; } }
+  @media only screen and (max-width: 1240px) {
+    header.thin.header-scroll nav .nav-wrapper, header.thin.fixed-header nav .nav-wrapper {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  header.thin.header-scroll nav .nav-wrapper .nav-header, header.thin.fixed-header nav .nav-wrapper .nav-header {
+    line-height: 64px; }
+  header.simple-header.header-scroll nav, header.simple-header.fixed-header nav {
+    left: 0px; }
+  header.simple-header.header-scroll.thin.header-scroll nav, header.simple-header.fixed-header.thin.header-scroll nav {
+    left: 0px; }
 
 ul {
   list-style-type: none; }
@@ -2103,7 +2117,7 @@ p {
 .right-align {
   text-align: right; }
 
-.center, .center-align {
+.center, .center-align, legend span.title, .section-title span.title {
   text-align: center; }
 
 .left {
@@ -2123,7 +2137,7 @@ ul {
 li {
   list-style-type: none; }
 
-.z-depth-1, .card-panel, .card, .toast, .message, .btn, .btn-large, .btn-floating, .dropdown-content, ul.collapsible {
+.z-depth-1, .card-panel, .card, .toast, .message, .btn, .btn-large, .btn-floating, .dropdown-content, .navbar-nav .dropdown-rel .dropdown-menu, ul.collapsible, .services .list-collapse {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
@@ -2133,7 +2147,7 @@ li {
   -moz-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2, .navbar-nav .dropdown-rel .dropdown-menu, .more-dropdown-toggle ul.more-dropdown, .paper {
+.z-depth-2, .more-dropdown-toggle ul.more-dropdown, .paper {
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
@@ -2155,8 +2169,19 @@ li {
 
 blockquote {
   margin: 20px 0;
-  padding-left: 1.5rem;
-  border-left: 5px solid #ef9a9a; }
+  padding: 1rem 0rem 1rem 1.5rem;
+  border-left: 5px solid #ff4081;
+  font-style: italic;
+  font-size: 20px;
+  color: #616161; }
+  blockquote :before, blockquote :after {
+    content: "";
+    clear: both;
+    color: #757575;
+    display: block; }
+  blockquote span {
+    font-style: italic;
+    font-size: 13px; }
 
 i {
   line-height: inherit; }
@@ -2185,7 +2210,7 @@ i {
     bottom: 0;
     width: 100%; }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 979px) {
   .parallax-container {
     height: auto; }
 
@@ -2194,16 +2219,24 @@ i {
     width: 100%; }
     .parallax img {
       position: relative; } }
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 760px) {
   .hide-on-small-only, .tabs-wrapper, .hide-on-small-and-down {
     display: none !important; } }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 360px) {
+  .show-on-very-small-and-down {
+    display: block !important; } }
+
+@media only screen and (max-width: 760px) {
+  .show-on-small-and-down {
+    display: block !important; } }
+
+@media only screen and (max-width: 979px) {
   .hide-on-med-and-down {
     display: none !important; } }
 
 @media only screen and (min-width: 761px) {
-  .hide-on-med-and-up {
+  .hide-on-med-and-up, nav a.button-collapse {
     display: none !important; } }
 
 @media only screen and (min-width: 760px) and (max-width: 979px) {
@@ -2215,10 +2248,10 @@ i {
     display: none !important; } }
 
 @media only screen and (min-width: 1241px) {
-  .hide-on-huge-only, nav a.button-collapse {
+  .hide-on-huge-only {
     display: none !important; } }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 760px) {
   .center-on-small-only {
     text-align: center; } }
 
@@ -2237,7 +2270,7 @@ table, th, td {
 table {
   width: 100%;
   display: table; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     table thead tr th, table tbody tr td {
       text-align: center; } }
   table.bordered tr {
@@ -2383,55 +2416,55 @@ span.badge {
   padding: 32px; }
   .padding.large-padding {
     padding-left: 56px; }
-    @media only screen and (max-width: 1492px) {
-      .padding.large-padding {
-        padding: 32px; } }
     @media only screen and (max-width: 1240px) {
       .padding.large-padding {
-        padding: 16px; } }
+        padding: 32px; } }
     @media only screen and (max-width: 979px) {
       .padding.large-padding {
+        padding: 16px; } }
+    @media only screen and (max-width: 760px) {
+      .padding.large-padding {
         padding: 8px; } }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .padding {
       padding: 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .padding {
       padding: 8px; } }
 
 .padding-side, legend span.title, .section-title span.title {
   padding-left: 32px !important;
   padding-right: 32px !important; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .padding-side, legend span.title, .section-title span.title {
       padding-left: 16px !important;
       padding-right: 16px !important; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .padding-side, legend span.title, .section-title span.title {
       padding-left: 8px !important;
       padding-right: 8px !important; } }
   .padding-side.large-padding, legend span.large-padding.title, .section-title span.large-padding.title {
     padding-left: 56px !important;
     padding-right: 56px !important; }
-    @media only screen and (max-width: 1492px) {
+    @media only screen and (max-width: 1240px) {
       .padding-side.large-padding, legend span.large-padding.title, .section-title span.large-padding.title {
         padding-left: 32px !important;
         padding-right: 32px !important; } }
-    @media only screen and (max-width: 1240px) {
+    @media only screen and (max-width: 979px) {
       .padding-side.large-padding, legend span.large-padding.title, .section-title span.large-padding.title {
         padding-left: 16px !important;
         padding-right: 16px !important; } }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       .padding-side.large-padding, legend span.large-padding.title, .section-title span.large-padding.title {
         padding-left: 8px !important;
         padding-right: 8px !important; } }
 
 .margin {
   margin: 32px; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .margin {
       margin: 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .margin {
       margin: 8px; } }
 
@@ -2440,19 +2473,19 @@ span.badge {
 
 .margin-top {
   margin-top: 32px; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .margin-top {
       margin-top: 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .margin-top {
       margin-top: 8px; } }
 
 .margin-bottom {
   margin-bottom: 32px; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .margin-bottom {
       margin-bottom: 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .margin-bottom {
       margin-bottom: 8px; } }
 
@@ -2470,6 +2503,12 @@ span.badge {
   vertical-align: middle;
   text-align: center;
   position: absolute; }
+
+.heading-margin-bottom {
+  display: block;
+  margin: 20px auto;
+  width: 90px;
+  border: 1px solid #e0e0e0; }
 
 header.thin {
   height: 64px;
@@ -5330,14 +5369,15 @@ a.icon {
       .container.fluid-container {
         width: 80% !important; } }
 
-@media only screen and (max-width: 1492px) {
-  .container {
-    padding-left: 0px;
-    padding-right: 0px; } }
 @media only screen and (max-width: 1240px) {
   .container {
-    width: 760px; } }
+    width: 960px;
+    padding-left: 0px;
+    padding-right: 0px; } }
 @media only screen and (max-width: 979px) {
+  .container {
+    width: 760px; } }
+@media only screen and (max-width: 760px) {
   .container {
     width: 360px; } }
 @media only screen and (max-width: 360px) {
@@ -5346,7 +5386,7 @@ a.icon {
 .container .row {
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 360px) {
     .container .row {
       margin-left: 0;
       margin-right: 0; } }
@@ -5454,7 +5494,7 @@ a.icon {
       margin-left: 91.66667%; }
     .row .col.offset-s12 {
       margin-left: 100%; }
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 761px) {
       .row .col.m1 {
         width: 8.33333%;
         margin-left: 0; }
@@ -5515,7 +5555,7 @@ a.icon {
         margin-left: 91.66667%; }
       .row .col.offset-m12 {
         margin-left: 100%; } }
-    @media only screen and (min-width: 1241px) {
+    @media only screen and (min-width: 980px) {
       .row .col.l1 {
         width: 8.33333%;
         margin-left: 0; }
@@ -5588,10 +5628,10 @@ nav {
   nav.navbar-nav {
     height: 64px;
     line-height: 64px; }
-    @media only screen and (min-width: 761px) {
+    @media only screen and (min-width: 980px) {
       nav.navbar-nav {
         left: 0 !important; } }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       nav.navbar-nav {
         height: auto;
         width: 240px;
@@ -5633,17 +5673,17 @@ nav {
               border-top: none;
               border-bottom: none;
               border-left: 5px solid transparent; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     nav {
       height: auto; } }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     nav {
       left: 0; } }
   nav.transparent {
     height: 0 !important; }
   nav .nav-wrapper {
     position: relative; }
-    @media only screen and (max-width: 1492px) {
+    @media only screen and (max-width: 1240px) {
       nav .nav-wrapper {
         padding-left: 0px; } }
   nav .nav-header {
@@ -5658,7 +5698,7 @@ nav {
       color: white; }
     .scrolled nav .nav-header {
       font-size: 1.33rem; }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       nav .nav-header {
         font-weight: 400; } }
   nav a {
@@ -5694,14 +5734,14 @@ nav {
     padding: 0; }
     .home-page nav .brand-logo {
       color: white; }
-    @media only screen and (max-width: 1240px) {
+    @media only screen and (max-width: 979px) {
       nav .brand-logo {
         left: 0;
         z-index: 0; } }
     nav .brand-logo.right {
       right: 0.5rem;
       padding: 0; }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       nav .brand-logo {
         font-size: 1.5rem; } }
   nav ul {
@@ -5751,7 +5791,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Roboto-draft","Roboto", sans-serif;
+  font-family: "Roboto","Roboto", sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 0) {
@@ -5764,10 +5804,10 @@ html {
     html {
       font-size: 15px; } }
 
-h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, h2, h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, h4, legend, .section-title, h5, .pricing-tables .pricing-table-item .pricing-table-item-header, h6, legend span.sub-title, .section-title span.sub-title {
+h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, h2, h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, h4, legend, .section-title, .dropcap span, .promotional .promo-text, h5, .pricing-tables .pricing-table-item .pricing-table-item-header, h6, legend span.sub-title, .section-title span.sub-title {
   font-weight: 400; }
 
-h1 a, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price a, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price a, h2 a, h3 a, .pricing-tables .pricing-table-item .pricing-table-item-body .price a, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header a, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header a, h4 a, legend a, .section-title a, h5 a, .pricing-tables .pricing-table-item .pricing-table-item-header a, h6 a, legend span.sub-title a, .section-title span.sub-title a {
+h1 a, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price a, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price a, h2 a, h3 a, .pricing-tables .pricing-table-item .pricing-table-item-body .price a, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header a, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header a, h4 a, legend a, .section-title a, .dropcap span a, .promotional .promo-text a, h5 a, .pricing-tables .pricing-table-item .pricing-table-item-header a, h6 a, legend span.sub-title a, .section-title span.sub-title a {
   font-weight: inherit; }
 
 h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price {
@@ -5785,7 +5825,7 @@ h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricin
   line-height: 3.212rem;
   margin: 1.46rem 0 1.168rem 0; }
 
-h4, legend, .section-title {
+h4, legend, .section-title, .dropcap span, .promotional .promo-text {
   font-size: 2.28rem;
   line-height: 2.508rem;
   margin: 1.14rem 0 0.912rem 0; }
@@ -5956,14 +5996,37 @@ small {
   color: #00bcd4; }
 
 legend span.title, .section-title span.title {
-  font-weight: 500;
-  padding-right: 8px !important; }
+  display: block;
+  font-weight: 300;
+  color: #424242;
+  padding-right: 8px !important;
+  padding-left: 8px !important; }
 
 .italicize {
   font-style: italic; }
 
 .capitalize {
   text-transform: uppercase; }
+
+.dropcap span {
+  float: left;
+  display: block;
+  line-height: 40px;
+  color: #00bcd4;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  margin: 0; }
+.dropcap.fill span {
+  padding: 4px 8px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  margin-top: 4px;
+  background: #00bcd4;
+  color: white; }
+
+p {
+  line-height: 26px; }
 
 .card-panel {
   padding: 1rem;
@@ -6020,21 +6083,27 @@ legend span.title, .section-title span.title {
       height: 160px; }
   .card .card-image {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    padding-top: 56.25%; }
+    @media only screen and (max-width: 760px) {
+      .card .card-image {
+        padding-top: 75%; } }
     .card .card-image .card-image-overlay {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.6); }
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.1); }
     .card .card-image .card-image-header {
       top: 0;
       left: 0;
       right: 0;
       position: absolute;
-      padding: 16px 16px 8px; }
-      @media only screen and (max-width: 979px) {
+      padding: 16px 16px 8px;
+      z-index: 1; }
+      @media only screen and (max-width: 760px) {
         .card .card-image .card-image-header {
           padding: 16px 16px 8px; } }
     .card .card-image .card-image-footer {
@@ -6042,8 +6111,9 @@ legend span.title, .section-title span.title {
       right: 0;
       left: 0;
       padding: 16px 16px 8px;
+      z-index: 1;
       position: absolute; }
-      @media only screen and (max-width: 979px) {
+      @media only screen and (max-width: 760px) {
         .card .card-image .card-image-footer {
           padding: 16px 16px 8px; } }
     .card .card-image .card-image-banner {
@@ -6051,21 +6121,23 @@ legend span.title, .section-title span.title {
       right: 0;
       left: 0;
       bottom: 0;
+      z-index: 1;
       vertical-align: middle;
       text-align: center;
       position: absolute; }
     .card .card-image > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       -webkit-border-radius: 2px 2px 0 0;
       -moz-border-radius: 2px 2px 0 0;
       border-radius: 2px 2px 0 0;
       background-clip: padding-box;
-      max-height: 300px;
-      z-index: -1;
-      width: 100%; }
-      @media only screen and (max-width: 979px) {
-        .card .card-image > img {
-          height: auto;
-          max-height: 300px; } }
+      z-index: 0;
+      min-width: 100%;
+      min-height: 100%; }
   .card .card-content, .card .portfolio .p-item .p-item-body, .portfolio .p-item .card .p-item-body, .card .portfolio .p-item .p-item-content, .portfolio .p-item .card .p-item-content {
     padding: 16px;
     -webkit-border-radius: 0 0 2px 2px;
@@ -6172,7 +6244,7 @@ legend span.title, .section-title span.title {
   .bottom-sheet.active {
     display: block;
     height: auto; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .bottom-sheet {
       top: 100px;
       overflow: auto; } }
@@ -6198,7 +6270,7 @@ legend span.title, .section-title span.title {
   .dialog-sheet img {
     height: 300px;
     width: 100%; }
-    @media only screen and (max-width: 1240px) {
+    @media only screen and (max-width: 979px) {
       .dialog-sheet img {
         height: 160px; } }
   .dialog-sheet.bg-white {
@@ -6226,7 +6298,7 @@ legend span.title, .section-title span.title {
     box-sizing: border-box;
     padding-top: 56.25%;
     overflow: hidden; }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       .portfolio .p-item .p-item-video {
         padding-top: 56.25%; } }
     .portfolio .p-item .p-item-video iframe {
@@ -6244,7 +6316,7 @@ legend span.title, .section-title span.title {
     box-sizing: border-box;
     padding-top: 75%;
     overflow: hidden; }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       .portfolio .p-item .p-item-image {
         padding-top: 75%; } }
     .portfolio .p-item .p-item-image img {
@@ -6284,18 +6356,18 @@ legend span.title, .section-title span.title {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -moz-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -o-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -ms-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
+    -webkit-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, -webkit-transform-origin 300ms ease-out 400ms, -webkit-transform 300ms ease-out 400ms;
+    -moz-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, -moz-transform-origin 300ms ease-out 400ms, -moz-transform 300ms ease-out 400ms;
+    -ms-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, -ms-transform-origin 300ms ease-out 400ms, -ms-transform 300ms ease-out 400ms;
+    -o-transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, -o-transform-origin 300ms ease-out 400ms, -o-transform 300ms ease-out 400ms;
     transition: top 300ms ease-out 400ms, left 300ms ease-out 400ms, width 300ms ease-out, border-radius 300ms ease-out, height 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms; }
     .portfolio .p-item .p-overlay .p-overlay-content {
       opacity: 0;
       overflow-y: auto;
       -webkit-transition: opacity 300ms;
       -moz-transition: opacity 300ms;
-      -o-transition: opacity 300ms;
       -ms-transition: opacity 300ms;
+      -o-transition: opacity 300ms;
       transition: opacity 300ms; }
   .portfolio .p-item.active .p-overlay {
     display: block;
@@ -6326,17 +6398,17 @@ legend span.title, .section-title span.title {
     -ms-transform-origin: 800%;
     -o-transform-origin: 800%;
     transform-origin: 800%;
-    -webkit-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -moz-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -o-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -ms-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -webkit-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, -webkit-transform-origin 300ms ease-out, -webkit-transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -moz-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, -moz-transform-origin 300ms ease-out, -moz-transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -ms-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, -ms-transform-origin 300ms ease-out, -ms-transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
+    -o-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, -o-transform-origin 300ms ease-out, -o-transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
     transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, height 300ms ease-out 300ms, width 300ms ease-out 300ms, border-radius 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms; }
     .portfolio .p-item.active .p-overlay .p-overlay-content {
       opacity: 1;
       -webkit-transition: opacity 300ms 1000ms;
       -moz-transition: opacity 300ms 1000ms;
-      -o-transition: opacity 300ms 1000ms;
       -ms-transition: opacity 300ms 1000ms;
+      -o-transition: opacity 300ms 1000ms;
       transition: opacity 300ms 1000ms; }
 
 .gallery li {
@@ -6350,7 +6422,7 @@ legend span.title, .section-title span.title {
   display: block;
   position: fixed;
   z-index: 1001; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     #toast-container {
       min-width: 100%;
       bottom: 0%; } }
@@ -6394,7 +6466,7 @@ legend span.title, .section-title span.title {
     margin-left: 3rem; }
   .toast.rounded {
     border-radius: 24px; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .toast {
       width: 100%; } }
   @media only screen and (min-width: 760px) and (max-width: 979px) {
@@ -6434,7 +6506,7 @@ legend span.title, .section-title span.title {
     margin-left: 3rem; }
   .message.rounded {
     border-radius: 24px; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .message {
       width: 100%; } }
   @media only screen and (min-width: 760px) and (max-width: 979px) {
@@ -7276,7 +7348,7 @@ li.divider {
       padding: 1rem 1rem; }
   @media only screen and (min-width: 1240px) {
     .dropdown-content li:hover {
-      background-color: rgba(0, 0, 0, 0.07); } }
+      color: #212121; } }
 
 .dropdown-rel {
   position: relative; }
@@ -7326,9 +7398,10 @@ li.divider {
       display: block; }
       .more-dropdown-toggle ul.more-dropdown li a {
         display: block;
-        padding: 8px 16px; }
+        padding: 8px 16px;
+        color: #424242; }
         .more-dropdown-toggle ul.more-dropdown li a:hover {
-          background: whitesmoke; }
+          color: #00bcd4; }
       .more-dropdown-toggle ul.more-dropdown li i {
         font-size: initial; }
 
@@ -7466,10 +7539,10 @@ li.divider {
   -o-transform: translate(0);
   transform: translate(0);
   will-change: top, opacity; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .modal {
       max-width: 80%; } }
-  .modal h1, .modal .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .modal .price, .modal .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .modal .price, .modal h2, .modal h3, .modal .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item .pricing-table-item-body .modal .price, .modal .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.most_popular .modal .pricing-table-item-header, .modal .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .modal .pricing-table-item-header, .modal h4, .modal legend, .modal .section-title {
+  .modal h1, .modal .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .modal .price, .modal .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .modal .price, .modal h2, .modal h3, .modal .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item .pricing-table-item-body .modal .price, .modal .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.most_popular .modal .pricing-table-item-header, .modal .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .modal .pricing-table-item-header, .modal h4, .modal legend, .modal .section-title, .modal .dropcap span, .dropcap .modal span, .modal .promotional .promo-text, .promotional .modal .promo-text {
     margin-top: 0; }
 
 #lean-overlay {
@@ -7530,6 +7603,9 @@ ul.collapsible {
     margin: 10px;
     padding-top: 12px;
     padding-bottom: 12px; }
+    @media only screen and (max-width: 760px) {
+      ul.collapsible.collapsible-plus {
+        margin: 0; } }
     ul.collapsible.collapsible-plus li .collapsible-header {
       font-weight: 500; }
       ul.collapsible.collapsible-plus li .collapsible-header i {
@@ -13689,6 +13765,10 @@ ul.collapsible {
   margin: 1rem;
   border: 1px solid #e0e0e0;
   border-radius: 2px; }
+  @media only screen and (max-width: 760px) {
+    .list-collapse {
+      margin: 0;
+      text-align: center; } }
   .list-collapse .list-item {
     background: whitesmoke;
     line-height: 1.5rem;
@@ -13704,7 +13784,7 @@ ul.collapsible {
     cursor: pointer;
     border-bottom: 1px solid #e0e0e0;
     overflow-y: auto; }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       .list-collapse .list-item {
         box-sizing: border-box;
         padding: 12px 8px;
@@ -14326,7 +14406,7 @@ ul.table-of-contents a {
       background-color: white;
       display: block;
       padding: 16px 32px; }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     .side-nav {
       -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -14409,18 +14489,18 @@ ul.table-of-contents a {
     position: absolute;
     top: 56px;
     left: 56px; }
-    @media only screen and (max-width: 1240px) {
+    @media only screen and (max-width: 979px) {
       .paper.abs-paper {
         top: 56px;
         left: 32px; } }
-    @media only screen and (max-width: 979px) {
+    @media only screen and (max-width: 760px) {
       .paper.abs-paper {
         top: 32px;
         left: 24px; } }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .paper {
       padding: 16px 32px 16px; } }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .paper {
       padding: 16px 24px 16px;
       max-width: 200px; } }
@@ -14444,13 +14524,13 @@ ul.table-of-contents a {
 
 .padding-box {
   padding: 56px 28px; }
-  @media only screen and (max-width: 1492px) {
-    .padding-box {
-      padding: 48px 24px; } }
   @media only screen and (max-width: 1240px) {
     .padding-box {
-      padding: 32px 16px; } }
+      padding: 48px 24px; } }
   @media only screen and (max-width: 979px) {
+    .padding-box {
+      padding: 32px 16px; } }
+  @media only screen and (max-width: 760px) {
     .padding-box {
       padding: 16px 8px; } }
 
@@ -14461,18 +14541,18 @@ ul.table-of-contents a {
   background: white;
   border: 1px solid #e0e0e0;
   text-transform: uppercase; }
-  .pricing-tables .pricing-table-item div, .pricing-tables .pricing-table-item p, .pricing-tables .pricing-table-item h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item h2, .pricing-tables .pricing-table-item h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item h4, .pricing-tables .pricing-table-item legend, .pricing-tables .pricing-table-item .section-title, .pricing-tables .pricing-table-item h5, .pricing-tables .pricing-table-item .pricing-table-item-header, .pricing-tables .pricing-table-item h6, .pricing-tables .pricing-table-item legend span.sub-title, legend .pricing-tables .pricing-table-item span.sub-title, .pricing-tables .pricing-table-item .section-title span.sub-title, .section-title .pricing-tables .pricing-table-item span.sub-title, .pricing-tables .pricing-table-item legend, .pricing-tables .pricing-table-item span {
+  .pricing-tables .pricing-table-item div, .pricing-tables .pricing-table-item p, .pricing-tables .pricing-table-item h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item h2, .pricing-tables .pricing-table-item h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item h4, .pricing-tables .pricing-table-item legend, .pricing-tables .pricing-table-item .section-title, .pricing-tables .pricing-table-item .dropcap span, .dropcap .pricing-tables .pricing-table-item span, .pricing-tables .pricing-table-item .promotional .promo-text, .promotional .pricing-tables .pricing-table-item .promo-text, .pricing-tables .pricing-table-item h5, .pricing-tables .pricing-table-item .pricing-table-item-header, .pricing-tables .pricing-table-item h6, .pricing-tables .pricing-table-item legend span.sub-title, legend .pricing-tables .pricing-table-item span.sub-title, .pricing-tables .pricing-table-item .section-title span.sub-title, .section-title .pricing-tables .pricing-table-item span.sub-title, .pricing-tables .pricing-table-item legend, .pricing-tables .pricing-table-item span {
     text-align: center; }
   .pricing-tables .pricing-table-item .pricing-table-item-header {
     background: whitesmoke;
     padding: 36px;
-    color: #3f51b5;
+    color: #424242;
     margin: 0; }
   .pricing-tables .pricing-table-item .pricing-table-item-body {
     padding: 24px; }
     .pricing-tables .pricing-table-item .pricing-table-item-body .price {
       position: relative;
-      color: #424242;
+      color: #757575;
       text-align: center;
       margin: 0px;
       margin-top: 24px;
@@ -14495,19 +14575,19 @@ ul.table-of-contents a {
           color: #757575; }
     .pricing-tables .pricing-table-item .pricing-table-item-body ul li {
       padding: 16px 0px;
-      color: #3f51b5; }
+      color: #424242; }
       .pricing-tables .pricing-table-item .pricing-table-item-body ul li.disabled {
         color: #9e9e9e; }
         .pricing-tables .pricing-table-item .pricing-table-item-body ul li.disabled i {
           padding-right: 12px;
           color: #9e9e9e; }
         .pricing-tables .pricing-table-item .pricing-table-item-body ul li.disabled .i-promo {
-          background: #a5d6a7; }
+          background: #424242; }
       .pricing-tables .pricing-table-item .pricing-table-item-body ul li i {
         padding-right: 12px;
-        color: #e91e63; }
+        color: #424242; }
       .pricing-tables .pricing-table-item .pricing-table-item-body ul li .i-promo {
-        background: #81c784;
+        background: #424242;
         color: white;
         padding: 8px;
         margin-left: 8px;
@@ -14515,15 +14595,15 @@ ul.table-of-contents a {
   .pricing-tables .pricing-table-item .pricing-table-item-footer {
     padding: 24px; }
   .pricing-tables .pricing-table-item .btn-pricing {
-    background: #3f51b5;
-    color: #eeeeee !important; }
+    background: #fafafa;
+    color: #424242 !important; }
     .pricing-tables .pricing-table-item .btn-pricing:hover {
-      background: white !important;
-      color: #3f51b5 !important; }
+      background: #fafafa !important;
+      color: #424242 !important; }
   .pricing-tables .pricing-table-item.most_popular {
     margin-top: 0px; }
     .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header {
-      background: #e91e63;
+      background: #ff4081;
       padding: 36px;
       color: white;
       margin: 0; }
@@ -14535,28 +14615,37 @@ ul.table-of-contents a {
           padding-right: 12px;
           color: #9e9e9e; }
         .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body ul li.disabled .i-promo {
-          background: #a5d6a7; }
+          background: #a5d6a7;
+          color: white; }
       .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body ul li i {
-        color: #e91e63; }
+        color: #ff4081; }
+      .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body ul li .i-promo {
+        background: #ff4081;
+        color: white; }
     .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price {
       color: black;
       text-align: center;
       margin: 0px;
       margin-top: 24px;
       margin-bottom: 8px; }
+      .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price .amt {
+        color: #ff4081; }
+        .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price .amt .c {
+          color: #ff4081; }
+        .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price .amt .pm {
+          color: #ff4081; }
     .pricing-tables .pricing-table-item.most_popular .pricing-table-item-footer {
       padding: 36px; }
     .pricing-tables .pricing-table-item.most_popular .btn-pricing {
-      background: #e91e63 !important;
+      background: #ff4081 !important;
       color: white !important; }
       .pricing-tables .pricing-table-item.most_popular .btn-pricing:hover {
-        background: white !important;
-        color: #e91e63 !important;
-        border: 1px solid #e91e63 !important; }
+        background: #ff1766 !important;
+        color: white !important; }
   .pricing-tables .pricing-table-item.second_most_popular {
     margin-top: 16px; }
     .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header {
-      background: #ffc107;
+      background: #00bcd4;
       padding: 28px;
       color: white;
       margin: 0; }
@@ -14570,22 +14659,30 @@ ul.table-of-contents a {
         .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body ul li.disabled .i-promo {
           background: #a5d6a7; }
       .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body ul li i {
-        color: #ffc107; }
+        color: #00bcd4; }
+      .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body ul li .i-promo {
+        background: #00bcd4;
+        color: white; }
     .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price {
       color: black;
       text-align: center;
       margin: 0px;
       margin-top: 24px;
       margin-bottom: 8px; }
+      .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price .amt {
+        color: #00bcd4; }
+        .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price .amt .c {
+          color: #00bcd4; }
+        .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price .amt .pm {
+          color: #00bcd4; }
     .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-footer {
       padding: 28px; }
     .pricing-tables .pricing-table-item.second_most_popular .btn-pricing {
-      background: #ffc107 !important;
+      background: #00bcd4 !important;
       color: white !important; }
       .pricing-tables .pricing-table-item.second_most_popular .btn-pricing:hover {
-        background: white !important;
-        color: #ffc107 !important;
-        border: 1px solid #ffc107 !important; }
+        background: #0098ab !important;
+        color: white !important; }
 
 /*
     @license
@@ -15688,7 +15785,7 @@ ul.table-of-contents a {
         width: 100%;
         height: 300px;
         max-width: 100%; }
-        @media only screen and (max-width: 979px) {
+        @media only screen and (max-width: 760px) {
           .blog .blog-excerpts .blog-item .blog-item-image-holder img, .blog .blog-single .blog-item .blog-item-image-holder img {
             display: block;
             width: 100%;
@@ -15721,7 +15818,7 @@ ul.table-of-contents a {
       height: 225px;
       width: 300px;
       margin-bottom: 16px; }
-      @media only screen and (max-width: 979px) {
+      @media only screen and (max-width: 760px) {
         .blog .blog-single .blog-item .blog-item-body img {
           display: block;
           width: 100%;
@@ -15734,7 +15831,7 @@ ul.table-of-contents a {
       background: #eeeeee;
       padding: 8px 16px;
       margin-bottom: 32px; }
-      @media only screen and (max-width: 979px) {
+      @media only screen and (max-width: 760px) {
         .blog .blog-single .blog-item .author .author-header {
           text-align: center; } }
       .blog .blog-single .blog-item .author .author-body {
@@ -15753,7 +15850,7 @@ ul.table-of-contents a {
             content: "";
             display: block;
             clear: both; }
-          @media only screen and (max-width: 979px) {
+          @media only screen and (max-width: 760px) {
             .blog .blog-single .blog-item .author .author-body img {
               display: block;
               margin: auto;
@@ -15765,7 +15862,7 @@ ul.table-of-contents a {
           font-size: 1.25rem;
           color: #212121;
           font-weight: 500; }
-          @media only screen and (max-width: 979px) {
+          @media only screen and (max-width: 760px) {
             .blog .blog-single .blog-item .author .author-body .name {
               text-align: center; } }
         .blog .blog-single .blog-item .author .author-body .about {
@@ -15790,7 +15887,7 @@ ul.table-of-contents a {
       .blog .blog-single .blog-item .add-comment button.btn, .blog .blog-single .blog-item .add-comment button.btn-large {
         background: white;
         color: #03a9f4; }
-    .blog .blog-single .blog-item .comments h4, .blog .blog-single .blog-item .comments legend, .blog .blog-single .blog-item .comments .section-title {
+    .blog .blog-single .blog-item .comments h4, .blog .blog-single .blog-item .comments legend, .blog .blog-single .blog-item .comments .section-title, .blog .blog-single .blog-item .comments .dropcap span, .dropcap .blog .blog-single .blog-item .comments span, .blog .blog-single .blog-item .comments .promotional .promo-text, .promotional .blog .blog-single .blog-item .comments .promo-text {
       margin-top: 16px;
       margin-bottom: 32px; }
     .blog .blog-single .blog-item .comments .comment-item {
@@ -15805,7 +15902,7 @@ ul.table-of-contents a {
         float: left;
         margin-bottom: 8px;
         margin-right: 16px; }
-        @media only screen and (max-width: 979px) {
+        @media only screen and (max-width: 760px) {
           .blog .blog-single .blog-item .comments .comment-item img {
             height: 60px;
             width: 60px; } }
@@ -15815,12 +15912,12 @@ ul.table-of-contents a {
         margin-top: 32px; }
       .blog .blog-single .blog-item .comments .comment-item.level-two {
         margin-left: 90px; }
-        @media only screen and (max-width: 979px) {
+        @media only screen and (max-width: 760px) {
           .blog .blog-single .blog-item .comments .comment-item.level-two {
             margin-left: 30px; } }
       .blog .blog-single .blog-item .comments .comment-item.level-three {
         margin-left: 180px; }
-        @media only screen and (max-width: 979px) {
+        @media only screen and (max-width: 760px) {
           .blog .blog-single .blog-item .comments .comment-item.level-three {
             margin-left: 60px; } }
 .blog .sidebar {
@@ -15855,7 +15952,7 @@ ul.table-of-contents a {
         cursor: hand;
         color: #03a9f4; }
 
-.btn-floating {
+.btn-floating.add, .btn-floating.cancel {
   position: fixed;
   top: 100%;
   left: 100%;
@@ -15864,65 +15961,51 @@ ul.table-of-contents a {
   height: 56px;
   width: 56px;
   line-height: 56px; }
-  .btn-floating:focus {
-    outline: 0; }
-  .btn-floating i {
-    line-height: 56px;
-    font-size: 2rem; }
-  .btn-floating.add {
-    z-index: 1001;
-    -webkit-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -moz-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -o-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    -ms-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms;
-    transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, padding 400ms ease-out, margin 400ms ease-out, z-index 0 ease-out 400ms, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms; }
-    .btn-floating.add i {
-      opacity: 1;
-      -webkit-transition: opacity 200ms ease-out 800ms;
-      -moz-transition: opacity 200ms ease-out 800ms;
-      -o-transition: opacity 200ms ease-out 800ms;
-      -ms-transition: opacity 200ms ease-out 800ms;
-      transition: opacity 200ms ease-out 800ms; }
-  .btn-floating.cancel {
-    display: block;
-    -webkit-transition: transform 300ms ease-out;
-    -moz-transition: transform 300ms ease-out;
-    -o-transition: transform 300ms ease-out;
-    -ms-transition: transform 300ms ease-out;
-    transition: transform 300ms ease-out; }
-  .floated .btn-floating.add {
-    height: 200%;
-    width: 200%;
-    top: 15%;
-    left: 15%;
-    margin: -20% 0 0 -20%;
-    /* margin: 10%; */
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transform-origin: 800%;
-    -moz-transform-origin: 800%;
-    -ms-transform-origin: 800%;
-    -o-transform-origin: 800%;
-    transform-origin: 800%;
-    -webkit-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
-    -moz-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
-    -o-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
-    -ms-transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms;
-    transition: top 400ms ease-out, left 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, z-index 0 ease-out 400ms, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms, padding 300ms ease-out 400ms, margin 300ms ease-out 400ms; }
-    .floated .btn-floating.add i {
-      opacity: 0;
-      -webkit-transition: opacity 200ms;
-      -moz-transition: opacity 200ms;
-      -o-transition: opacity 200ms;
-      -ms-transition: opacity 200ms;
-      transition: opacity 200ms; }
+.btn-floating:focus {
+  outline: 0; }
+.btn-floating i {
+  line-height: 56px;
+  font-size: 2rem; }
+.btn-floating.add {
+  z-index: 1001;
+  top: 100%;
+  left: 100%;
+  margin: -80px 0 0 -136px;
+  -webkit-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, margin 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, box-shadow 300ms ease-out 400ms, -webkit-transform-origin 300ms ease-out 400ms, -webkit-transform 300ms ease-out 400ms;
+  -moz-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, margin 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, box-shadow 300ms ease-out 400ms, -moz-transform-origin 300ms ease-out 400ms, -moz-transform 300ms ease-out 400ms;
+  -ms-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, margin 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, box-shadow 300ms ease-out 400ms, -ms-transform-origin 300ms ease-out 400ms, -ms-transform 300ms ease-out 400ms;
+  -o-transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, margin 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, box-shadow 300ms ease-out 400ms, -o-transform-origin 300ms ease-out 400ms, -o-transform 300ms ease-out 400ms;
+  transition: top 400ms ease-out 400ms, left 400ms ease-out 400ms, margin 400ms ease-out 400ms, width 400ms ease-out, border-radius 400ms ease-out, height 400ms ease-out, box-shadow 300ms ease-out 400ms, transform-origin 300ms ease-out 400ms, transform 300ms ease-out 400ms; }
+  @media only screen and (max-width: 760px) {
+    .btn-floating.add {
+      margin: -80px 0 0 -80px; } }
+  .btn-floating.add i {
+    opacity: 1;
+    -webkit-transition: opacity 200ms ease-out 800ms;
+    -moz-transition: opacity 200ms ease-out 800ms;
+    -o-transition: opacity 200ms ease-out 800ms;
+    -ms-transition: opacity 200ms ease-out 800ms;
+    transition: opacity 200ms ease-out 800ms; }
+.btn-floating.cancel {
+  display: block;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  -moz-transition: -moz-transform 300ms ease-out;
+  -ms-transition: -ms-transform 300ms ease-out;
+  -o-transition: -o-transform 300ms ease-out;
+  transition: transform 300ms ease-out; }
+.floated .btn-floating.add {
+  -webkit-transition: top 400ms ease-out, left 400ms ease-out, margin 400ms ease-out, box-shadow 400ms ease-out, -webkit-transform-origin 400ms ease-out, -webkit-transform 400ms ease-out, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms;
+  -moz-transition: top 400ms ease-out, left 400ms ease-out, margin 400ms ease-out, box-shadow 400ms ease-out, -moz-transform-origin 400ms ease-out, -moz-transform 400ms ease-out, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms;
+  -ms-transition: top 400ms ease-out, left 400ms ease-out, margin 400ms ease-out, box-shadow 400ms ease-out, -ms-transform-origin 400ms ease-out, -ms-transform 400ms ease-out, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms;
+  -o-transition: top 400ms ease-out, left 400ms ease-out, margin 400ms ease-out, box-shadow 400ms ease-out, -o-transform-origin 400ms ease-out, -o-transform 400ms ease-out, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms;
+  transition: top 400ms ease-out, left 400ms ease-out, margin 400ms ease-out, box-shadow 400ms ease-out, transform-origin 400ms ease-out, transform 400ms ease-out, height 300ms ease-out 400ms, width 300ms ease-out 400ms, border-radius 300ms ease-out 400ms; }
+  .floated .btn-floating.add i {
+    opacity: 0;
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    -o-transition: opacity 200ms;
+    -ms-transition: opacity 200ms;
+    transition: opacity 200ms; }
 
 .header-scroll .fab {
   top: 560px; }
@@ -15948,10 +16031,10 @@ ul.table-of-contents a {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1);
-      -webkit-transition: transform 300ms ease-out 600ms;
-      -moz-transition: transform 300ms ease-out 600ms;
-      -o-transition: transform 300ms ease-out 600ms;
-      -ms-transition: transform 300ms ease-out 600ms;
+      -webkit-transition: -webkit-transform 300ms ease-out 600ms;
+      -moz-transition: -moz-transform 300ms ease-out 600ms;
+      -ms-transition: -ms-transform 300ms ease-out 600ms;
+      -o-transition: -o-transform 300ms ease-out 600ms;
       transition: transform 300ms ease-out 600ms; }
   .action-content .cancel {
     position: absolute;
@@ -15965,10 +16048,10 @@ ul.table-of-contents a {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-transition: transform 300ms ease-out;
-    -moz-transition: transform 300ms ease-out;
-    -o-transition: transform 300ms ease-out;
-    -ms-transition: transform 300ms ease-out;
+    -webkit-transition: -webkit-transform 300ms ease-out;
+    -moz-transition: -moz-transform 300ms ease-out;
+    -ms-transition: -ms-transform 300ms ease-out;
+    -o-transition: -o-transform 300ms ease-out;
     transition: transform 300ms ease-out; }
     .defloat .action-content .cancel {
       -webkit-transform: scale(0) !important;
@@ -15976,10 +16059,10 @@ ul.table-of-contents a {
       -ms-transform: scale(0) !important;
       -o-transform: scale(0) !important;
       transform: scale(0) !important;
-      -webkit-transition: transform 300ms ease-out;
-      -moz-transition: transform 300ms ease-out;
-      -o-transition: transform 300ms ease-out;
-      -ms-transition: transform 300ms ease-out;
+      -webkit-transition: -webkit-transform 300ms ease-out;
+      -moz-transition: -moz-transform 300ms ease-out;
+      -ms-transition: -ms-transform 300ms ease-out;
+      -o-transition: -o-transform 300ms ease-out;
       transition: transform 300ms ease-out; }
   .defloat .action-content .action-content-inner {
     opacity: 0 !important;
@@ -15988,10 +16071,10 @@ ul.table-of-contents a {
     -ms-transform: translateY(20px) !important;
     -o-transform: translateY(20px) !important;
     transform: translateY(20px) !important;
-    -webkit-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
-    -moz-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
-    -o-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
-    -ms-transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+    -webkit-transition: opacity 300ms ease-out, -webkit-transform 300ms ease-out !important;
+    -moz-transition: opacity 300ms ease-out, -moz-transform 300ms ease-out !important;
+    -ms-transition: opacity 300ms ease-out, -ms-transform 300ms ease-out !important;
+    -o-transition: opacity 300ms ease-out, -o-transform 300ms ease-out !important;
     transition: opacity 300ms ease-out, transform 300ms ease-out !important; }
   .action-content .action-content-inner {
     opacity: 0;
@@ -16010,10 +16093,10 @@ ul.table-of-contents a {
       -ms-transform: translateY(0px);
       -o-transform: translateY(0px);
       transform: translateY(0px);
-      -webkit-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
-      -moz-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
-      -o-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
-      -ms-transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms;
+      -webkit-transition: opacity 300ms ease-out 1500ms, -webkit-transform 300ms ease-out 1500ms;
+      -moz-transition: opacity 300ms ease-out 1500ms, -moz-transform 300ms ease-out 1500ms;
+      -ms-transition: opacity 300ms ease-out 1500ms, -ms-transform 300ms ease-out 1500ms;
+      -o-transition: opacity 300ms ease-out 1500ms, -o-transform 300ms ease-out 1500ms;
       transition: opacity 300ms ease-out 1500ms, transform 300ms ease-out 1500ms; }
 
 .button-fill {
@@ -16068,52 +16151,26 @@ ul.table-of-contents a {
   -ms-transition: all 300ms ease-out;
   transition: all 300ms ease-out; }
 
-.add {
-  position: fixed;
-  z-index: 1;
-  top: 100%;
-  left: 100%;
-  margin: -5em 0 0 -5em;
-  background: #3f51b5;
-  -webkit-box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
-  box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transition: width 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 300ms, top 300ms ease-out 300ms, left 300ms ease-out 300ms, box-shadow 300ms ease-out 300ms, transform-origin 300ms ease-out 300ms, transform 300ms ease-out 300ms;
-  -moz-transition: width 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 300ms, top 300ms ease-out 300ms, left 300ms ease-out 300ms, box-shadow 300ms ease-out 300ms, transform-origin 300ms ease-out 300ms, transform 300ms ease-out 300ms;
-  -o-transition: width 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 300ms, top 300ms ease-out 300ms, left 300ms ease-out 300ms, box-shadow 300ms ease-out 300ms, transform-origin 300ms ease-out 300ms, transform 300ms ease-out 300ms;
-  -ms-transition: width 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 300ms, top 300ms ease-out 300ms, left 300ms ease-out 300ms, box-shadow 300ms ease-out 300ms, transform-origin 300ms ease-out 300ms, transform 300ms ease-out 300ms;
-  transition: width 300ms ease-out, padding 300ms ease-out, margin 300ms ease-out, z-index 0 ease-out 300ms, top 300ms ease-out 300ms, left 300ms ease-out 300ms, box-shadow 300ms ease-out 300ms, transform-origin 300ms ease-out 300ms, transform 300ms ease-out 300ms; }
-  .add.active {
-    z-index: 1000;
-    top: 35%;
-    left: 20%;
-    width: 200%;
-    padding-bottom: 200%;
-    margin: -140% 0 0 -60%;
-    cursor: default;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transform-origin: 800%;
-    -moz-transform-origin: 800%;
-    -ms-transform-origin: 800%;
-    -o-transform-origin: 800%;
-    transform-origin: 800%;
-    -webkit-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, width 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -moz-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, width 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -o-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, width 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    -ms-transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, width 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms;
-    transition: top 300ms ease-out, left 300ms ease-out, box-shadow 300ms ease-out, transform-origin 300ms ease-out, transform 300ms ease-out, z-index 0 ease-out 300ms, width 300ms ease-out 300ms, padding 300ms ease-out 300ms, margin 300ms ease-out 300ms; }
+.dummy, .floated .btn-floating.add {
+  height: 200% !important;
+  width: 200% !important;
+  top: 0% !important;
+  left: 0% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transform-origin: 800%;
+  -moz-transform-origin: 800%;
+  -ms-transform-origin: 800%;
+  -o-transform-origin: 800%;
+  transform-origin: 800%; }
 
 .timeline-list {
   margin-left: 24px;
@@ -16178,14 +16235,14 @@ ul.table-of-contents a {
 .section .header .title {
   font-size: 2.28rem;
   margin-bottom: 0px; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .section .header .title {
       font-size: 1.64rem; } }
 .section .header .caption, .section .header .blog .blog-single .blog-item .author .author-body .about, .blog .blog-single .blog-item .author .author-body .section .header .about {
   margin-top: 0;
   padding-top: 0px;
   font-size: 1.2rem; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .section .header .caption, .section .header .blog .blog-single .blog-item .author .author-body .about, .blog .blog-single .blog-item .author .author-body .section .header .about {
       font-size: 1rem; } }
 
@@ -16223,15 +16280,16 @@ header, footer {
   background: #00bcd4; }
 
 .navbar-nav .dropdown-rel .dropdown-menu li {
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -ms-transition: background-color 0.3s;
-  transition: background-color 0.3s; }
-  .navbar-nav .dropdown-rel .dropdown-menu li:hover, .navbar-nav .dropdown-rel .dropdown-menu li.active {
-    background-color: whitesmoke; }
-    .navbar-nav .dropdown-rel .dropdown-menu li:hover > a, .navbar-nav .dropdown-rel .dropdown-menu li.active > a {
-      border-color: transparent; }
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  transition: color 0.3s; }
+  .navbar-nav .dropdown-rel .dropdown-menu li:hover > a, .navbar-nav .dropdown-rel .dropdown-menu li.active > a {
+    color: #00bcd4;
+    border-color: transparent; }
+.navbar-nav .dropdown-rel .dropdown-menu a {
+  color: #424242; }
 
 legend span.sub-title {
   color: #9e9e9e; }
@@ -16240,6 +16298,9 @@ legend span.sub-title {
   color: white;
   background: #ec407a; }
 
+.section .section-title {
+  font-weight: 300;
+  color: #424242; }
 .section.primary-section legend, .section.primary-section .section-title, .section.accent-section legend, .section.accent-section .section-title {
   color: white; }
   .section.primary-section legend span.sub-title, .section.primary-section .section-title span.sub-title, .section.accent-section legend span.sub-title, .section.accent-section .section-title span.sub-title {
@@ -16305,11 +16366,38 @@ ul.collapsible.collapsible-plus {
 .accent-text {
   color: #ff4081 !important; }
 
+.dark-text {
+  color: #424242 !important; }
+
 .card-content .input-field label, .portfolio .p-item .p-item-body .input-field label, .portfolio .p-item .p-item-content .input-field label {
   color: #424242; }
 
 .card-content .input-field input, .portfolio .p-item .p-item-body .input-field input, .portfolio .p-item .p-item-content .input-field input {
   color: black; }
+
+.promotional .promo-text {
+  color: #4f4f4f; }
+
+.services .list-collapse li.list-item, .services .list-collapse li.list-header {
+  background: white; }
+  .services .list-collapse li.list-item.active, .services .list-collapse li.list-header.active {
+    background: #00bcd4; }
+    .services .list-collapse li.list-item.active .list-item-title p, .services .list-collapse li.list-header.active .list-item-title p {
+      color: white !important; }
+    .services .list-collapse li.list-item.active .list-item-body p, .services .list-collapse li.list-header.active .list-item-body p {
+      color: white !important; }
+  .services .list-collapse li.list-item .list-item-title p, .services .list-collapse li.list-header .list-item-title p {
+    color: #00bcd4; }
+  .services .list-collapse li.list-item .list-item-body p, .services .list-collapse li.list-header .list-item-body p {
+    color: white !important; }
+.services .list-collapse .list-header p {
+  color: #ff4081; }
+
+.bg-2 {
+  background: #fafafa !important; }
+
+.bg-1 {
+  background: white !important; }
 
 /***************
   HTML Styles	
@@ -16324,7 +16412,7 @@ p {
   padding: 0;
   -webkit-font-smoothing: antialiased; }
 
-h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, h2, h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, h4, legend, .section-title, h5, .pricing-tables .pricing-table-item .pricing-table-item-header, h6, legend span.sub-title, .section-title span.sub-title {
+h1, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, h2, h3, .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, h4, legend, .section-title, .dropcap span, .promotional .promo-text, h5, .pricing-tables .pricing-table-item .pricing-table-item-header, h6, legend span.sub-title, .section-title span.sub-title {
   -webkit-font-smoothing: antialiased; }
 
 nav a {
@@ -16335,13 +16423,13 @@ nav ul li:hover, nav ul li.active {
 .header {
   color: #03a9f4;
   font-weight: 400; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .header {
       font-size: 1.64rem; } }
 
 .caption, .blog .blog-single .blog-item .author .author-body .about {
   margin-bottom: 30px; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     .caption, .blog .blog-single .blog-item .author .author-body .about {
       margin-bottom: 12px; } }
 
@@ -16367,12 +16455,12 @@ nav ul li:hover, nav ul li.active {
   background-color: #ee6e73; }
   #index-banner .container {
     position: relative; }
-  #index-banner h4, #index-banner legend, #index-banner .section-title {
+  #index-banner h4, #index-banner legend, #index-banner .section-title, #index-banner .dropcap span, .dropcap #index-banner span, #index-banner .promotional .promo-text, .promotional #index-banner .promo-text {
     margin-bottom: 40px; }
 
 .contact-page #contact-banner .container {
   position: relative; }
-.contact-page #contact-banner h4, .contact-page #contact-banner legend, .contact-page #contact-banner .section-title {
+.contact-page #contact-banner h4, .contact-page #contact-banner legend, .contact-page #contact-banner .section-title, .contact-page #contact-banner .dropcap span, .dropcap .contact-page #contact-banner span, .contact-page #contact-banner .promotional .promo-text, .promotional .contact-page #contact-banner .promo-text {
   margin-bottom: 40px; }
 .contact-page .section.map-section {
   padding-bottom: 0; }
@@ -16403,7 +16491,7 @@ nav ul li:hover, nav ul li.active {
   color: #e6e6e6;
   font-size: .9rem; }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 979px) {
   .github-commit {
     text-align: center; } }
 #github-button {
@@ -16630,7 +16718,7 @@ nav ul li:hover, nav ul li.active {
     right: 0;
     margin-top: -27px; }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 979px) {
   .parallax-container {
     height: auto; } }
 ul.table-of-contents {
@@ -16719,7 +16807,7 @@ body.parallax-demo footer {
   .image-container img {
     max-width: 100%; }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 760px) {
   .mobile-image {
     max-width: 100%; } }
 
@@ -16751,14 +16839,14 @@ img {
 .chartContainer {
   margin: 0;
   padding: 0; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     .chartContainer {
       margin: 0 50px; } }
 
 #homeChart {
   display: block;
   margin: auto; }
-  @media only screen and (max-width: 1240px) {
+  @media only screen and (max-width: 979px) {
     #homeChart {
       display: block;
       width: 100%;
@@ -16772,7 +16860,7 @@ img {
   max-width: 100%;
   float: right;
   height: 250px; }
-  @media only screen and (max-width: 979px) {
+  @media only screen and (max-width: 760px) {
     #owl-demo .item .img-holder img {
       display: block;
       width: 100%;
@@ -16810,13 +16898,13 @@ img {
   .follow-us span.fa-stack:hover i.fa.fa-inverse {
     color: #03a9f4; }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 760px) {
   * img {
     display: block;
     width: 100%;
     height: 160px; } }
 
-@media only screen and (max-width: 1492px) {
+@media only screen and (max-width: 1240px) {
   .growth-section {
     display: none; } }
 
@@ -16825,23 +16913,26 @@ img {
   width: 240px;
   padding: 8px;
   max-width: 100%; }
-  @media only screen and (max-width: 1492px) {
+  @media only screen and (max-width: 1240px) {
     .partner-icon {
-      height: auto;
-      width: 180px; } }
+      height: 50px;
+      box-sizing: border-box;
+      width: 180px;
+      display: block;
+      margin: auto; } }
 
 .section.map-section {
   padding: 0px; }
 
 #map-canvas {
   height: 480px; }
-  @media only screen and (max-width: 1492px) {
-    #map-canvas {
-      height: 320px; } }
   @media only screen and (max-width: 1240px) {
     #map-canvas {
-      height: 240px; } }
+      height: 320px; } }
   @media only screen and (max-width: 979px) {
+    #map-canvas {
+      height: 240px; } }
+  @media only screen and (max-width: 760px) {
     #map-canvas {
       height: 160px; } }
 
@@ -16852,6 +16943,18 @@ img {
   margin-bottom: 40px; }
 .inner-footer a {
   line-height: 26px; }
+
+.gallery a {
+  height: 100%;
+  display: block;
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden; }
+  .gallery a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; }
 
 .footer-about ul li {
   margin-bottom: 20px;
@@ -16897,3 +17000,254 @@ img {
   flex: 1; }
 .footer-twitter .tweet-inner {
   display: flex; }
+
+.logo {
+  width: auto;
+  height: 40px;
+  margin: 0;
+  line-height: 64px;
+  padding: 0; }
+
+.headings h1, .headings .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .headings .price, .headings .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .headings .price, .headings h2, .headings h3, .headings .pricing-tables .pricing-table-item .pricing-table-item-body .price, .pricing-tables .pricing-table-item .pricing-table-item-body .headings .price, .headings .pricing-tables .pricing-table-item.most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.most_popular .headings .pricing-table-item-header, .headings .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-header, .pricing-tables .pricing-table-item.second_most_popular .headings .pricing-table-item-header, .headings h4, .headings legend, .headings .section-title, .headings .dropcap span, .dropcap .headings span, .headings .promotional .promo-text, .promotional .headings .promo-text, .headings h5, .headings .pricing-tables .pricing-table-item .pricing-table-item-header, .pricing-tables .pricing-table-item .headings .pricing-table-item-header, .headings h6, .headings legend span.sub-title, legend .headings span.sub-title, .headings .section-title span.sub-title, .section-title .headings span.sub-title {
+  margin: 0 0 20px !important; }
+.headings p {
+  margin: 0; }
+
+.typography h1, .typography .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .typography .price, .typography .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .typography .price {
+  margin-bottom: 36px; }
+
+.clientelle .review {
+  font-size: 1.2rem;
+  line-height: 30px;
+  font-style: italic;
+  position: relative;
+  padding: 16px 56px;
+  text-align: center; }
+  .clientelle .review:before {
+    content: "\201C";
+    font-size: 100px;
+    margin-right: 16px;
+    color: #00bcd4;
+    position: absolute;
+    top: 0;
+    left: 0px; }
+  .clientelle .review:after {
+    content: "\201D";
+    font-size: 100px;
+    margin-left: 16px;
+    color: #00bcd4;
+    position: absolute;
+    right: 30px;
+    bottom: -21px; }
+.clientelle .user {
+  margin: auto; }
+  .clientelle .user .name, .clientelle .user .designation {
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 30px; }
+  .clientelle .user .name {
+    margin-bottom: 8px; }
+  .clientelle .user .designation {
+    font-size: 1rem; }
+.clientelle .img-floater {
+  margin: auto;
+  width: 100px;
+  float: none; }
+  .clientelle .img-floater img {
+    margin: 32px auto 16px;
+    display: block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    height: 90px;
+    width: 90px; }
+.clientelle .owl-page span {
+  background: #bdbdbd; }
+.clientelle .owl-page.active span {
+  background: #ff4081 !important; }
+
+.call-to-action {
+  background: #ff4081; }
+  .call-to-action h1, .call-to-action .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.most_popular .pricing-table-item-body .call-to-action .price, .call-to-action .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .price, .pricing-tables .pricing-table-item.second_most_popular .pricing-table-item-body .call-to-action .price {
+    color: white;
+    margin-top: 0;
+    font-size: 2.28rem;
+    padding: 8px 16px;
+    text-align: center; }
+  .call-to-action button {
+    display: block;
+    width: 200px;
+    margin: auto;
+    background: white;
+    color: #424242; }
+    .call-to-action button:hover {
+      background: white;
+      color: #424242; }
+    .call-to-action button:focus {
+      outline: none; }
+
+.fab .btn-floating.add {
+  background-color: #00bcd4; }
+
+.promotional .promo-text {
+  text-align: center;
+  font-weight: 300;
+  margin: 32px; }
+  @media only screen and (max-width: 760px) {
+    .promotional .promo-text {
+      line-height: 3.5rem;
+      text-align: left;
+      margin: 16px; } }
+
+.pricing-section .pricing-tables {
+  margin-top: 80px; }
+
+.section .section-sub-title {
+  font-size: 1.68rem;
+  font-weight: 300;
+  margin: 56px 0px 80px; }
+
+.team-section .card .card-image-overlay {
+  background-color: rgba(0, 0, 0, 0.2); }
+.team-section .card .card-image-footer {
+  z-index: 2 !important; }
+  .team-section .card .card-image-footer p {
+    color: white;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: left; }
+    .team-section .card .card-image-footer p.name {
+      margin-bottom: 0.5rem; }
+    .team-section .card .card-image-footer p.designation {
+      font-size: 1rem;
+      margin-top: 0; }
+
+@media only screen and (max-width: 760px) {
+  .services .collapsible {
+    margin-bottom: 32px; } }
+.services .list-collapse li.list-item .list-item-title p, .services .list-collapse li.list-header .list-item-title p {
+  font-size: 15px;
+  margin: 0;
+  height: 3rem;
+  line-height: 3rem;
+  font-weight: 500; }
+.services .list-collapse li.list-item.active, .services .list-collapse li.list-header.active {
+  border: none; }
+  .services .list-collapse li.list-item.active .list-item-title p, .services .list-collapse li.list-header.active .list-item-title p {
+    font-size: 2.28rem; }
+.services .list-collapse li.list-item .list-item-title p, .services .list-collapse li.list-header .list-item-title p {
+  font-size: 15px;
+  margin: 0;
+  height: 3rem;
+  line-height: 3rem; }
+.services .list-collapse .list-header {
+  padding-left: 30px; }
+  .services .list-collapse .list-header p {
+    font-size: 20px;
+    font-weight: 500; }
+
+@media only screen and (max-width: 760px) {
+  .promotional-2 {
+    text-align: center; } }
+.promotional-2 .img-holder {
+  position: relative;
+  padding-top: 75%;
+  overflow: hidden; }
+  @media only screen and (max-width: 760px) {
+    .promotional-2 .img-holder {
+      width: 300px;
+      margin-top: 32px; } }
+  .promotional-2 .img-holder img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%; }
+.promotional-2 .title {
+  color: #424242;
+  margin-top: 100px;
+  font-weight: 300;
+  font-size: 1.68rem; }
+  @media only screen and (max-width: 760px) {
+    .promotional-2 .title {
+      margin-top: 32px; } }
+.promotional-2 .sub-title {
+  color: #424242;
+  font-size: 1.4rem; }
+
+.why-us {
+  position: relative; }
+  .why-us .why-us-content {
+    margin: 80px 0px 56px; }
+    @media only screen and (min-width: 761px) {
+      .why-us .why-us-content > .row:nth-child(2) .floater {
+        float: right; } }
+  .why-us .btn-floating {
+    height: 56px;
+    width: 56px;
+    line-height: 56px;
+    position: absolute;
+    top: -28px;
+    right: 80px; }
+    .why-us .btn-floating i {
+      line-height: 56px;
+      font-size: 2rem;
+      width: inherit;
+      display: inline-block;
+      text-align: center; }
+  .why-us .why-us-item {
+    margin: 32px 0px; }
+    .why-us .why-us-item .image-holder {
+      position: relative;
+      overflow: hidden;
+      padding-top: 75%; }
+      .why-us .why-us-item .image-holder img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%; }
+    .why-us .why-us-item .text p {
+      text-align: center; }
+      .why-us .why-us-item .text p.title {
+        margin: 100px 0px;
+        font-size: 2.28rem; }
+      .why-us .why-us-item .text p.sub-title {
+        margin-top: -50px;
+        font-size: 1.2rem; }
+
+.action-content .text p {
+  text-align: center; }
+  .action-content .text p.title {
+    margin: 100px 0px;
+    font-size: 2.28rem; }
+  .action-content .text p.sub-title {
+    margin-top: -50px;
+    font-size: 1.2rem; }
+
+.abs-img-holder {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden; }
+  .abs-img-holder img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+
+@media only screen and (max-width: 760px) {
+  footer {
+    text-align: center; }
+    footer .footer-column-heading {
+      margin-top: 16px; } }
+footer .footer-social ul li {
+  float: left;
+  padding: 8px; }
+  footer .footer-social ul li a i {
+    font-size: 18px;
+    color: white; }

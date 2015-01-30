@@ -32,16 +32,16 @@ header,footer{
     .dropdown-menu{
       li {
 
-        @include transition(background-color .3s);
+        @include transition(color .3s);
         &:hover, &.active {
-          background-color:color("grey","lighten-4");
           >a{
+            color:$primary-color;
             border-color:transparent;
           }
         }
       }
       a {
-
+        color:color("grey","darken-3");
       }
     }
   }
@@ -58,6 +58,11 @@ legend{
   background:color("pink","lighten-1");
 }
 .section{
+  .section-title{
+    font-weight:300;
+    color:$dark-color;
+  }
+
   &.primary-section, &.accent-section{
     legend, .section-title{
       color:white;
@@ -165,6 +170,9 @@ ul.collapsible{
 .accent-text{
   color: $accent-color !important;
 }
+.dark-text{
+  color: $dark-color !important;
+}
 .card-content .input-field label{
   color:color("grey","darken-3");
 }
@@ -173,4 +181,60 @@ ul.collapsible{
   color:black;
 }
 
+.promotional{
+  .promo-text{
+    color:lighten($dark-color,5%);
 
+  }
+}
+
+.services{
+  .list-collapse{
+    @extend .z-depth-1;
+    li.list-item, li.list-header{
+
+      background:white;
+      &.active{
+        background:$primary-color;
+        .list-item-title{
+          p{
+            color:white !important;
+          }
+        }
+        .list-item-body{
+          p{
+           color:white !important;
+         }
+
+        }
+      }
+      .list-item-title{
+        p{
+          color:$primary-color;
+        }
+      }
+      .list-item-body{
+        p{
+          color:white !important;
+        }
+
+      }
+
+
+    }
+    .list-header{
+      p{
+        color:$accent-color;
+      }
+    }
+  }
+}
+
+
+.bg-2{
+  background:color("grey","lighten-5") !important;
+
+}
+.bg-1{
+  background:white !important;
+}
